@@ -208,6 +208,62 @@
 
         <p>That last phrase, by the way, is the hallmark of a lazy installation. Don't settle for it.</p>
 
+        <h2 id="digital-voice">Digital Voice: The New Landscape</h2>
+
+        <p>The VHF/UHF landscape has changed significantly in recent years. Analog FM isn't going anywhere &mdash; repeaters still run it, simplex still uses it, and it will be the backbone of local communications for a long time yet. But digital voice modes have established themselves firmly enough that ignoring them is no longer reasonable.</p>
+
+        <p>Here's a quick, honest survey of what's out there:</p>
+
+        <p><strong>DMR (Digital Mobile Radio)</strong> is the 800-pound gorilla. Originally a commercial standard, it's been embraced by hams primarily because the radios are dirt cheap. For the price of a decent dinner out, you can buy a DMR handheld or mobile. The worldwide talk group infrastructure &mdash; Brandmeister, TGIF, and others &mdash; gives you global reach through linked repeaters and hotspots. The catch? Programming a DMR radio is an exercise in frustration. You'll need a codeplug, a cable, software that looks like it was designed in 1998, and patience. Lots of patience. Once it's set up, it works. Getting there is the tax you pay for cheap hardware.</p>
+
+        <p><strong>Fusion (C4FM)</strong> is Yaesu's proprietary digital voice system. If you're already a Yaesu shop, Fusion is the path of least resistance. The radios handle both analog and digital seamlessly, the Wires-X network provides internet linking, and programming is straightforward compared to DMR. The ecosystem is smaller than DMR but well-supported. You're locked into one manufacturer's ecosystem, which bothers some people and doesn't bother others.</p>
+
+        <p><strong>D-STAR</strong> has a loyal following, particularly among Icom users who adopted it early. The technology works, the gateway system provides internet linking, and the user experience is reasonably polished. That said, growth has slowed noticeably. New repeater installations increasingly favor DMR or Fusion over D-STAR. It's not dead, but it's not where the momentum is.</p>
+
+        <p><strong>M17</strong> is the newcomer &mdash; an open-source digital voice protocol designed by hams, for hams. No proprietary codecs, no licensing fees, no single manufacturer controlling the standard. It uses the Codec2 vocoder, which is fully open. Hardware support is still limited, but it's growing. If the idea of an open-source digital voice standard appeals to you &mdash; and it should &mdash; M17 is worth watching closely.</p>
+
+        <div class="callout key-concept">
+          <div class="callout-title">🔑 KEY CONCEPT</div>
+          <p>The installation requirements for digital voice radios are <strong>identical</strong> to analog FM. Same power wiring. Same antenna mounting. Same NMO mount. Same bonding and RFI considerations. Digital voice is just a different way of modulating the carrier &mdash; the RF plumbing doesn't change one bit. In fact, digital modes are <em>less</em> tolerant of marginal signals than analog FM. Where a weak analog signal gets noisy and scratchy but remains intelligible, a weak digital signal hits a cliff and disappears entirely. Your installation needs to be right, or digital voice will punish you for it.</p>
+        </div>
+
+        <h2 id="digital-hotspots">Digital Hotspots in the Vehicle</h2>
+
+        <p>A digital hotspot is a low-power transceiver &mdash; typically well under one watt &mdash; connected to the internet, which acts as your personal gateway to a digital voice network. You talk to the hotspot on a simplex frequency with your DMR, Fusion, or D-STAR radio, and the hotspot routes your audio to the appropriate talk group or reflector over the internet. The range is a few feet to a few dozen feet, which is fine when the hotspot is sitting on your dashboard.</p>
+
+        <p>The most common platforms are Pi-Star and WPSD, both running on a Raspberry Pi with a small radio board attached. Standalone hotspot units that don't require a separate Pi are also available. Either way, the physical package is small &mdash; about the size of a deck of cards &mdash; and runs on USB power. Plug it into a USB port in the vehicle, connect it to your phone's WiFi hotspot for internet access, and you have a portable digital voice gateway.</p>
+
+        <p>The appeal is obvious: access to worldwide digital voice networks from anywhere you have cell coverage. The limitation is equally obvious: <strong>no cell coverage, no hotspot.</strong> In a dead zone, your hotspot is a paperweight. This is not a replacement for a properly installed mobile radio working through real repeaters. It's a supplement.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 TIP</div>
+          <p>A hotspot is frosting. Your mobile installation is the cake. Get the cake right first &mdash; proper antenna, proper mount, proper wiring, proper bonding. Then add a hotspot if the digital voice networks interest you. Too many operators spend their time fiddling with hotspot configurations while their actual mobile installation remains a mess of mag mounts and cigarette lighter adapters. Priorities.</p>
+        </div>
+
+        <h2 id="aprs-modern">APRS: Modern Options</h2>
+
+        <p>The <a href="#aprs">APRS considerations</a> discussed earlier in this article still apply fully, but the hardware options have expanded since the days when a dedicated TNC was the only game in town.</p>
+
+        <p>Several current VHF mobile radios include built-in APRS capability &mdash; GPS receiver, TNC, and SmartBeaconing all in the radio itself. This is the cleanest installation: one radio, one feedline, one antenna, done. No separate boxes, no extra cables, no additional failure points. If you want APRS and are shopping for a new radio anyway, a model with built-in APRS is worth the premium.</p>
+
+        <p>For radios without built-in APRS, Bluetooth-connected TNCs have emerged as a compact option. These pair with a smartphone running an APRS application and key the radio through a cable connection. The phone provides the GPS position, the app handles the packet formatting, and the TNC handles the audio interface to the radio. It works, though you've now added dependencies on a phone, a Bluetooth link, an app, and a TNC &mdash; four things that can individually decide to misbehave.</p>
+
+        <p>Software TNCs, most notably Direwolf, can run on a Raspberry Pi or similar small computer and handle packet encoding and decoding entirely in software. Combined with a USB sound card interface to the radio, this provides a capable and inexpensive APRS setup. It's a tinkerer's solution, and a good one for operators who enjoy building systems from components.</p>
+
+        <p>Regardless of which approach you choose, the installation fundamentals haven't changed. GPS receiver desensing from VHF transmit energy is still a real problem. Common mode currents on the feedline will still jam your GPS receiver during transmit. Antenna placement still matters. The hardware has gotten smaller and smarter, but physics remains stubbornly indifferent to technological progress.</p>
+
+        <h2 id="shark-fin">The Shark Fin Complication</h2>
+
+        <p>If you've looked at the roof of any vehicle built in the last decade, you've probably noticed the "shark fin" antenna module that has replaced the traditional telescoping mast. That innocuous plastic fin contains a surprising amount of hardware: GPS antenna, satellite radio antenna, cellular and WiFi antennas, and sometimes a dedicated antenna for the vehicle's emergency call system. It's a multi-function RF platform, and it occupies prime real estate on the vehicle's roof.</p>
+
+        <p>This matters to you because the center of the roof &mdash; the ideal location for an NMO mount &mdash; is now spoken for on many vehicles. The shark fin is typically mounted at or near the rear center of the roof, right where you'd most like to put your VHF/UHF antenna.</p>
+
+        <p>The good news is that at VHF and UHF wavelengths, a few inches off dead center doesn't matter much. At 146 MHz, a quarter wavelength is about 19 inches. Moving your NMO mount 3 or 4 inches to one side of center to avoid the shark fin module produces no measurable difference in antenna pattern or performance. The ground plane is still symmetrical enough for practical purposes. This is a non-issue that some operators spend far too much time worrying about.</p>
+
+        <p>The real concerns are practical, not electrical. First, the shark fin module has its own wiring running down through the headliner, and you don't want to disturb it. Second, the roof area around the shark fin may have additional reinforcement or adhesive that complicates drilling. Third, you need enough clearance between your NMO mount and the shark fin that you can install and remove antennas without interference.</p>
+
+        <p>Before drilling, verify the shark fin module's footprint and wiring path from your vehicle's service manual. Plan your NMO mount location to maintain at least 4 to 6 inches of clearance from the shark fin's base. And remember: a slightly off-center NMO mount with a permanent connection to the vehicle body will outperform a perfectly centered mag mount every day of the week.</p>
+
       </div>
 
       <div class="related-articles">

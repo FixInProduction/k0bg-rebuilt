@@ -226,6 +226,40 @@
 
         <p>Fix the mount. Choke the motor leads. Verify the coax shield connection. Check resistance before replacing components. Follow these steps and you will solve the vast majority of mobile antenna problems before they require anything more exotic.</p>
 
+        <h2 id="modern-antenna-options">Modern Antenna Options and Mounting</h2>
+
+        <p>The fundamentals above have not changed, but the range of available hardware has expanded. A few developments are worth discussing.</p>
+
+        <h3>Non-Motorized Alternatives</h3>
+
+        <p>The motorized screwdriver antenna has been the workhorse of mobile HF for decades, and it remains an excellent choice. But it is not the only choice. Manually-adjusted coil antennas &mdash; designs that use a silver-plated coil with a sliding contact that you set by hand before operating &mdash; have gained a following, and for good reason.</p>
+
+        <p>A manually-adjusted antenna eliminates the motor, the motor leads, the motor lead choke, the Polyfuse, and the controller. That is a significant reduction in complexity and a significant reduction in potential failure points. The trade-off is obvious: you cannot change bands from the driver's seat. You get out of the vehicle, move the contact, get back in, and operate. For an operator who stays on one band per trip &mdash; which describes a great many POTA activators and casual mobile operators &mdash; this is a welcome simplification.</p>
+
+        <p>The physics are identical to a motorized screwdriver. The coil is still a loading coil. The whip is still a whip. The antenna still needs a proper mount, proper coax, and proper common-mode choking. Eliminating the motor does not eliminate the need for a correctly engineered installation. It just removes one set of problems from the equation.</p>
+
+        <h3>Modern Mounting Solutions</h3>
+
+        <p>Hitch-receiver mounts have become a popular option for heavy HF antennas on trucks and SUVs. A receiver-mounted antenna bracket allows you to place a full-size screwdriver or manually-adjusted antenna at the rear of the vehicle, supported by a structural member that can handle the weight and wind loading. Many designs offer quick-disconnect capability, so you can remove the antenna for garages, car washes, and low clearances without tools.</p>
+
+        <p>Stake-pocket mounts &mdash; brackets that drop into the stake pockets on truck bed rails &mdash; are another option. They can provide good ground plane contact to the vehicle body, assuming the stake pocket itself has clean metal-to-metal contact with the bed rail. On some trucks this is the case; on others, the pockets are painted, powder-coated, or lined with plastic, and you are back to the same bonding problems as any other mount.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">&#9888; WARNING</div>
+          <p>Any aftermarket antenna mount &mdash; hitch receiver, stake pocket, or otherwise &mdash; still requires <strong>electrical bonding verification</strong>. A mount that is mechanically solid is not necessarily electrically connected to the vehicle body. Measure it. A mount bolted to a powder-coated hitch receiver with rubber isolators between the components has zero RF ground plane connection regardless of how sturdy it feels. See the <a href="bonding.html">Bonding</a> article.</p>
+        </div>
+
+        <h3>Verifying Choke Impedance</h3>
+
+        <p>For years, building a motor lead choke meant following the recipe &mdash; 13 turns on the correct core &mdash; and trusting that the result was adequate. You had no practical way to verify it without expensive laboratory equipment.</p>
+
+        <p>That has changed. Low-cost handheld vector network analyzers (VNAs) are now widely available, and they can measure the impedance of your motor lead choke directly. You can see both the resistive (R) and reactive (X) components across the entire HF spectrum, confirm that you have adequate choking impedance where you need it, and identify any frequencies where the choke may be insufficient.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">&#128161; TIP</div>
+          <p><strong>Measure, don't assume.</strong> A handheld VNA takes the guesswork out of choke verification. Wind your choke, measure it, and know &mdash; rather than hope &mdash; that it is doing its job. If the impedance is low at a frequency you care about, add turns or change the core material. The data is right there on the screen.</p>
+        </div>
+
       </div>
 
       <div class="related-articles">

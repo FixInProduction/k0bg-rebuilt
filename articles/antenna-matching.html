@@ -216,6 +216,29 @@
 
         <p>It is not complicated. But it does require doing things in the right order, with the right instruments, and resisting the temptation to chase numbers instead of understanding what those numbers actually mean.</p>
 
+        <h2 id="modern-antenna-analyzers">Modern Antenna Analyzers</h2>
+
+        <h3 id="vna-revolution">The VNA Revolution</h3>
+
+        <p>When the original version of this article was written, a decent antenna analyzer with reactance readout was a significant investment. That is no longer the case. Low-cost handheld vector network analyzers are now available for well under $100, and they display R, X, SWR, and a Smith chart simultaneously on a color screen. They show reactance directly&mdash;which is the entire point of this article's advice about finding X=0 instead of chasing the lowest SWR number.</p>
+
+        <p>There is no longer any excuse for not owning a proper analyzer. The NanoVNA-H4 costs roughly $50 to $80 (as of early 2026) and is more than adequate for mobile HF antenna work. The NanoVNA V2 Plus4 from NanoRFE (approximately $299) offers better dynamic range and accuracy if you want a premium instrument. Either way, the price barrier is gone. If you are adjusting a mobile antenna by ear, or by SWR meter alone, or by borrowing someone else's analyzer once a year at Field Day, you are doing it wrong. Buy one and use it every time you change anything in your antenna system.</p>
+
+        <p>One practical caveat: the small screens on these handheld units can be difficult to read in direct sunlight. If you are doing antenna work outdoors on a bright day, most of these analyzers support USB tethering to a laptop, which gives you a full-size display with better visibility. Use it.</p>
+
+        <h3 id="automatic-antenna-tuners">A Note on Automatic Antenna Tuners</h3>
+
+        <p>LDG, mAT, and similar automatic antenna tuners will match a wide range of impedances to 50 ohms. Your radio sees a clean load, the protection circuitry stays happy, and full power flows into the feedline. On the surface, this sounds like a solution to the matching problem described in this article.</p>
+
+        <p>It is not.</p>
+
+        <p>An auto-tuner does not find resonance. It does not eliminate reactance at the feedpoint. It masks underlying problems&mdash;a broken antenna element, a poor mount, inadequate bonding, rampant common-mode current&mdash;by brute-forcing a match at the radio end of the coax. The antenna system is still broken. You just cannot see it on the SWR meter anymore.</p>
+
+        <div class="callout key-concept">
+          <div class="callout-title">&#128273; KEY CONCEPT</div>
+          <p>For a properly installed mobile antenna with correct matching, you do not need an automatic antenna tuner. For a poorly installed one, an auto-tuner is an expensive band-aid. It keeps your radio from folding back power, but it does nothing to fix the efficiency problems, the common-mode current, or the degraded radiation pattern caused by whatever is actually wrong with the installation. Fix the installation. That is the point of this entire article.</p>
+        </div>
+
       </div>
 
       <div class="related-articles">

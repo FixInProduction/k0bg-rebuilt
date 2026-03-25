@@ -203,6 +203,39 @@
 
         <p>There is no excuse for not doing this. The materials cost less than a fast-food meal. The construction takes ten minutes. The performance improvement can be dramatic. If you have not yet installed a common mode choke in your mobile setup, stop reading and go build one. Your signal reports will thank you.</p>
 
+        <h2 id="modern-measurement-materials">Modern Measurement and Materials</h2>
+
+        <h3 id="modern-measurement-tools">Modern Measurement Tools</h3>
+
+        <p>When the original version of this article was written, an RF current meter like the MFJ-854 was the best field tool available for diagnosing common mode current. If you own one, it still works for relative comparisons &mdash; clamp it on, see if the current goes down when you add a choke. That is useful information. (Note: MFJ Enterprises ceased all manufacturing in May 2024. The MFJ-854 is no longer produced new but used units remain available.)</p>
+
+        <p>But low-cost handheld vector network analyzers have changed everything. These devices, now available for well under $100, display R and X components separately, show Smith charts in real time, and measure actual choke impedance&mdash;not just relative current. You can characterize your choke before you ever install it, verify its self-resonant frequency, and confirm that the resistive component dominates over the inductive component across your bands of interest. That is far more diagnostic power than an RF current meter can provide.</p>
+
+        <p>If you already own an RF current meter, keep using it. It remains a valid tool for before-and-after comparisons at the antenna feedpoint. But if you are buying new test equipment, a modern handheld VNA gives you quantitative impedance data that an RF current meter simply cannot. The NanoVNA-H4 (approximately $50&ndash;$80 as of early 2026) is a capable entry point for HF work. The NanoVNA V2 Plus4 from NanoRFE (approximately $299 as of early 2026) offers better dynamic range for precise choke characterization. Beware of clones sold under various names &mdash; buy from reputable sources.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 TIP</div>
+          <p>To measure choke impedance with a VNA, use the one-port (S11) method. Connect the VNA to one end of the choke and measure across the outside of the coax shield&mdash;center conductor to shield at the input, shield to shield at the output. You are measuring the impedance that common mode current sees. Sweep across your bands of interest and look for the resistive peak. If the peak falls outside your operating range, you need to adjust the number of turns.</p>
+        </div>
+
+        <h3 id="ferrite-mix-31-vs-61">Ferrite Material Selection: Mix 31 vs Mix 61</h3>
+
+        <p>Everything in this article specifying mix 31 ferrite remains correct for 160 through 10 meters. Mix 31 is the right material for that frequency range, and nothing has changed on that front. Do not let anyone talk you into substituting a different mix for HF work.</p>
+
+        <p>Where the picture gets more nuanced is above approximately 25 MHz. Mix 31 loses effectiveness as you climb in frequency, and by the time you reach 6 meters (50 MHz), it is not doing much useful work. For 6-meter operation, mix 61 is the better choice. Mix 61 is optimized for the 10&ndash;300 MHz range and provides significantly higher impedance at VHF frequencies than mix 31 can deliver.</p>
+
+        <p>Do not make the mistake of substituting mix 61 for mix 31 on the lower HF bands. Mix 61 does not have adequate permeability below about 10 MHz, and a choke built with it will be ineffective on 80 or 160 meters. If you operate both HF and 6 meters, you need separate chokes with the appropriate ferrite for each range. Dual-mix chokes that combine both materials on a single core are theoretically possible but add complexity without a clear advantage over two dedicated chokes.</p>
+
+        <h3 id="commercial-chokes">Commercial Pre-Built Chokes</h3>
+
+        <p>Not everyone is going to build their own choke. I have accepted this reality, even if I think you are missing out on a ten-minute project that teaches you something about your antenna system. For operators who will not pick up a ferrite bead and wind coax through it, commercial common-mode chokes built with correct ferrite materials are available from several amateur radio suppliers.</p>
+
+        <p>If you buy a commercial choke, verify that it uses mix 31 ferrite (or the appropriate mix for your operating frequency) and that it specifies the choking impedance across the bands you operate. A choke sold without impedance specifications is a choke you should not buy. That said, running a good commercial choke beats running without one. A mediocre choke is still infinitely better than no choke at all.</p>
+
+        <h3 id="note-on-g3txq">A Note on G3TXQ</h3>
+
+        <p>Steve Hunt, G3TXQ, whose impedance data is referenced earlier in this article, passed away in December 2018. His meticulous measurements of ferrite choke impedance across various materials and winding configurations remain the gold standard reference in this field. His original data is still accessible at karinya.net/g3txq/chokes/ and has been mirrored at several community sites. His updated 2015 RadCom article, archived at gm3sek.com, contains his most recent measurements. If you are serious about understanding choke design, seek out his work &mdash; it is well worth the effort.</p>
+
       </div>
 
       <div class="related-articles">

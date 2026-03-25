@@ -198,6 +198,49 @@
 
         <p>Provide that environment and the controller becomes the reliable, convenient device you paid for. Fail to provide it and the controller becomes a source of endless frustration that you will eventually rip out and replace with manual tuning, cursing the manufacturer all the while for a problem that was never theirs to begin with.</p>
 
+        <h2 id="controller-landscape">The Controller Landscape Today</h2>
+
+        <h3 id="controller-availability">Availability</h3>
+
+        <p>The mobile HF antenna controller market has always been thin. These are small-batch products from small companies serving a niche within a niche. Product lines appear, run for a few years, and quietly disappear when the one or two people who designed them move on to other things. That is the reality of this market, and it is unlikely to change.</p>
+
+        <p>Case in point: MFJ Enterprises, which manufactured the MFJ-1924 and its subsidiary Ameritron's SDC-102B, ceased all production in May 2024 after 52 years. These controllers are no longer manufactured new. Used units remain available through the usual channels, and remaining dealer stock may still be found, but plan accordingly.</p>
+
+        <p>The practical advice is simple: if you find a working controller &mdash; new or used &mdash; that does what you need, buy it. Do not wait for the next model. Do not hold out for a feature that might be added in a future revision. What was available six months ago may not be available today, and what is available today may not be available next month.</p>
+
+        <h3 id="smart-alternators">Smart Alternators and Supply Voltage</h3>
+
+        <p>Modern vehicles no longer maintain a steady 13.8 or 14.2 volts at the battery. Smart alternators &mdash; also called variable-voltage or load-responsive alternators &mdash; modulate charging voltage anywhere from 12.5 to 15.5 volts depending on battery state of charge, electrical load, engine RPM, and even ambient temperature. The vehicle's body control module decides what voltage the alternator produces, and it changes constantly.</p>
+
+        <p>This matters because turn-counting controllers depend on consistent motor speed to maintain accurate position tracking. The motor in your antenna is a simple DC motor. Change the voltage, change the speed. Change the speed, and the time window in which the controller expects to see reed switch pulses shifts. The result is position drift &mdash; the controller thinks the antenna is at one position when it is actually at another. Over several band changes, the error accumulates.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">&#128161; TIP</div>
+          <p>The fix is a regulated 13.8V DC power supply between the vehicle battery and the controller's motor drive output. This holds the motor voltage constant regardless of what the alternator is doing. SWR-seeking controllers are less affected by voltage variation since they do not depend on motor speed for position accuracy &mdash; they simply hunt for minimum SWR regardless of how fast the motor turns.</p>
+        </div>
+
+        <h3 id="homebrew-controllers">Homebrew Microcontroller Controllers</h3>
+
+        <p>The Arduino, ESP32, and Raspberry Pi Pico platforms have made it practical for technically inclined operators to build their own antenna controllers. A homebrew controller can include features that no commercial unit offers: Bluetooth or WiFi control from a phone, OLED display showing frequency and position, CI-V decoding for automatic band tracking, SWR sensing with a built-in directional coupler, and whatever else you can write code for.</p>
+
+        <p>There is a growing community of documented designs, shared code, and published projects. If you are comfortable with a soldering iron and a code editor, the barrier to entry has never been lower.</p>
+
+        <div class="callout key-concept">
+          <div class="callout-title">&#128273; KEY CONCEPT</div>
+          <p>The controller is the easy part. The choke is still the hard part. A beautifully engineered microcontroller with a color display and WiFi will behave just as badly as a commercial controller if the motor lead choke is inadequate or in the wrong location. Build and test the choke first. Get the RF environment right. Then build the controller. The fundamentals in this article apply to homebrew controllers exactly as they apply to commercial ones.</p>
+        </div>
+
+        <h3 id="current-radio-interface">Radio Interface for Current Transceivers</h3>
+
+        <p>Many current transceivers expose their CI-V or CAT control interface via USB rather than the traditional TTL-level serial port or DIN connector. This is fine for computer logging and digital modes, but it can complicate the connection to an antenna controller that expects a legacy serial input.</p>
+
+        <p>You may need a USB-to-serial adapter, a level converter, or a purpose-built interface cable to bridge between a modern radio's USB port and a controller's CI-V input. Check the controller documentation for the specific signal levels and protocol it expects.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">&#9888; WARNING</div>
+          <p>Digital mode software &mdash; FT8, JS8Call, WSJT-X, and similar applications &mdash; holds the radio's control port open for the duration of the session. If your antenna controller shares that same port, it will not be able to communicate with the radio while the digital software is running. Plan your port usage carefully. Use separate ports if your radio provides them, or implement a deliberate switching scheme. Running both on the same port simultaneously is a recipe for neither one working correctly.</p>
+        </div>
+
       </div>
 
       <div class="related-articles">

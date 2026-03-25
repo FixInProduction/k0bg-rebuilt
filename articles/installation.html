@@ -196,6 +196,82 @@
 
         <p>The reward is a station that works reliably, sounds good on the air, does not generate interference, and will not try to kill you in a collision. That seems like a reasonable trade for a few drilled holes.</p>
 
+        <h2 id="modern-vehicle-challenges">Modern Vehicle Installation Challenges</h2>
+
+        <p>Everything I have discussed above assumes a vehicle that was designed with at least a passing nod to the possibility that someone might want to modify it. That era is ending. Vehicles built in the last few years present a set of challenges that did not exist a decade ago, and they are only getting worse. If you are shopping for a vehicle and you intend to install HF radio equipment, you need to understand what you are getting into <em>before</em> you sign the paperwork.</p>
+
+        <h3 id="touchscreen-infotainment">Touchscreen Infotainment Systems</h3>
+
+        <p>The days of pulling out a factory head unit and replacing it with an aftermarket unit are effectively over. In most modern vehicles, the infotainment screen is not just a radio — it is the control interface for the HVAC system, the backup camera, navigation, vehicle settings, and increasingly, the Advanced Driver Assistance Systems (ADAS). Remove it and you lose half the car's functionality. There is no DIN-sized slot behind it waiting for your Pioneer. It is integrated, and it is staying.</p>
+
+        <p>This matters to us because RF energy in the vicinity of these touchscreens causes problems. Phantom touches. Screen freezes. Spontaneous reboots. The capacitive touch sensors in modern displays are sensitive to RF fields, and running 100 watts of HF through a coax cable that passes directly behind the dashboard is a fine way to demonstrate this. I have seen installations where keying the transmitter on 20 meters reliably triggered the climate control to switch to maximum defrost. Amusing the first time; less so in January.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 TIP</div>
+          <p>If your coax must route behind or near the dashboard area, install a common-mode choke on the coax before it enters that space. A half-dozen turns of coax through a suitable mix 31 toroid will often eliminate touchscreen interference. Address this during installation — not after the headliner is back in place and the trim panels are reinstalled.</p>
+        </div>
+
+        <h3 id="panoramic-glass-roofs">Panoramic Glass Roofs</h3>
+
+        <p>Panoramic glass roofs — those expansive, gorgeous, light-flooding sheets of glass that cover most or all of the roof — are becoming standard equipment on an alarming number of vehicles. They are wonderful for stargazing. They are an unmitigated disaster for HF mobile operation.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">⚠ WARNING</div>
+          <p>A panoramic glass roof is an <strong>unmitigated disaster</strong> for HF mobile operators. There is no ground plane where there is no metal. No amount of clever engineering, bonding straps, or wishful thinking will turn a glass roof into a functional antenna counterpoise. If you are serious about HF mobile, think very carefully before buying a vehicle with a full panoramic roof.</p>
+        </div>
+
+        <p>Glass is not a ground plane. It does not matter that the glass has a thin metallic UV-reflective coating — those coatings are measured in nanometers and are electrically irrelevant at RF. You cannot mount an NMO in glass. You cannot create a ground plane where there is no metal. This is not a problem you can engineer around with enough creativity. It is physics.</p>
+
+        <p>If you already own such a vehicle, your options are limited to finding whatever metal remains: the roof rail structures (if they are steel and not aluminum extrusions bonded with adhesive), the short metal section at the rear of the roof behind the glass, or the trunk lid. None of these are ideal. All of them are compromises. But a compromise mounted on actual metal will outperform a miracle solution mounted on glass every single time.</p>
+
+        <div class="callout key-concept">
+          <div class="callout-title">🔑 KEY CONCEPT</div>
+          <p>Before purchasing any vehicle for mobile HF use, verify exactly how much metal roof area remains. Open the headliner photos in the owner forums. Check for a steel roof panel versus a full glass panel. A vehicle with 18 inches of metal at the rear of the roof is workable. A vehicle with nothing but glass from windshield to tailgate is not. This is a buying decision, not an installation decision.</p>
+        </div>
+
+        <h3 id="modern-trim-removal">Modern Trim Panel Removal</h3>
+
+        <p>Older vehicles used screws to hold interior trim panels in place. You could see the screws — or at least find them under obvious covers — remove them, pull the panel, do your work, and put the panel back. Simple.</p>
+
+        <p>Modern vehicles use plastic push clips, and those clips are designed for exactly one installation. Pull the panel and the clips break. Some of them. Sometimes most of them. Now your trim panel does not fit snugly anymore, and it rattles at highway speed, and you have created a problem that did not exist before you started. The solution is straightforward: order replacement clips <em>before</em> you begin the installation. Your vehicle's parts department or a supplier like Dorman can provide them. They cost pennies. Buy twice as many as you think you need.</p>
+
+        <p>Modern panels also contain things that older panels did not. Ambient LED lighting strips. Speaker assemblies. Proximity sensors. Wiring harnesses with connectors you have never seen before. Pulling a door panel without knowing what is behind it — and what is connected to it — is a recipe for broken connectors and unexplained warning lights on the dashboard.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 TIP</div>
+          <p>Before pulling any trim panel: photograph it from multiple angles, including every visible connector and wire routing. Use plastic pry tools — never metal screwdrivers — to release clips. Work slowly and methodically. Budget at least twice the time you think the job will take. If a clip resists, there is a reason, and brute force is not the answer.</p>
+        </div>
+
+        <h3 id="adhesive-bonded-panels">Adhesive-Bonded Body Panels</h3>
+
+        <p>Here is something that catches even experienced installers off guard. Many modern vehicles use structural adhesive to bond body panels to the frame and to each other. This is standard practice in the automotive industry now — it reduces weight, improves rigidity, and eliminates the corrosion problems associated with spot welds on dissimilar metals.</p>
+
+        <p>The problem for us is that structural adhesive is an insulator. A metal body panel that is bonded to the vehicle structure with adhesive may be <em>electrically floating</em> — completely isolated from the vehicle chassis at RF frequencies. It looks like metal. You can tap on it and it sounds like metal. But your multimeter will tell you it has no electrical connection to the rest of the vehicle.</p>
+
+        <p>Before you mount an antenna on any body panel, verify continuity between that panel and the vehicle chassis with a multimeter. If there is no continuity, you need a bonding strap — a short, wide piece of copper braid connecting the panel to a known chassis ground point, with paint removed at both ends and proper hardware securing it. Without this step, you are mounting your antenna on an isolated chunk of metal that is not part of the ground plane, and your antenna performance will reflect that fact.</p>
+
+        <h3 id="heated-windshields">Heated Windshields</h3>
+
+        <p>Heated windshields have been around for years — Ford's Quickclear system is the most well-known, but VW, BMW, and others offer them as well. These windshields contain a conductive layer embedded in the glass that serves as a resistive heating element. Run current through it and it melts ice. Simple enough in concept.</p>
+
+        <p>The conductive layer is a problem for two reasons. First, it distorts VHF and UHF antenna patterns. If you mount an antenna on or immediately adjacent to a heated windshield, the conductive layer acts as a parasitic element, skewing and attenuating your signal in unpredictable ways. Second, the heating controller itself — the electronics that switch high current through that conductive layer — is a broadband RFI source. It generates noise across a wide frequency range, and it is located right there in the dashboard area where your receiver is trying to hear weak signals.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">⚠ WARNING</div>
+          <p>Do not mount VHF/UHF antennas on or adjacent to a heated windshield. The conductive heating layer will distort antenna patterns and the heating controller will generate broadband RFI. Mount antennas on the roof or trunk, well clear of the heated glass.</p>
+        </div>
+
+        <h3 id="factory-dash-cameras">Factory Dash Cameras and ADAS Sensors</h3>
+
+        <p>Tesla vehicles have eight or more cameras. Rivian uses eleven. GM's newer vehicles are laden with cameras and sensors for their hands-free driving systems. These are not aftermarket dash cams that you can unplug — they are integral to the vehicle's Advanced Driver Assistance Systems. They share processors, wiring harnesses, and control modules with features like automatic emergency braking, lane keeping, and adaptive cruise control. Disconnecting them is not an option unless you enjoy warning lights, degraded vehicle functionality, and potentially voided warranties.</p>
+
+        <p>Every one of these cameras and sensors is a broadband digital noise source. High-speed digital data — video streams, sensor data, processing signals — radiates RF noise across a wide spectrum. And these devices are distributed around the entire perimeter of the vehicle: front bumper, rear bumper, fenders, mirrors, windshield header, tailgate. You are surrounded by digital noise generators, and there is nothing you can do about it except understand that they exist, identify the specific frequencies they affect, and work around them where possible.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 TIP</div>
+          <p>If your modern vehicle has a higher-than-expected noise floor on certain bands, factory cameras and ADAS sensors are a likely culprit. Systematic noise hunting with the engine running and all systems active — as described in the <a href="rfi.html">RFI article</a> — is the only way to identify and characterize these sources.</p>
+        </div>
+
       </div>
 
       <div class="related-articles">

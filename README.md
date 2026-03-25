@@ -9,7 +9,8 @@ This project reconstructs and organizes that knowledge as a free, permanent comm
 ## What's Here
 
 - **16 full-length technical articles** covering every aspect of mobile amateur radio installation
-- **Comprehensive glossary** of 38+ technical terms
+- **Comprehensive glossary** of 50+ technical terms
+- **Modernized for 2026** — Alan's original guidance preserved, with new sections covering modern vehicle electrical systems, digital modes, current test equipment, and emerging technologies
 - **Client-side search** across all articles
 - **Responsive design** with dark mode — works on desktop, tablet, and mobile
 - **Print-optimized** stylesheets for offline reference
@@ -31,6 +32,20 @@ The original k0bg.com content was lost when the domain went offline and was subs
 - General amateur radio technical knowledge consistent with K0BG's documented positions
 
 An [accuracy audit](AUDIT.md) was performed against the original source material, with corrections applied where contradictions or errors were found.
+
+## Modernization
+
+Alan's original content addressed vehicles and equipment available through roughly 2015. Every article has been updated with "Modern Considerations" sections that cover:
+
+- **Modern vehicle electrical systems** — Intelligent Battery Sensors (IBS), battery-mounted fuse blocks, smart alternators (12.4–15.5V variable voltage), start-stop systems, 48V mild hybrids
+- **New RFI sources** — LED headlight drivers, ADAS sensors, USB-C Power Delivery, electronic power steering, wireless CarPlay/Android Auto, heated seats and steering wheels
+- **Aluminum and composite vehicles** — Galvanic corrosion prevention, adhesive-bonded panels, non-conductive body panels, factory ground points
+- **Digital voice and data** — DMR, Fusion, D-STAR, M17, FT8/FT4, APRS with modern hardware
+- **Current test equipment** — NanoVNA replacing MFJ analyzers, VNA-based choke verification
+- **Updated product landscape** — MFJ/Ameritron closure (May 2024), Hardrock-50 LDMOS amplifiers, Wolf River Coils, modern dual-band mobiles, Mobilinkd TNC4
+- **RV and OTR updates** — Starlink RFI, LiFePO4 house batteries, MPPT/inverter noise, Class B van builds
+
+The original K0BG content has been preserved to the best of our ability from the sources available. Modern updates are clearly additions, not replacements — building on Alan's foundation rather than overwriting it.
 
 ## Contributing
 

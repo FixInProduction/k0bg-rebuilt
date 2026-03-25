@@ -210,6 +210,54 @@
 
         <p>Or you can skip all of this, slap a mag mount on the roof and a cigarette lighter power cord on the radio, and spend the next two years wondering why mobile HF does not work. Your choice.</p>
 
+        <h2>What Has Changed Since This Was Written</h2>
+
+        <p>The fundamentals above have not changed &mdash; physics does not care what year it is. But the vehicle landscape and the operating landscape have shifted considerably, and a few topics deserve updated treatment.</p>
+
+        <h3>Hybrid and EV Vehicles: A More Nuanced Picture</h3>
+
+        <p>The original advice to avoid hybrids and EVs for HF was correct in its day and remains substantially correct, but the picture has become more nuanced. Full battery-electric vehicles are still broadly hostile to HF operation. The high-voltage inverters and motor controllers produce broadband noise across the entire HF spectrum, and no amount of filtering has consistently solved the problem. If HF is your priority, a full EV is still not the vehicle you want.</p>
+
+        <p>Plug-in hybrids (PHEVs) are a mixed bag. In engine-on mode, with the internal combustion engine running and the electric drive system in a supporting role, the noise environment is often manageable with standard suppression techniques. In pure EV mode, however, the inverters are doing all the work and the noise floor climbs accordingly. If you drive a PHEV, plan on operating HF with the engine running.</p>
+
+        <p>Mild hybrids &mdash; vehicles with 48-volt assist systems that cannot operate in pure electric mode &mdash; are generally manageable with standard RFI suppression. The 48V system runs intermittently and at lower power levels than a full hybrid drivetrain.</p>
+
+        <p>VHF and UHF remain workable on all of these platforms. The noise is predominantly an HF problem.</p>
+
+        <p>One development worth noting: digital modes like FT8 and FT4 can decode signals well below the noise floor. A modest mobile station running FT8 can make contacts that would be flatly impossible on SSB in the same noise environment. This does not make an EV a good HF platform &mdash; it makes an EV a <em>tolerable</em> HF platform for digital modes, and only while parked. Operating digital modes while driving is unsafe and in most cases impractical.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">&#9888; WARNING</div>
+          <p><strong>High-voltage cables in hybrid and electric vehicles are identified by orange insulation.</strong> These carry 200 to 800 volts DC. They are lethal. Do not route radio wiring near them, do not tap into them, do not disturb them. If you are not sure whether a cable is high-voltage, check the service manual. This is non-negotiable.</p>
+        </div>
+
+        <h3>Smart Charging and Start-Stop</h3>
+
+        <p>The assumption that your vehicle electrical system sits at a steady 13.8 volts with the engine running is no longer safe. Many late-model vehicles use smart alternators (also called variable-voltage or demand-based charging) that vary output between roughly 12.4 and 15.5 volts depending on battery state-of-charge, electrical load, and engine operating conditions. Your radio may see different supply voltages from one stoplight to the next.</p>
+
+        <p>Start-stop systems compound the problem. At every red light, the engine shuts off. The alternator stops. Voltage drops to battery resting voltage. When the light turns green, the engine restarts with a transient that can reset radios, glitch antenna controllers, and produce a burst of broadband noise. For HF operation, start-stop is a nuisance at best and a genuine problem at worst.</p>
+
+        <p>Most vehicles with start-stop provide a button to disable it, and you should use it during HF operation. For a more permanent solution, the options include a LiFePO4 auxiliary battery to buffer voltage swings, a DC-DC converter to provide regulated 13.8V regardless of vehicle bus voltage, or in some cases, alternator reprogramming through the vehicle's diagnostic interface. The right approach depends entirely on your specific vehicle &mdash; consult a service manual and, if necessary, a qualified automotive electrician.</p>
+
+        <h3>Battery Junction Boxes and Intelligent Sensors</h3>
+
+        <p>On many current-production vehicles, you cannot simply clamp a power lead onto the battery terminal the way you could twenty years ago. The battery terminals may be enclosed inside a <strong>Battery Junction Box</strong> &mdash; a fuse block housing that covers the positive terminal and routes multiple circuits through integral fuses and relays. The negative terminal may incorporate an <strong>Intelligent Battery Sensor (IBS)</strong> that monitors current flow for the vehicle's energy management system. Bypassing or disturbing this sensor can set fault codes and confuse the charging system.</p>
+
+        <p>The solution is straightforward but requires homework: <strong>read the service manual</strong> for your specific vehicle. Identify the correct connection points for auxiliary loads. Route your power leads to those points, not to wherever you can get a clamp to fit. Every vehicle is different, and guessing is a recipe for blown fuses, fault codes, or worse. See the <a href="wiring.html">Wiring</a> article for additional detail on modern vehicle power connections.</p>
+
+        <h3>Digital Modes and POTA/SOTA</h3>
+
+        <p>The rise of digital modes &mdash; FT8 and FT4 in particular &mdash; has meaningfully changed what is achievable from a mobile station. These modes decode signals that are 20 dB or more below the noise floor, which means contacts that would be impossible on SSB become routine on FT8. A 100-watt mobile station with a compromise antenna can work genuine DX on FT8 under conditions where SSB would produce nothing but static.</p>
+
+        <p>This matters for mobile operators because it partially offsets the inherent disadvantages of mobile HF &mdash; small antennas, high noise floors, and limited power. It does not eliminate those disadvantages, and it does not excuse sloppy installation practices, but it expands what is possible.</p>
+
+        <p>The Parks on the Air (POTA) program has also created a massive community of mobile and portable operators. If you are setting up a mobile station today, there is a good chance POTA activations are part of your plan. The good news is that POTA operation is typically done while parked, which eliminates the safety concerns of operating while driving and allows the use of digital modes that require a keyboard and screen.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">&#9888; WARNING</div>
+          <p><strong>Operate digital modes only while parked.</strong> FT8 and FT4 require reading a screen, clicking on decodes, and managing a logging program. This is not something you can do while driving. Pull over, shut off the engine if noise is an issue, and operate from a stationary position. The contact will still be there in 15 seconds.</p>
+        </div>
+
       </div>
 
       <div class="related-articles">
