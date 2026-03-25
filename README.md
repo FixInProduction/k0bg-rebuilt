@@ -1,6 +1,6 @@
 # K0BG Mobile Amateur Radio — Community Preservation Project
 
-A static website preserving the mobile amateur radio reference originally authored by **Alan Applegate, K0BG (SK)**.
+A static website preserving the mobile amateur radio reference originally authored by **Alan Applegate, K0BG**.
 
 K0BG.com was the encyclopedic resource for mobile HF and VHF amateur radio installation — covering antennas, bonding, wiring, RFI suppression, impedance matching, antenna controllers, amplifiers, and much more. It was the first place experienced operators sent newcomers, and the last word in many technical debates. When the site went offline, years of irreplaceable knowledge went with it.
 
@@ -70,7 +70,7 @@ You are free to share and adapt this material for any purpose, including commerc
 
 ## Credits
 
-- **Alan Applegate, K0BG (SK)** — Original author of k0bg.com. His decades of practical experience and willingness to share it made mobile amateur radio accessible to thousands of operators.
+- **Alan Applegate, K0BG** — Original author of k0bg.com. His decades of practical experience and willingness to share it made mobile amateur radio accessible to thousands of operators.
 - **Community contributors** — Reconstruction, organization, and site development.
 - **The amateur radio community** — For preserving fragments of K0BG's work in forums, blog posts, and personal notes that made this reconstruction possible.
 

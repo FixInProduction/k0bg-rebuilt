@@ -22,14 +22,14 @@
     </div>
     <div class="sidebar-nav">
       <div class="nav-group">
-        <span class="nav-group-label">Getting Started</span>
+        <button class="nav-group-label">Getting Started <span class="chevron">▾</span></button>
         <ul>
           <li><a href="abcs.html">ABCs of Mobile HF</a></li>
           <li><a href="safety.html">Safety</a></li>
         </ul>
       </div>
       <div class="nav-group">
-        <span class="nav-group-label">Electrical Fundamentals</span>
+        <button class="nav-group-label">Electrical Fundamentals <span class="chevron">▾</span></button>
         <ul>
           <li><a href="bonding.html">Bonding</a></li>
           <li><a href="wiring.html">Wiring</a></li>
@@ -38,7 +38,7 @@
         </ul>
       </div>
       <div class="nav-group">
-        <span class="nav-group-label">Antenna System</span>
+        <button class="nav-group-label">Antenna System <span class="chevron">▾</span></button>
         <ul>
           <li><a href="installation.html">Installation Notes</a></li>
           <li><a href="antenna-problems.html">Antenna Problems</a></li>
@@ -48,7 +48,7 @@
         </ul>
       </div>
       <div class="nav-group">
-        <span class="nav-group-label">Equipment</span>
+        <button class="nav-group-label">Equipment <span class="chevron">▾</span></button>
         <ul>
           <li><a href="amplifiers.html">Amplifiers</a></li>
           <li><a href="vhf-options.html">VHF/UHF Options</a></li>
@@ -56,7 +56,7 @@
         </ul>
       </div>
       <div class="nav-group">
-        <span class="nav-group-label">Reference</span>
+        <button class="nav-group-label">Reference <span class="chevron">▾</span></button>
         <ul>
           <li><a href="tricks.html">Tricks of the Trade</a></li>
           <li><a href="glossary.html">Glossary</a></li>
@@ -66,7 +66,8 @@
   </nav>
   <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
-  <!-- Topbar -->
+<!-- Main Content -->
+  <main class="main-content">
   <div class="topbar">
     <button class="hamburger" id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
     <div class="search-wrapper">
@@ -76,9 +77,6 @@
     </div>
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#127769;</button>
   </div>
-
-  <!-- Main Content -->
-  <main class="main-content">
     <div class="article-container">
     <article>
       <div class="article-header">
@@ -232,11 +230,14 @@
     </article>
 
     <footer class="site-footer">
-      <p>Based on the original work of Alan Applegate, K0BG (SK). Preserved for the amateur radio community.</p>
+      <p>Based on the original work of Alan Applegate, K0BG. Preserved for the amateur radio community.</p>
     </footer>
     </div>
   </main>
 
+  <button class="back-to-top" id="backToTop" aria-label="Return to top">&uarr;</button>
+
   <script src="../js/main.js"></script>
+
 </body>
 </html>

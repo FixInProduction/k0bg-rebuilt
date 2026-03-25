@@ -2,20 +2,21 @@
   'use strict';
 
   // ===== Theme Toggle =====
-  var themeToggle = document.querySelector('.theme-toggle');
-  var savedTheme = localStorage.getItem('k0bg-theme') || 'light';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  if (themeToggle) {
-    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  var toggle = document.querySelector('.theme-toggle');
+  var saved = localStorage.getItem('theme') || 'light';
+
+  if (saved === 'dark') {
+    document.documentElement.classList.add('dark');
   }
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function() {
-      var current = document.documentElement.getAttribute('data-theme');
-      var next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('k0bg-theme', next);
-      themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+  if (toggle) {
+    toggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+
+    toggle.addEventListener('click', function() {
+      document.documentElement.classList.toggle('dark');
+      var isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggle.textContent = isDark ? '☀️' : '🌙';
     });
   }
 
@@ -75,6 +76,38 @@
     if (href && href.split('/').pop() === currentPath) {
       link.classList.add('active');
     }
+  });
+
+  // ===== Collapsible Nav Groups =====
+  var navCollapsed = {};
+  try { navCollapsed = JSON.parse(localStorage.getItem('nav-collapsed') || '{}'); } catch(e) {}
+
+  document.querySelectorAll('.nav-group').forEach(function(group, i) {
+    var label = group.querySelector('.nav-group-label');
+    if (!label) return;
+
+    var key = 'g' + i;
+
+    // Restore saved state
+    if (navCollapsed[key]) {
+      group.classList.add('collapsed');
+    }
+
+    // Ensure group containing the active link is always open
+    if (group.querySelector('a.active')) {
+      group.classList.remove('collapsed');
+      delete navCollapsed[key];
+    }
+
+    label.addEventListener('click', function() {
+      group.classList.toggle('collapsed');
+      if (group.classList.contains('collapsed')) {
+        navCollapsed[key] = true;
+      } else {
+        delete navCollapsed[key];
+      }
+      try { localStorage.setItem('nav-collapsed', JSON.stringify(navCollapsed)); } catch(e) {}
+    });
   });
 
   // ===== Reading Time =====
@@ -247,4 +280,33 @@
       }
     });
   });
+
+  // ===== Topbar Scroll Shadow =====
+  var topbar = document.querySelector('.topbar');
+  if (topbar) {
+    window.addEventListener('scroll', function() {
+      topbar.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  }
+
+  // ===== Back to Top Button =====
+  var backToTopBtn = document.getElementById('backToTop');
+  if (backToTopBtn) {
+    var tocEl = document.querySelector('.toc');
+    var scrollThreshold = tocEl
+      ? tocEl.offsetTop + tocEl.offsetHeight
+      : 400;
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > scrollThreshold) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 })();
