@@ -218,6 +218,70 @@
 
         <p>Skip the bonding, and you're operating with one hand tied behind your back. Do it right, and you'll wonder why you didn't do it sooner.</p>
 
+        <h2 id="modern-vehicles">Aluminum, Composites, and the Modern Vehicle</h2>
+
+        <p>Everything above assumes a vehicle made primarily of stamped steel panels and a steel frame or unibody. That described nearly every vehicle on the road when this site was first written. It no longer does. If you're installing an HF rig in a vehicle built after roughly 2015, you need to understand what your vehicle is actually made of before you reach for the braid and star washers. The physics hasn't changed, but the materials certainly have.</p>
+
+        <h3 id="aluminum-body-vehicles">Aluminum-Body Vehicles</h3>
+
+        <p>Ford switched the F-150 to an aluminum body in 2015, and the industry has been moving in that direction ever since. Aluminum is an excellent conductor &mdash; better than steel, actually &mdash; so you'd think bonding would be easier. It isn't. Aluminum presents two problems that steel doesn't, and both of them will ruin your bonding work if you ignore them.</p>
+
+        <p><strong>Problem one: the oxide layer.</strong> Aluminum forms aluminum oxide (Al<sub>2</sub>O<sub>3</sub>) the instant it is exposed to air. This oxide layer is extremely hard, extremely thin, and an excellent electrical insulator. You can scrape it off with a wire brush, but it reforms within seconds &mdash; literally before you can get the bolt tightened. Star washers alone won't solve this. You need a conductive joint compound such as Penetrox A (or its generic equivalent, an oxide-inhibiting compound loaded with zinc particles) applied to the bare metal before assembly. The compound displaces oxygen, prevents new oxide formation, and the embedded metal particles maintain conductivity through the joint.</p>
+
+        <p><strong>Problem two: galvanic corrosion.</strong> When two dissimilar metals are in contact in the presence of moisture, you get a battery. Copper and aluminum are far apart on the galvanic series, and copper wins that fight decisively &mdash; meaning the aluminum loses material. In a humid environment, bare copper braid bolted directly to aluminum will destroy the aluminum at the joint in a matter of months.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">⚠ WARNING</div>
+          <p>Do not use bare copper braid on aluminum body panels. Galvanic corrosion will eat the aluminum at the contact point, and you'll be left with a corroded, high-impedance mess that is worse than no bond at all. The joint can deteriorate to the point of structural concern in as little as one wet season. Use tin-plated copper braid with stainless steel hardware and oxide-inhibiting compound on every aluminum connection.</p>
+        </div>
+
+        <div class="callout key-concept">
+          <div class="callout-title">🔑 KEY CONCEPT</div>
+          <p>Tin-plated copper braid is essential for aluminum-body vehicles. The tin plating acts as a galvanic barrier between the copper and the aluminum, dramatically slowing corrosion while maintaining excellent RF conductivity. Combine it with stainless steel hardware and a conductive oxide-inhibiting compound like Penetrox A at every joint. This is not optional on aluminum &mdash; it is the only way to make a bond that lasts.</p>
+        </div>
+
+        <h3 id="adhesive-bonded-panels">Adhesive-Bonded Panels</h3>
+
+        <p>Here is something that surprises people who haven't looked under the skin of a modern aluminum vehicle: the panels are not spot-welded together. Spot-welding aluminum is far more difficult and expensive than spot-welding steel, so most aluminum-body vehicles use structural adhesive combined with self-piercing rivets instead. The adhesive carries the structural load; the rivets hold things in position while the adhesive cures and provide additional mechanical fastening.</p>
+
+        <p>This matters to you because <strong>you must not drill through adhesive-bonded joints.</strong> Drilling through a structural adhesive joint compromises the integrity of the bond, can introduce a moisture path that accelerates corrosion from the inside out, and will almost certainly void your vehicle's structural warranty. Don't do it.</p>
+
+        <p>Instead, use factory bolt locations for your bonding connections. Every modern vehicle has factory ground studs and bolt points that were designed to accept electrical connections. Your vehicle's service manual identifies every factory ground point &mdash; and on aluminum-body trucks and SUVs, these are specifically engineered to handle the galvanic and oxide issues discussed above. Use them.</p>
+
+        <h3 id="non-conductive-panels">Non-Conductive Body Panels</h3>
+
+        <p>Carbon fiber, fiberglass, and sheet molding compound (SMC) are not conductors. They cannot be bonded into your ground plane because they are not part of your ground plane. Period.</p>
+
+        <p>This isn't a theoretical concern. The Corvette C8 uses extensive carbon fiber body panels. Several pickup trucks use composite beds &mdash; the GMC CarbonPro bed is carbon fiber, and various other manufacturers use SMC or fiberglass for bed panels, fenders, or hoods. These panels are RF-invisible. Your antenna's ground plane simply does not include them.</p>
+
+        <p>The practical consequence is a smaller effective ground plane than the vehicle's physical footprint would suggest. A pickup truck with a composite bed and a cab-mounted antenna has a ground plane that ends at the back of the cab, not at the tailgate. You cannot fix this with bonding straps &mdash; there is nothing conductive to bond to. What you can do is adjust your expectations. A smaller ground plane means slightly different antenna impedance characteristics and possibly a less uniform radiation pattern. It's not a disaster, but you need to know what you're working with.</p>
+
+        <h3 id="electric-hybrid-vehicles">Electric and Hybrid Vehicles</h3>
+
+        <p>Electric and hybrid vehicles change the bonding calculus in two important ways.</p>
+
+        <p>First, there is no exhaust system to bond. On a pure EV, the single most impactful bonding target &mdash; the one I told you to do first, the one that drops the noise floor by multiple S-units &mdash; simply doesn't exist. That's the good news.</p>
+
+        <p>The bad news is that the noise environment is different, not absent. The motor inverter converts DC battery voltage to three-phase AC to drive the traction motor, and it does so by switching power transistors at high frequency. The result is broadband RF hash &mdash; a steady, buzzing, hissing interference that is a different character entirely from the crackle-and-pop of an internal combustion vehicle. It tends to be more uniform and harder to localize. Proper bonding of body panels still helps reduce the vehicle's susceptibility to this noise, and ferrite suppression on the 12-volt accessory bus becomes even more important.</p>
+
+        <p>Doors, hood, trunk or liftgate, and any other bolted-on metal panels still need bonding exactly as described in the sections above. The ground plane argument hasn't changed just because the powertrain has.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">⚠ WARNING</div>
+          <p>Do NOT attach bonding straps to any high-voltage component or to any cable with orange jacketing. Orange cables in EVs and hybrids carry hundreds of volts DC. The high-voltage battery, motor, inverter, and charging system are isolated from the vehicle chassis by design, and for very good reason. Interfering with HV isolation can kill you. Bonding work on EVs and hybrids is limited to the 12-volt chassis and body panels &mdash; the same sheet metal you'd bond on any other vehicle. Leave the orange cables alone.</p>
+        </div>
+
+        <h3 id="factory-ground-points">Factory Ground Points</h3>
+
+        <p>Modern vehicles have documented factory ground studs &mdash; typically located on inner fenders, the radiator support, the firewall, and the engine block. These are purpose-built electrical connection points with corrosion protection already engineered in. On aluminum and mixed-material vehicles, the factory ground studs are often the <em>only</em> points where the manufacturer has addressed the oxide and galvanic issues properly from the start.</p>
+
+        <p>Using factory ground points is almost always better than drilling new holes, especially on aluminum or mixed-material vehicles. Drilling creates bare aluminum surfaces that immediately begin to oxidize, introduces a moisture entry point, and on adhesive-bonded structures may compromise a structural joint. The factory points avoid all of these problems.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 TIP</div>
+          <p>Your vehicle's factory service manual (not the owner's manual &mdash; the actual shop manual) contains a wiring diagram section that identifies every factory ground point by location and stud size. For most vehicles, this information is also available through services like AllData or Mitchell. Spend the time to find these points before you start drilling. On an aluminum-body truck, the factory ground studs may be all you need.</p>
+        </div>
+
       </div>
 
       <div class="related-articles">

@@ -110,7 +110,7 @@
 
         <h2 id="available-options">What's Actually Available</h2>
 
-        <p>The market for mobile HF amplifiers is thin. The only currently manufactured 500-watt class amplifier designed for mobile use is the Ameritron ALS-500M. And let's be honest about the numbers: while it's marketed as a 500-watt amplifier, the ALS-500M realistically produces around 400 watts PEP on a good day with adequate primary voltage. Mobile primary voltage is rarely "adequate" by the amplifier's standards, particularly while transmitting with the engine off.</p>
+        <p>The market for mobile HF amplifiers is thin. For years, the only purpose-built 500-watt class mobile HF amplifier was the Ameritron ALS-500M. <em>[Editor's note: Ameritron/MFJ ceased all manufacturing in May 2024. The ALS-500M is no longer produced new. See <a href="#amplifier-market-2026">updated availability</a> below.]</em> And let's be honest about the numbers: while it was marketed as a 500-watt amplifier, the ALS-500M realistically produces around 400 watts PEP on a good day with adequate primary voltage. Mobile primary voltage is rarely "adequate" by the amplifier's standards, particularly while transmitting with the engine off.</p>
 
         <p>The ALS-500M uses four MOSFET devices in a push-pull broadband configuration. It requires no tuning, which is convenient, and it draws substantial current from the vehicle's electrical system, which is not. Plan on at least 80 amps on voice peaks. If your wiring isn't up to the task &mdash; and if you haven't read the <a href="wiring.html">Wiring</a> article, it probably isn't &mdash; you're going to have voltage drop problems that will limit the amplifier's output and potentially damage it.</p>
 
@@ -195,6 +195,55 @@
         <p>An amplifier is the last thing you add to a mobile HF installation, not the first. It is a force multiplier, which means it multiplies whatever you've got &mdash; good or bad. If your antenna system is efficient, your bonding is thorough, your common mode is suppressed, and your wiring is adequate, an amplifier will give you a useful boost on the air. If any of those things are deficient, the amplifier will amplify the deficiency and you'll spend more time troubleshooting than operating.</p>
 
         <p>Do the work first. Get the antenna right. Bond the vehicle. Choke the common mode. Fix the wiring. Then, and only then, consider adding an amplifier. You may find that once you've done all that, you don't need one.</p>
+
+        <h2 id="amplifier-market-2026">The Amplifier Market in 2026</h2>
+
+        <h3 id="amplifier-availability">Availability</h3>
+
+        <p>The mobile HF amplifier market was thin when this article was first written, and it has gotten thinner. Ameritron, which manufactured the ALS-500M referenced above, was a subsidiary of MFJ Enterprises. MFJ ceased all manufacturing in May 2024 after 52 years. The ALS-500M is no longer produced new. Remaining dealer stock may still exist, but the primary source for this amplifier is now the used market.</p>
+
+        <p>The used market is your friend here. Mobile HF amplifiers are built to take abuse &mdash; heat, vibration, voltage swings &mdash; and a well-maintained unit has years of service left. But "well-maintained" is the operative phrase. Inspect before buying. Test before installing. Verify output power across all bands with a proper load. Check for signs of overheating, corroded connectors, and loose mounting hardware. A used amplifier with a known history from a fellow operator is worth more than a mystery box from a swap meet.</p>
+
+        <h3 id="qrp-to-mobile">The QRP-to-Mobile Niche</h3>
+
+        <p>A category that barely existed a few years ago has quietly become one of the more practical options for mobile operators: compact LDMOS amplifiers that take 5 watts in and produce 50 watts out. Pair one of these with a QRP transceiver &mdash; an Elecraft KX2 or KX3, an Icom IC-705, or similar &mdash; and you have a mobile HF station that draws 8 amps instead of 80. The wiring is manageable. The heat is manageable. The installation is dramatically simpler than a full-power amplifier setup.</p>
+
+        <p>The math works out better than you might expect. Going from 5 watts to 50 watts is a 10 dB gain &mdash; nearly two S-units at the receiving station. That is the difference between "I can barely hear you" and a comfortable QSO. And because the total power is still modest, you avoid the cascade of problems that come with high-power mobile operation: massive current draw, voltage sag, extreme common mode current, and the need for bomb-proof bonding.</p>
+
+        <div class="callout key-concept">
+          <div class="callout-title">&#128273; KEY CONCEPT</div>
+          <p>The antenna-before-amplifier rule still applies, even at QRP power levels. A 10 dB amplifier feeding a lossy antenna is still wasting most of its output as heat in the loading coil. Fix the antenna first. The amplifier multiplies whatever efficiency you have &mdash; good or bad.</p>
+        </div>
+
+        <h3 id="ldmos-technology">LDMOS Technology</h3>
+
+        <p>Laterally Diffused Metal Oxide Semiconductor &mdash; LDMOS &mdash; transistors have largely replaced the older MOSFET devices used in previous-generation mobile amplifiers. The advantages are meaningful: higher efficiency (less heat for the same output power), greater ruggedness (more tolerant of load mismatch and voltage transients), and better linearity (cleaner signal, less splatter on adjacent frequencies).</p>
+
+        <p>LDMOS devices can survive brief load mismatches that would destroy older MOSFETs. That matters in mobile service, where the SWR can spike unexpectedly when the antenna is being tuned or when vibration momentarily degrades a connection. A more forgiving output stage means fewer blown finals and fewer roadside troubleshooting sessions.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">&#128161; TIP</div>
+          <p>Better transistors do not fix bad installations. An LDMOS amplifier will survive abuse that would have killed an older design, but "survive" is not the same as "work correctly." All the fundamentals &mdash; bonding, wiring, common mode suppression, antenna efficiency &mdash; still apply. The amplifier technology has improved. The physics has not.</p>
+        </div>
+
+        <h3 id="gan-amplifiers">GaN: On the Horizon</h3>
+
+        <p>Gallium Nitride (GaN) transistors offer higher efficiency and greater power density than LDMOS. They can operate at higher temperatures, switch faster, and produce more watts per unit of die area. The military and commercial communications sectors have been using GaN for years.</p>
+
+        <p>As of this writing, no mass-market amateur mobile HF amplifier uses GaN devices. That will likely change. When it does, expect the benefits to be real but incremental: somewhat higher efficiency, somewhat smaller enclosures, somewhat better thermal performance. What will not change is the installation. A GaN amplifier will still require proper wiring, proper bonding, proper common mode suppression, and a proper antenna. The transistor technology is the least important variable in a mobile HF amplifier installation. It always has been.</p>
+
+        <h3 id="lifepo4-batteries">LiFePO4 Auxiliary Batteries</h3>
+
+        <p>Lithium iron phosphate (LiFePO4) batteries have become a legitimate tool for serious mobile amplifier operators, and the reason comes down to voltage under load.</p>
+
+        <p>A lead-acid battery under an 80-amp load sags. Badly. A fully charged lead-acid battery that reads 12.7 volts with no load may deliver only 11.5 volts &mdash; or less &mdash; when the amplifier is drawing full current. A LiFePO4 battery under the same load maintains 13.0 to 13.2 volts. That difference matters more than the numbers suggest.</p>
+
+        <div class="callout key-concept">
+          <div class="callout-title">&#128273; KEY CONCEPT</div>
+          <p>Amplifier output power is roughly proportional to the square of the supply voltage. Going from 11.5V to 13.2V is a 14.8% voltage increase, which translates to approximately 32% more output power. That is not a rounding error. For operators running amplifiers at or near their limits, the voltage stability of a LiFePO4 auxiliary battery is a legitimate and measurable improvement in effective radiated power.</p>
+        </div>
+
+        <p>A LiFePO4 auxiliary battery dedicated to the amplifier, charged by the vehicle's alternator through an appropriate DC-DC charger or battery isolator, provides the stable high-current supply that amplifiers demand. The weight savings over an equivalent lead-acid battery are a bonus, but the voltage performance under load is the real reason to make the switch.</p>
 
       </div>
 

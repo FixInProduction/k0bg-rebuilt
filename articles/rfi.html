@@ -196,11 +196,13 @@
           <p>This is primarily an issue with older vehicles. If you are operating a vehicle from the 1990s or early 2000s with an aftermarket VHF radio and hearing a birdie near 146.76 MHz, the color burst oscillator is the likely culprit. Ferrite beads on the wiring to the offending module can help, though identifying which module contains the oscillator may require some detective work with a portable receiver.</p>
         </div>
 
-        <h2 id="future-concerns">Laser Ignition and Future Concerns</h2>
+        <h2 id="future-concerns">The Trend: More Electronics, More Noise</h2>
 
-        <p>Looking ahead, laser ignition systems are on the horizon for internal combustion engines. These systems use pulsed lasers to ignite the fuel-air mixture, driven by pulse-width modulation circuits. PWM-driven laser systems have the potential to generate significant RFI across a wide spectrum, and the amateur radio community will need to develop new mitigation techniques as these systems enter production.</p>
+        <p>A modern vehicle rolling off the assembly line today contains upwards of 100 microprocessors. Not one of them was designed with your receiver in mind. There are high-speed Ethernet backbones running at 100BASE-T1, always-on telematics modules phoning home over cellular, millimeter-wave radar for adaptive cruise control, ultrasonic parking sensors, and multiple cameras processing video in real time. Every one of these systems has a switching power supply, a clock oscillator, or both. The aggregate noise environment in a 2024 vehicle makes a 2005 vehicle look like an anechoic chamber.</p>
 
-        <p>The broader trend is clear: vehicles are becoming more electrically complex, not less. Every new feature, every new module, every new digital bus is a potential RFI source. The fundamentals of mitigation&mdash;bonding, common mode choking, proper antenna mounting, and systematic troubleshooting&mdash;will remain your most effective tools regardless of what the automotive industry throws at us next.</p>
+        <p>Here is the good news: the mitigation fundamentals have not changed. Bond everything. Choke common mode currents. Mount your antenna properly on a solid ground plane. Run your feedline correctly. These principles worked in 1990, they work today, and they will work when vehicles are entirely electric. The noise sources change, but the paths by which that noise reaches your receiver remain the same&mdash;conducted current on wiring and coax, and radiated coupling through inadequate shielding. Fix the paths, and the sources matter far less.</p>
+
+        <p>Stop chasing individual noise sources and start building a fundamentally sound installation. The vehicle will always have more noise generators than you can individually suppress. Your job is not to silence every microprocessor&mdash;it is to ensure that their noise has no efficient path to your antenna system.</p>
 
         <h2 id="systematic-approach">A Systematic Approach</h2>
 
@@ -215,6 +217,72 @@
         </ol>
 
         <p>This is not glamorous work. It requires patience and methodical thinking. But it is the only approach that reliably produces a quiet, effective mobile installation. Throwing parts at the problem without understanding it is a waste of time and money&mdash;and it rarely works.</p>
+
+        <h2 id="modern-vehicle-rfi">Modern Vehicle RFI Sources (2018+)</h2>
+
+        <p>The sections above cover the classic RFI sources that have plagued mobile operators for decades. What follows are noise generators that are either new to modern vehicles or have become dramatically worse in recent model years. Some can be mitigated. Some cannot. Knowing the difference will save you enormous frustration.</p>
+
+        <h3 id="led-headlights-drl">LED Headlights and Daytime Running Lights</h3>
+
+        <p>Factory LED headlights use buck or boost switching regulators to deliver constant current to the LED arrays. These drivers switch at frequencies between 100 and 400 kHz, and their harmonics land squarely across the HF spectrum. Worse, daytime running lights are always on&mdash;you cannot turn them off in most vehicles without pulling a fuse or modifying the body control module. This is not intermittent interference. It is there every time the vehicle is running.</p>
+
+        <p>Factory LED headlights are bad enough. Aftermarket LED bulbs dropped into halogen reflector housings are dramatically worse. The cheap switching converters built into the base of these bulbs are electrically noisy, thermally stressed, and completely unshielded. They are one of the most potent RFI generators you can voluntarily install in your vehicle.</p>
+
+        <p>For factory LED assemblies, a ferrite choke on the headlight power wiring placed as close to the assembly as possible can reduce conducted noise. Use a mix appropriate for the switching frequency&mdash;typically a #31 or #43 material. However, some integrated LED driver modules have the switching regulator built directly into the sealed headlight assembly. There is no wiring to choke between the driver and the LEDs. In those cases, you cannot treat the source. Accept it and ensure the rest of your installation is clean enough to compensate.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 TIP</div>
+          <p>Aftermarket LED bulbs in halogen housings are one of the few modern RFI sources you can <strong>completely eliminate</strong> by reverting to halogen bulbs. If you installed LED replacement bulbs and your noise floor went up, go back to halogens. The LED bulbs were not helping your visibility anyway&mdash;an LED bulb in a reflector housing designed for a halogen filament produces a poor beam pattern with excessive glare. You gain nothing and lose receive performance. This is the rare case where the fix is simple: undo what you did.</p>
+        </div>
+
+        <h3 id="adas-sensors">ADAS Sensors (Radar, Cameras, Ultrasonics)</h3>
+
+        <p>Advanced Driver Assistance Systems include forward-looking radar (typically 77 GHz), camera-based lane departure and collision avoidance, and ultrasonic parking sensors. These systems have their own processing modules, clock oscillators, and switching power supplies. Some of them generate detectable noise on HF.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">⚠ WARNING</div>
+          <p>Do not filter, choke, or in any way modify the wiring to ADAS components. These are safety-critical systems. Forward collision warning, automatic emergency braking, blind spot monitoring, and lane keeping assist depend on these sensors functioning with precise timing. Adding impedance to their wiring can degrade performance in ways that will not be obvious until the system fails to prevent a collision. Your defense against ADAS noise is a clean antenna installation with good common-mode rejection&mdash;not filtering at the source.</p>
+        </div>
+
+        <h3 id="usbc-charging">USB-C Power Delivery Charging</h3>
+
+        <p>USB-C Power Delivery ports use switching converters typically running at 200 kHz to 1 MHz to negotiate and deliver variable voltage and current to connected devices. A modern vehicle may have two to six USB-C ports, each with its own converter. The noise generated is load-dependent&mdash;a port charging a phone at 27 watts produces more switching noise than one at idle. Multiple ports under load multiply the problem.</p>
+
+        <p>The simplest mitigation is to unplug devices while operating. If you need to charge while on the air, a quality aftermarket USB charger with proper filtering, plugged into a 12V accessory socket, will typically be quieter than the factory USB-C ports. The factory ports are optimized for fast charging and data throughput, not for RF cleanliness.</p>
+
+        <h3 id="wireless-carplay-telematics">Wireless CarPlay/Android Auto and Telematics</h3>
+
+        <p>Wireless CarPlay and Android Auto require the infotainment system's Wi-Fi and Bluetooth radios to be continuously active. The processors that handle these connections run full-time, fed by their own switching power supplies. Add to this the always-on telematics module&mdash;OnStar, Toyota Connected Services, FordPass Connect, or whatever your manufacturer calls it&mdash;which maintains a cellular data connection at all times. These modules have cellular modems, GPS receivers, and their own voltage regulators, and they inject conducted noise onto the 12V bus.</p>
+
+        <p>You cannot disable these systems without affecting vehicle functionality, and in some cases, disabling telematics will trigger warnings or disable other features. Treat the noise from these systems as part of your vehicle's baseline noise floor. It is there, it is not going away, and your installation needs to be good enough to operate in spite of it.</p>
+
+        <h3 id="electronic-power-steering">Electronic Power Steering</h3>
+
+        <p>Hydraulic power steering pumps, driven by the engine, have been replaced in most vehicles by electric power steering (EPS). The EPS motor is a brushless DC motor driven by pulse-width modulation, drawing 30 to 80 amps under load during steering input. That is a lot of current being switched at high frequency, and it generates substantial broadband noise.</p>
+
+        <p>The critical detail for troubleshooting: EPS noise appears only during active steering input. It does <strong>not</strong> correlate with engine RPM. This confuses operators who are accustomed to categorizing noise as either RPM-dependent or constant. EPS noise is neither&mdash;it correlates with the steering wheel. If you hear a burst of hash every time you turn the wheel, particularly at low speeds or while parking, that is your EPS motor.</p>
+
+        <div class="callout key-concept">
+          <div class="callout-title">🔑 KEY CONCEPT</div>
+          <p>EPS noise that appears during steering but does not track engine RPM is a classic misdiagnosis trap. Operators blame the alternator because "it happens when I'm moving" or blame the ignition because "it sounds like hash." Neither is correct. The giveaway is that it correlates with steering wheel movement, especially at low speed and during parking maneuvers where the motor is working hardest. At highway speeds with gentle steering corrections, it is usually inaudible.</p>
+        </div>
+
+        <p>Bonding the steering column to the vehicle chassis with a heavy ground strap can reduce radiated noise from the EPS system. Beyond that, EPS noise is mostly a low-speed and parking issue. At highway speeds, where you are actually trying to work stations, it is rarely a problem.</p>
+
+        <h3 id="heated-seats-steering">Heated Seats and Steering Wheels</h3>
+
+        <p>Heated seats and heated steering wheels use PWM-controlled resistive heating elements drawing 5 to 10 amps per zone. The PWM switching generates broadband hash that appears when you activate the heater and disappears when you turn it off. If you hear noise that comes and goes and you cannot figure out what changed, check whether the heated seats or steering wheel were activated.</p>
+
+        <p>If the controller module is accessible, ferrite chokes on the power leads close to the controller can reduce conducted noise. In practice, these controllers are often buried under the seat or deep in the steering column, making access difficult. The pragmatic solution is to turn them off while operating. You will survive a cold seat for the duration of a QSO.</p>
+
+        <h3 id="backup-cameras-360">Backup Cameras and 360-Degree Systems</h3>
+
+        <p>Backup cameras have been federally mandated on all new vehicles sold in the United States since May 2018. Many current vehicles go further, offering 360-degree surround-view systems that process feeds from four or more cameras in real time to generate a top-down composite view. These systems contain video processors with clock oscillators whose harmonics can extend into HF territory.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">⚠ WARNING</div>
+          <p>Backup cameras and 360-degree camera systems are safety equipment. The backup camera is a federal requirement. Do not filter, disconnect, or modify the wiring to these systems. If they generate detectable RFI, note it, compensate with proper installation practices, and move on. A quiet receiver is not worth compromising a system designed to prevent you from backing over a child.</p>
+        </div>
 
       </div>
 

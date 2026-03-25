@@ -104,6 +104,9 @@
         <h2 id="section-a">A</h2>
 
         <dl>
+          <dt id="adas">ADAS</dt>
+          <dd>Advanced Driver Assistance Systems. Umbrella term for radar cruise control, lane-keeping assist, automatic emergency braking, blind-spot monitoring, and similar features. Uses 77 GHz radar, cameras, and ultrasonics. ADAS wiring and sensors must not be disturbed during radio installation. These are safety-critical systems, and tampering with them can disable features designed to prevent collisions.</dd>
+
           <dt id="aprs">APRS</dt>
           <dd>Automatic Packet Reporting System. A digital communications system using the AX.25 protocol, primarily on VHF (144.39 MHz in North America, 144.80 MHz in Europe). APRS is used for real-time position reporting, weather station data, short messaging, and telemetry. Despite the name, the "A" originally stood for "Automatic" rather than a reference to any specific technology. Most modern implementations use GPS for position data, transmitted at regular intervals or triggered by course changes.</dd>
         </dl>
@@ -111,6 +114,9 @@
         <h2 id="section-b">B</h2>
 
         <dl>
+          <dt id="bjb">BJB / BMFB</dt>
+          <dd>Battery Junction Box / Battery-Mounted Fuse Block. A consolidated fuse and relay center mounted on or adjacent to the battery positive terminal, found on most modern vehicles (Ford, GM, Stellantis, roughly 2015 and newer). Contains mega fuses protecting main vehicle circuits. A BJB does NOT protect your accessory wiring. You still need your own inline fuse on the radio power cable, sized and located per the <a href="wiring.html">Wiring</a> article.</dd>
+
           <dt id="b-can">B-CAN</dt>
           <dd>Body Controller Area Network. A vehicle data bus that connects body electronics including lighting, power locks, windows, mirrors, and seat controls. B-CAN operates at varying data rates (typically 125 to 250 kbps depending on the manufacturer) and can be a significant source of RFI, producing evenly-spaced birdies across the HF spectrum. The spacing of these birdies corresponds to the bus clock frequency. See the <a href="rfi.html">RFI Problems</a> article for mitigation strategies.</dd>
 
@@ -131,16 +137,42 @@
           <dd>A conductor or system of conductors used as a substitute for a direct earth ground connection, forming the "other half" of the antenna system. In mobile installations, the vehicle body serves as the counterpoise. Its effectiveness depends entirely on bonding quality and the antenna mounting location relative to the vehicle's metal surface area. A vehicle with poor bonding is a poor counterpoise, regardless of how expensive the antenna is.</dd>
         </dl>
 
+        <h2 id="section-d">D</h2>
+
+        <dl>
+          <dt id="d-star">D-STAR</dt>
+          <dd>Digital Smart Technologies for Amateur Radio. A digital voice protocol developed by JARL (Japan Amateur Radio League), implemented primarily by Icom. Uses the AMBE vocoder for voice compression. The internet gateway system links D-STAR repeaters worldwide, allowing global communication through local repeater access.</dd>
+
+          <dt id="dmr">DMR</dt>
+          <dd>Digital Mobile Radio. An ETSI TDMA digital voice standard adopted by the amateur radio community. Provides two time slots per 12.5 kHz channel, effectively doubling repeater capacity. The Brandmeister and TGIF talkgroup networks provide worldwide connectivity via internet-linked repeaters.</dd>
+        </dl>
+
         <h2 id="section-e">E</h2>
 
         <dl>
+          <dt id="eps">EPS</dt>
+          <dd>Electronic Power Steering. Motor-assisted steering that has replaced hydraulic systems in virtually all vehicles since roughly 2015. The PWM motor controller can generate broadband HF noise during steering input, particularly noticeable on the lower bands. EPS is safety-critical. If RF from your transmitter causes anomalous steering behavior, stop transmitting immediately and investigate before operating again.</dd>
+
           <dt id="erp">ERP</dt>
           <dd>Effective Radiated Power. The actual power radiated by an antenna system in its direction of maximum gain, calculated as the product of transmitter output power, feed line efficiency, and antenna gain (or loss, as is usually the case with mobile HF antennas). ERP is the number that actually determines whether your signal is heard at the other end. A 100-watt transmitter feeding a mobile antenna with 6 dB of loss produces an ERP of 25 watts. Understanding this keeps your expectations realistic.</dd>
+        </dl>
+
+        <h2 id="section-f">F</h2>
+
+        <dl>
+          <dt id="ft8">FT8 / FT4</dt>
+          <dd>Weak-signal digital modes developed by K1JT and implemented in WSJT-X software. FT8 uses 15-second transmit/receive cycles and can decode signals down to -21 dB SNR. Extraordinarily effective for mobile HF where antenna efficiency is poor and signals that would be inaudible on SSB are decoded reliably. Requires a computer, sound card interface, and accurate time synchronization. Operate only while parked.</dd>
+
+          <dt id="fusion">Fusion</dt>
+          <dd>Yaesu System Fusion. A C4FM digital voice protocol for VHF and UHF. Backward compatible with analog FM, so a Fusion-equipped radio works on any analog repeater. Wires-X provides internet linking between Fusion repeaters. Built into current Yaesu mobile and handheld transceivers.</dd>
         </dl>
 
         <h2 id="section-g">G</h2>
 
         <dl>
+          <dt id="gan">GaN</dt>
+          <dd>Gallium Nitride. A wide-bandgap semiconductor material used in RF power amplifiers. Offers higher power density and efficiency than silicon LDMOS at RF frequencies. GaN devices are entering the amateur market in some commercial amplifier designs but are not yet common in mobile HF amplifiers.</dd>
+
           <dt id="ground-loop">Ground Loop</dt>
           <dd>A condition where multiple ground paths between two pieces of equipment create a closed loop that can act as a receiving antenna, picking up noise, RFI, and alternator whine. Ground loops are a frequent problem in mobile installations where the transceiver, amplifier, and antenna controller each have their own ground connections to different points on the vehicle. The solution is a single-point grounding scheme, not adding more ground wires. See the <a href="wiring.html">Wiring</a> article.</dd>
         </dl>
@@ -148,6 +180,9 @@
         <h2 id="section-i">I</h2>
 
         <dl>
+          <dt id="ibs">IBS</dt>
+          <dd>Intelligent Battery Sensor. A sensor mounted on the negative battery cable that monitors current, voltage, and temperature, reporting to the vehicle's power management system. Present on most vehicles from roughly 2015 onward. If you bypass the IBS by connecting your radio's negative lead to the battery terminal above the sensor, the vehicle loses track of current draw, sets diagnostic trouble codes, and may exhibit erratic charging behavior. On IBS-equipped vehicles, connect the radio negative lead to a factory chassis ground stud instead.</dd>
+
           <dt id="imd">IMD</dt>
           <dd>Intermodulation Distortion. Spurious signals generated when two or more signals mix in a non-linear device such as a transistor amplifier stage. In mobile HF context, the most relevant fact is that solid-state transceivers generate excessive IMD when presented with an SWR much above 1.8:1. The output transistors are forced into non-linear operation by the reflected power, producing splatter on adjacent frequencies. This is why proper antenna matching matters: not just for your own signal quality, but out of courtesy to others on the band.</dd>
         </dl>
@@ -173,11 +208,17 @@
 
           <dt id="loading-coil">Loading Coil</dt>
           <dd>An inductor placed in series with an antenna element to electrically lengthen a physically short antenna. The coil adds the inductive reactance needed to cancel the capacitive reactance of the short element, bringing the antenna to resonance. In screwdriver antennas, a motor-driven variable loading coil allows tuning across multiple bands. The trade-off is that energy stored in the coil's magnetic field is subject to resistive loss, reducing radiation efficiency. See the <a href="coil-adjustment.html">Coil Adjustment</a> article.</dd>
+
+          <dt id="lrc">LRC</dt>
+          <dd>Load Response Control. Smart alternator systems that vary output voltage between roughly 12.4V and 15.5V based on battery state of charge, engine load, and fuel economy targets. Found on most vehicles since approximately 2016. The old assumption that your vehicle electrical system sits at a steady 13.8V is outdated. LRC systems can drop voltage below 13V during cruise conditions and spike above 15V during regenerative braking, which affects transceiver behavior and auxiliary battery charging.</dd>
         </dl>
 
         <h2 id="section-m">M</h2>
 
         <dl>
+          <dt id="m17">M17</dt>
+          <dd>An open-source digital voice protocol using the Codec2 vocoder, which is entirely patent-free. Still in early-stage deployment with limited hardware support. Worth watching as a potential alternative to the proprietary D-STAR, DMR, and Fusion ecosystems.</dd>
+
           <dt id="mag-mount">Mag Mount</dt>
           <dd>Magnetic mount antenna base. Uses one or more permanent magnets to temporarily attach an antenna to a vehicle's roof, trunk, or other flat metal surface. Adequate for VHF and UHF work where the short wavelength makes ground plane quality less critical. On HF, however, mag mounts introduce significant loss because the RF ground connection depends on capacitive coupling through the paint and the small contact area of the magnets. For serious HF mobile work, a permanent through-body mount is strongly preferred. See the <a href="installation.html">Installation Notes</a> article.</dd>
 
@@ -197,6 +238,9 @@
         <h2 id="section-n">N</h2>
 
         <dl>
+          <dt id="nanovna">NanoVNA</dt>
+          <dd>A low-cost handheld vector network analyzer that measures SWR, impedance (R+jX), return loss, and displays Smith charts. Has largely replaced dedicated antenna analyzers for many amateur applications. Invaluable for mobile antenna adjustment and choke verification. Companion software on a laptop provides a larger display and data logging when the small screen proves insufficient in the field.</dd>
+
           <dt id="nmo">NMO</dt>
           <dd>New Motorola mount. The industry-standard professional mobile antenna mounting system, requiring a 3/4-inch (19mm) hole through the vehicle surface. NMO mounts provide excellent RF grounding, mechanical strength, and weather sealing when properly installed. Genuine NMO mounts from reputable manufacturers (Larsen, PCTEL, Laird) are precision-machined and meet tight tolerances. Be aware that cheap import "NMO-style" mounts are often not dimensionally compatible with genuine NMO connectors and antennas, leading to intermittent connections and water intrusion.</dd>
         </dl>
@@ -206,6 +250,9 @@
         <dl>
           <dt id="obdii">OBDII</dt>
           <dd>On-Board Diagnostics, version II. The standardized vehicle diagnostic port mandated on all vehicles sold in the United States since 1996. The OBDII connector is required to be located within 3 feet of the driver's seating position, typically under the dashboard on the driver's side. The port provides access to the vehicle's diagnostic data bus and is used with scan tools to read fault codes. Relevant to mobile radio work because it is the interface through which RFI-induced fault codes can be read and cleared.</dd>
+
+          <dt id="ota">OTA</dt>
+          <dd>Over-the-Air updates. Wireless software updates pushed to vehicle ECUs, now standard on most manufacturers. OTA updates can change power management behavior, CAN bus timing, or module firmware without warning. A vehicle that was RFI-clean yesterday can develop new noise sources overnight after an OTA update. If new interference appears with no changes to your radio installation, check whether the vehicle recently received a software update.</dd>
         </dl>
 
         <h2 id="section-p">P</h2>
@@ -213,6 +260,9 @@
         <dl>
           <dt id="polyfuse">Polyfuse</dt>
           <dd>A resettable fuse based on a PTC (Positive Temperature Coefficient) thermistor. When overcurrent heats the device, its resistance increases dramatically, effectively opening the circuit. When the device cools, it resets to its low-resistance state. Polyfuses are used in some antenna controllers and transceivers for overcurrent protection. A notable gotcha: in cold weather, motor running current increases (cold lubricants are stiffer), which can cause a polyfuse to trip prematurely. If your antenna motor stops running in winter but works fine in summer, a polyfuse is likely the culprit.</dd>
+
+          <dt id="pota">POTA / SOTA</dt>
+          <dd>Parks on the Air / Summits on the Air. Organized programs that award credits for making contacts from designated parks or mountain summits. POTA in particular has driven enormous growth in mobile and portable HF activity since roughly 2020. Many POTA activators operate mobile from their vehicles in park parking areas, making proper mobile HF installation directly relevant.</dd>
         </dl>
 
         <h2 id="section-r">R</h2>
@@ -254,6 +304,9 @@
 
           <dt id="srs">SRS</dt>
           <dd>Supplemental Restraint System. The vehicle's airbag system, including crash sensors, the airbag control module, wiring harnesses, and the inflator units located in the steering wheel, dashboard, door panels, headliner, and seat bolsters. SRS components are EXTREMELY dangerous to work around. Airbag inflators contain explosive charges that can cause severe injury or death if accidentally triggered. Never run radio wiring near SRS harnesses (typically identified by yellow connectors and conduit). If you must remove interior panels that contain SRS components, disconnect the battery and wait a minimum of 10 minutes for the backup capacitors to discharge before proceeding. Better yet, do not remove those panels at all. See the <a href="safety.html">Safety</a> article.</dd>
+
+          <dt id="start-stop">Start-Stop</dt>
+          <dd>Automatic engine start-stop systems found on most modern vehicles. The engine shuts off at stoplights to save fuel and restarts automatically when the brake is released. During the off period, the alternator produces no output. The starter restart causes a voltage transient that can dip to 9 or 10 volts, which is enough to reset transceivers, corrupt controller memory, and drop digital mode connections. Disable start-stop during HF operation if your vehicle provides that option.</dd>
 
           <dt id="strapping">Strapping</dt>
           <dd>The process of installing bonding straps between vehicle body panels and the frame or unibody structure to ensure RF continuity. Often used interchangeably with "bonding," though strapping specifically refers to the physical act of connecting panels with flat copper braid. See the <a href="bonding.html">Bonding</a> article for complete guidance on materials, methods, and what to strap.</dd>

@@ -225,6 +225,69 @@
 
         <p>Mobile amateur radio is a wonderful capability. It connects you to the world while you travel, provides communications in emergencies, and makes long drives far more enjoyable. But it must be done responsibly. Take the time to do it safely, and you will enjoy it for decades. Cut corners, and you may not enjoy anything at all.</p>
 
+        <h2>Modern Vehicle Safety Considerations</h2>
+
+        <p>Everything above remains as true as the day it was written, but vehicles have not stood still. The 2020s brought a raft of new systems that directly affect how &mdash; and where &mdash; you can safely install amateur radio equipment. If you are working on a vehicle built after roughly 2018, the following sections are not optional reading. They are the difference between a professional installation and a trip to the dealer with a five-figure repair bill, or worse.</p>
+
+        <h3>ADAS Sensors and Cameras</h3>
+
+        <p>Advanced Driver Assistance Systems &mdash; ADAS &mdash; have proliferated to the point where even base-model trucks and economy cars are bristling with sensors. Expect to find 77 GHz millimeter-wave radar behind the front grille and in the rear bumper, cameras embedded in the windshield header, side mirrors, tailgate handle, and B-pillars, and ultrasonic proximity sensors ringing the vehicle at bumper height. These systems control adaptive cruise control, automatic emergency braking, lane-keeping assist, blind-spot monitoring, and parking assist. They are not convenience features. They are safety systems your vehicle relies on.</p>
+
+        <p>The problem for mobile hams is straightforward: the wiring for these sensors runs through the same areas we have traditionally used for coax and power cable routing. Camera harnesses follow the headliner and A-pillars. Radar module wiring runs behind grilles and through bumper covers. Ultrasonic wiring traces the perimeter of the vehicle at exactly the height where you might be drilling for an NMO mount.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">&#9888; WARNING</div>
+          <p><strong>Disturbing an ADAS sensor's position by even a fraction of a degree will invalidate its calibration.</strong> Removing an interior panel and reinstalling it slightly differently, bumping a radar module, or flexing a windshield camera bracket during coax routing can all cause miscalibration. Recalibration requires dealer-level scan tools and targets, and typically costs $200 to $500 per sensor (as of 2024). Some require a static calibration bay that only dealers and specialized shops have. Get your vehicle's service manual, learn where every sensor and its wiring live, and stay well clear.</p>
+        </div>
+
+        <h3>More Airbags Than Ever</h3>
+
+        <p>The airbag section earlier in this article covers the basics, but vehicles built since 2020 have taken the concept considerably further. Far-side airbags now deploy from the inboard edge of front seats to prevent occupant-to-occupant contact in side impacts. Center airbags deploy between the front seats. Rear-seat side curtain airbags protect second-row occupants. And &mdash; the one that catches the most hams off guard &mdash; <strong>seatbelt pretensioner pyrotechnics are now routinely located in the B-pillars</strong>.</p>
+
+        <p>The B-pillar has long been a favored coax routing path. It is a straight shot from the headliner to the rocker panel, it is easy to access by removing trim panels, and it avoids the complexity of the A-pillar and dash area. It is also now packed with pyrotechnic devices. Pretensioner charges, which fire to cinch seatbelts tight in a collision, use the same type of electrically initiated explosive squibs as airbag inflators. Their wiring follows the same yellow-connector convention &mdash; but not always. Some manufacturers use different colors for pretensioner circuits.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">&#9888; WARNING</div>
+          <p><strong>Treat seatbelt pretensioner wiring with exactly the same caution as airbag wiring.</strong> The same rules apply: disconnect the battery, wait the specified discharge time, identify all SRS wiring before you touch anything, and never run your cables alongside or zip-tied to pretensioner harnesses. A pretensioner firing while you are routing coax through the B-pillar will, at minimum, ruin your day. Consult your service manual &mdash; the number and location of pyrotechnic devices in modern B-pillars may surprise you.</p>
+        </div>
+
+        <h3>48V Mild Hybrid Systems</h3>
+
+        <p>Here is one that catches people because they do not know they have it. Since 2019, a growing number of vehicles use 48-volt mild hybrid systems: the Ram 1500 eTorque, numerous Mercedes-Benz models with EQ Boost, many Audis, some BMWs, and the list grows every model year. These systems use a belt-driven starter-generator and a small lithium battery pack to provide stop-start capability, electric boost during acceleration, and energy recovery during braking. They are not full hybrids. The vehicle does not drive on electric power alone. And that is precisely why owners often have no idea the system exists.</p>
+
+        <p>The 48V wiring in these systems is identified by <strong>blue cable jacketing</strong> &mdash; not the orange associated with full high-voltage hybrids and EVs. It is technically below the 60-volt threshold that defines &ldquo;high voltage&rdquo; in automotive standards. Do not let that mislead you into complacency.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">&#128161; TIP</div>
+          <p>48 volts will not electrocute you, but it will arc-weld a wrench to a terminal and start a fire before you can react. A 48V lithium battery pack can deliver enormous short-circuit currents. If you short a 48V bus with a tool, the arc is sustained and hot enough to ignite insulation, upholstery, and anything else nearby. Know whether your vehicle has a 48V system &mdash; check for blue-jacketed cables and a secondary battery (often under the rear seat or in the trunk). Treat the 48V bus with the same respect you give 12V battery cables: fuse everything, insulate everything, and do not create short circuits.</p>
+        </div>
+
+        <h3>Lithium Battery Hazards</h3>
+
+        <p>This applies to full hybrids, EVs, 48V mild hybrids, and increasingly to the auxiliary 12V batteries that some manufacturers are replacing with lithium units. Lithium batteries are not oversized versions of the lead-acid battery you grew up with. They are a fundamentally different technology with a fundamentally different failure mode, and if you do not understand that difference, you are not prepared to work around them.</p>
+
+        <p>When a lithium cell fails &mdash; from physical damage, a short circuit, overcharging, or manufacturing defect &mdash; it can enter <strong>thermal runaway</strong>. The cell temperature escalates uncontrollably, reaching over 1,000&deg;F. The resulting fire produces toxic <strong>hydrogen fluoride gas</strong>, which is immediately dangerous to life. You cannot extinguish a lithium battery fire with a conventional fire extinguisher. Water slows the propagation but does not stop the electrochemical reaction. And a lithium battery that appears to be extinguished can re-ignite minutes or hours later as adjacent cells reach their thermal runaway threshold.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">&#9888; WARNING</div>
+          <p><strong>Know what type of battery your vehicle has before you start any installation work.</strong> If your vehicle uses lithium batteries of any kind &mdash; traction pack, 48V auxiliary, or 12V starter &mdash; understand that a puncture, crush, or short circuit of that battery is a life-threatening emergency, not merely an inconvenience. Do not drill, cut, or route wiring near lithium battery packs without consulting the service manual for exclusion zones. If you damage a lithium cell, evacuate the vehicle and call the fire department. Do not attempt to fight the fire yourself.</p>
+        </div>
+
+        <h3>Updated FCC RF Exposure Rules</h3>
+
+        <p>This one is not about vehicle safety, but it is about regulatory compliance that directly affects every mobile installation, and most hams I talk to are not yet aware of the change.</p>
+
+        <div class="callout key-concept">
+          <div class="callout-title">&#128273; KEY CONCEPT</div>
+          <p>In May 2023, updated FCC rules from <strong>ET Docket 19-226</strong> took effect that removed the categorical exemptions many amateurs had relied on to avoid performing RF exposure evaluations. Under the previous rules, most amateur stations below certain power thresholds were categorically exempt from routine evaluation. That exemption is gone. <strong>Routine evaluation is now mandatory for most amateur installations</strong>, including mobile stations. The ARRL has updated their online RF exposure calculator to reflect the new rules. Perform the evaluation for your specific installation &mdash; antenna type, power level, mounting location, and distance to occupied areas &mdash; and <strong>document the results</strong>. Keep the documentation with your station records. The rules require it, and in the event of an RF exposure complaint, your documentation is your defense.</p>
+        </div>
+
+        <h3>Pedestrian Airbags and Active Hood Hinges</h3>
+
+        <p>If you route wiring through the engine bay or anywhere near the hood hinge area, you need to know whether your vehicle has a pedestrian protection system. Volvo has used pedestrian airbags &mdash; which deploy from under the rear edge of the hood to cushion a struck pedestrian's impact with the windshield &mdash; since 2012. Subaru, Jaguar, Land Rover, and others use <strong>active hood hinges</strong> with pyrotechnic actuators that pop the rear of the hood upward on impact to create a crush space between the hood and the engine below.</p>
+
+        <p>These pyrotechnic actuators are located in the hood hinge area, and their wiring runs along the firewall and fender wells. If you are routing power cables or coax through the engine bay &mdash; which you may well be doing if your antenna mount is on the fender or near the hood &mdash; you must know where these devices and their wiring are located. An active hood hinge is an explosive actuator. Treat it with the same respect as any other pyrotechnic safety device in the vehicle: identify it, identify its wiring, and stay away from both.</p>
+
       </div>
 
       <div class="related-articles">

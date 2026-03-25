@@ -124,7 +124,7 @@
           <p>Some heavy-duty OTR trucks use <strong>24-volt electrical systems</strong>. Check before you connect anything. Most amateur transceivers are designed for 13.8 VDC nominal. Connecting one to a 24-volt system will destroy it instantly, and your warranty won't cover your mistake.</p>
         </div>
 
-        <p>Proper power wiring for the transceiver follows the same principles outlined in the <a href="wiring.html">Wiring</a> article, but with the added caveat that your cable runs will almost certainly be longer. Use appropriately sized wire&mdash;10 AWG minimum for runs over 10 feet at 100 watts&mdash;and fuse both the positive and negative leads at the battery. Do not tap into existing circuits, do not use the cigarette lighter socket, and do not rely on the chassis for your negative return. Run a dedicated negative wire back to the battery.</p>
+        <p>Proper power wiring for the transceiver follows the same principles outlined in the <a href="wiring.html">Wiring</a> article, but with the added caveat that your cable runs will almost certainly be longer. Use appropriately sized wire&mdash;10 AWG minimum for runs over 10 feet at 100 watts&mdash;and fuse the positive lead at the battery. Do not tap into existing circuits, do not use the cigarette lighter socket, and do not rely on the chassis for your negative return. Run a dedicated negative lead &mdash; on vehicles without an Intelligent Battery Sensor (IBS), connect directly to the battery negative terminal. On vehicles with an IBS, use a factory ground stud on the engine block. See the <a href="wiring.html#ibs-sensor">Wiring article</a> for details on why this matters.</p>
 
         <h2 id="rfi-suppression">RFI Suppression: Split Beads Are Not Optional</h2>
 
@@ -217,6 +217,80 @@
         <p>Installing HF in an OTR truck or RV is absolutely doable, but it requires more effort, more expense, and more patience than a passenger vehicle. The non-conducting body panels, long cable runs, multiple electronic systems, and limited antenna mounting options all conspire against you. The solutions are the same as in any mobile installation&mdash;bonding, common mode suppression, proper wiring, and sensible antenna choices&mdash;but you'll need more of everything and you'll need to be more methodical about it.</p>
 
         <p>Don't let forum posts or YouTube videos convince you it's a weekend project. Do it right, or don't do it at all. A poorly installed HF system in an RV is worse than no system&mdash;it's a source of frustration and RFI that will sour you on mobile operating forever.</p>
+
+        <h2 id="modern-rv-hardware">The Modern RV: New Hardware, New Noise</h2>
+
+        <p>Everything above still applies. But the RV that rolls off the lot in 2025 bears little resemblance to one from 2010, and the new hardware brings new problems for the HF operator. Some of it is actually an improvement. Most of it isn't. Here's what you're dealing with now.</p>
+
+        <h3 id="starlink-satellite">Starlink and Satellite Internet</h3>
+
+        <p>Starlink has become the internet solution of choice for full-time RVers, and from a connectivity standpoint it's remarkable. From an HF standpoint it's a nightmare. The phased array antenna contains its own power supply unit, and that PSU radiates broadband noise that will peg your S-meter at S7 to S9 across the HF spectrum. It isn't subtle. You will hear it the moment you turn the dish on.</p>
+
+        <p>The dish itself is only part of the problem. The PoE cable running from the dish to the router is an excellent RF radiator, and the router adds its own contribution to the noise floor. Type 31 split beads on the PoE cable will help, but they won't eliminate the problem entirely.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 TIP</div>
+          <p>Separate the Starlink dish from your HF antenna by as much distance as the roof allows. If you can manage 10 feet or more, do it. The simplest and most effective solution remains: <strong>turn Starlink off when operating HF</strong>. If that's unacceptable, be prepared to invest serious time and money in suppression&mdash;and accept that you may not get the noise floor all the way down.</p>
+        </div>
+
+        <h3 id="lithium-batteries">Lithium House Batteries</h3>
+
+        <p>LiFePO4 batteries have become standard equipment in mid-range and higher RVs, and from a pure power standpoint they're a genuine improvement. The voltage stays at a rock-solid 13.2V under load instead of sagging like lead-acid. Your transceiver will appreciate the stable supply. That's the good news.</p>
+
+        <p>The bad news is the Battery Management System. Every lithium pack has a BMS board, and that board uses switching circuitry that generates noise. Some BMS designs are quieter than others&mdash;this is worth researching and comparing <em>before</em> you buy, because you're not going to swap it out later without considerable effort.</p>
+
+        <div class="callout warning">
+          <div class="callout-title">⚠ WARNING</div>
+          <p>The ugly surprise with lithium batteries: the BMS can and will <strong>disconnect the pack mid-transmit</strong> with zero warning if it decides the discharge rate, temperature, or cell balance is outside its parameters. One moment you're in a QSO, the next moment your radio is dead. There is no graceful degradation&mdash;it's a hard cutoff. Know your BMS limits and stay inside them.</p>
+        </div>
+
+        <h3 id="solar-mppt-inverters">Solar, MPPT Controllers, and Inverters</h3>
+
+        <p>A modern RV with a solar installation gives you three independent broadband noise sources, and they're all on the roof right next to your antenna.</p>
+
+        <p>The solar panels themselves are electrically benign&mdash;they're just producing DC. But the wiring between the panels and the charge controller is a coupling path for noise, and it's often run parallel to other wiring in the most convenient (and worst, from an RF perspective) routing.</p>
+
+        <p>The MPPT charge controller is the primary offender. It operates at 50 to 150 kHz with switching harmonics that extend well into the HF range. Inverters are worse&mdash;a 2000-watt inverter is a broadband noise generator that will obliterate your receive capability on multiple bands simultaneously.</p>
+
+        <div class="callout key-concept">
+          <div class="callout-title">🔑 KEY CONCEPT</div>
+          <p>Install type 31 ferrite on <strong>every lead entering and leaving</strong> both the inverter and the MPPT controller&mdash;DC input, DC output, AC output, sense wires, all of it. Route solar DC wiring away from coax and antenna feed lines. Physical separation and ferrite together. Neither one alone is sufficient.</p>
+        </div>
+
+        <h3 id="digital-coach-control">Digital Coach Control Systems</h3>
+
+        <p>This is where modern RVs get genuinely difficult for the HF operator. Systems like Firefly, CZone, and the RV-C protocol use CAN bus running at 250 kbps distributed throughout the entire coach. Every light, vent, slide, and awning is controlled by networked modules, and many of those modules include PWM LED dimmers.</p>
+
+        <p>PWM dimmers are HF noise generators. That's not an opinion; it's physics. The switching edges produce harmonics across the HF spectrum, and because the architecture is distributed&mdash;modules everywhere, connected by long bus wiring&mdash;you can't just clamp a bead on one cable and call it done. The noise sources are spread throughout the vehicle.</p>
+
+        <p>Troubleshooting these systems is a longer process than anything else in this article. You'll need to identify which individual modules are the worst offenders by turning circuits on and off methodically while monitoring your receiver. There is no shortcut. Budget your time accordingly.</p>
+
+        <h3 id="def-systems">DEF Systems</h3>
+
+        <p>If your RV has a diesel chassis built after 2010, it has a Diesel Exhaust Fluid system, and that system is going to make noise. The DEF pump and the PWM heaters for the tank and fluid lines draw 10 to 20 amps and produce broadband noise while operating. The heaters cycle on and off based on temperature, so the noise comes and goes unpredictably.</p>
+
+        <p>Here's the rub: you can't disable the DEF system without generating fault codes that will eventually derate the engine or put it in limp mode. Don't even think about it. Put type 31 ferrite on the DEF harness leads, accept whatever improvement you get, and move on. This is one you live with.</p>
+
+        <h3 id="class-b-vans">Class B Vans</h3>
+
+        <p>The Sprinter, Transit, and ProMaster conversion vans deserve separate discussion because they're fundamentally different from larger RVs&mdash;and in most ways, they're better for HF.</p>
+
+        <p>Steel bodies. That's the headline. A Class B van has an all-steel unibody or body-on-frame construction, which means you have a real ground plane. Compared to the fiberglass-and-aluminum construction of a Class A or fifth-wheel, this is an enormous advantage. By a wide margin, Class B vans are the best RV platform for HF mobile.</p>
+
+        <p>The tradeoff is space. The compact interior means cable separation between your coax and the vehicle's wiring harnesses is measured in inches, not feet. Roof space is at a premium&mdash;you're competing with the Maxxfan, solar panels, Starlink dish, and your HF antenna for a finite number of square feet.</p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 TIP</div>
+          <p><strong>Plan your roof layout before anything gets installed.</strong> Once the Maxxfan is cut in, the solar panels are bonded down, and the Starlink mount is drilled, you're living with those positions. Decide where your HF antenna goes first, then arrange everything else around it. Getting this wrong means a permanent compromise you'll regret every time you tune across a noisy band.</p>
+        </div>
+
+        <h3 id="electric-rvs">Electric RVs</h3>
+
+        <p>Thor's Vision Vehicle and the Winnebago eRV represent the leading edge of electric recreational vehicles. For HF operators, they represent uncharted territory.</p>
+
+        <p>The traction inverter in an electric drivetrain is a massive switching power converter&mdash;we're talking hundreds of kilowatts. The noise it generates will almost certainly make HF operation while driving impractical. This isn't a ferrite-and-move-on situation; the power levels involved are orders of magnitude beyond anything a snap-on bead can address.</p>
+
+        <p>Stationary operation is more feasible. With the traction inverter idle, the remaining systems (DC-DC converters, climate control, onboard charger) are comparable to what you'd find in any modern RV, and the same suppression techniques apply. But these are early days. There isn't enough field experience yet to give definitive answers, and anyone who claims otherwise is guessing. If you're an early adopter, take good notes and share what you learn.</p>
 
       </div>
 
