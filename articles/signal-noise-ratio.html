@@ -170,12 +170,12 @@
 
         <figure>
           <img src="../images/Signal_To_Noise_Ratio_p1_0.jpeg" alt="ARRL IC-7000 receiver specifications table" loading="lazy">
-          <figcaption>ARRL measurements for the Icom IC-7000 receiver. A signal strength of 0.15 &micro;V yields an SNR of 10 dB &mdash; but this figure represents SNR above the internal noise floor of the receiver, not what actually happens in the real mobile world. <!-- From PDF page 1 — verify placement --></figcaption>
+          <figcaption>ARRL measurements for the Icom IC-7000 receiver. A signal strength of 0.15 &micro;V yields an SNR of 10 dB &mdash; but this figure represents SNR above the internal noise floor of the receiver, not what actually happens in the real mobile world.</figcaption>
         </figure>
 
         <figure>
           <img src="../images/Signal_To_Noise_Ratio_p1_1.jpeg" alt="IC-7000 Owner's Manual SINAD and dynamic range table" loading="lazy">
-          <figcaption>The IC-7000 Owner's Manual SINAD and dynamic range table. Dynamic range is the ratio between the strongest signal and the minimum discernible signal within a specified bandpass. Note that Dynamic Range becomes worse as bandwidth increases. <!-- From PDF page 1 — verify placement --></figcaption>
+          <figcaption>The IC-7000 Owner's Manual SINAD and dynamic range table. Dynamic range is the ratio between the strongest signal and the minimum discernible signal within a specified bandpass. Note that Dynamic Range becomes worse as bandwidth increases.</figcaption>
         </figure>
 
         <p>Let's look at the specifications of a real-world receiver: the Icom IC-7000 (courtesy of the ARRL). A signal strength of 0.15 &micro;V yields an SNR of 10 dB. Sounds pretty good &mdash; but there's a minor problem. This figure represents an SNR above the internal noise floor of the receiver. What actually happens in the real world is much more complex.</p>
@@ -211,8 +211,8 @@
         <h2 id="the-noise">The Noise</h2>
 
         <figure>
-          <img src="../images/Signal_To_Noise_Ratio_p1_2.jpeg" alt="Short ground braid on Honda Ridgeline cylinder head" loading="lazy">
-          <figcaption>A single 4-inch long ground braid installed between a threaded boss on the rear cylinder head and a firewall cable bracket. This single braid reduced the ignition noise level on a Honda Ridgeline by approximately 10 dB. That's the kind of result good bonding produces. <!-- From PDF page 1 — verify placement --></figcaption>
+          <img src="../images/Signal_To_Noise_Ratio_p2_3.jpeg" alt="Short copper ground braid installed between cylinder head and firewall bracket" loading="lazy">
+          <figcaption>A single 4-inch copper ground braid installed between a threaded boss on the rear cylinder head and a firewall cable bracket. This single braid reduced the ignition noise level on a Honda Ridgeline by approximately 10 dB. That is the kind of result good bonding produces.</figcaption>
         </figure>
 
         <p>Every junction of every solid-state device functions as a square-law detector. The strength of the RF signal detected increases or decreases to the square of the RF level at the junction detecting the signal. In other words, the strength of the detected RF changes by twice the number of dB that the signal changes. Therefore, if we reduce the offending signal by 3 dB, the detected signal will be reduced by 6 dB. Liken it to the old adage that an ounce of prevention is worth a pound of cure.</p>
@@ -234,13 +234,15 @@
         <h2 id="measuring-snr">Measuring SNR</h2>
 
         <figure>
-          <img src="../images/Signal_To_Noise_Ratio_p2_3.jpeg" alt="Helper Instruments Sinadder internals" loading="lazy">
-          <figcaption>Inside the Helper Instruments Sinadder. Note the 1 kHz notch filter &mdash; the core of how it works. The Sinadder removes the 1 kHz modulation and measures what's left over as extraneous noise. The meter scale reads backwards because lower noise equals better SNR. <!-- From PDF page 2 — verify placement --></figcaption>
+          <img src="../images/Signal_To_Noise_Ratio_p2_4.jpeg" alt="Helper Instruments Sinadder front panel" loading="lazy">
+          <figcaption>The Helper Instruments Sinadder — a distortion analyzer with a reversed meter scale (lower noise equals better SNR). The 1 kHz notch filter removes the modulation tone; what remains on the meter is extraneous noise. Setup: connect to audio out, disable AGC, back off RF gain until the meter just lifts off full scale, then peak the VFO at 1 kHz.</figcaption>
         </figure>
 
-        <figure>
-          <img src="../images/Signal_To_Noise_Ratio_p2_4.jpeg" alt="Sinadder connected to transceiver audio output" loading="lazy">
-          <figcaption>The Sinadder connected to the audio output of a transceiver. Setup is straightforward: connect input to audio out, turn off AGC, back off the RF gain control, and adjust until the meter just comes off full scale. Then adjust the VFO until the Sinadder shows its lowest reading at 1 kHz. <!-- From PDF page 2 — verify placement --></figcaption>
+        <figure class="image-placeholder">
+          <span class="placeholder-icon">📷</span>
+          <span class="placeholder-label">Inside the Helper Instruments Sinadder</span>
+          <p>Internal view of the Sinadder showing the 1 kHz notch filter — the core of how it works. The Sinadder removes the 1 kHz modulation and measures what's left over as extraneous noise.</p>
+          <span class="placeholder-source">Photo not recovered from source PDF</span>
         </figure>
 
         <p>There is a way to measure SNR comparatively, but it does require a piece of hardware and a stable signal source. The piece of hardware is a Sinadder, as made by Helper Instruments. Although meant for use with commercial FM transceivers (SINAD = Signal to Noise and Distortion), it is usable for SSB as well. Helper is out of business, and their successor stopped making the device. However, used ones are readily available online. Used pricing varies from as low as $20 up to $200 depending on the model and condition.</p>

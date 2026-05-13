@@ -158,8 +158,8 @@
         <p>Some of the terms used in this article are the same as those explained in the <a href="antenna-efficiency.html">Antenna Efficiency</a> article, which should be read first. And remember: myths die hard.</p>
 
         <figure>
-          <img src="../images/Antenna_Myths_p1_0.jpeg" alt="Variety of HF mobile antennas showing different designs" loading="lazy">
-          <figcaption>The variety of HF mobile antenna designs on the market. Almost all of them will allow you to make contacts. What varies enormously is efficiency, quality, and how much of your 100 watts actually gets radiated as a useful signal.</figcaption>
+          <img src="../images/Antenna_Myths_p1_0.jpeg" alt="Close-up of a cylindrical monoband antenna resonator coil with mesh or screen winding housing" loading="lazy">
+          <figcaption>A monoband resonator coil close-up. Coil Q is the dominant efficiency variable in this class of antenna, and it cannot be determined from appearance alone. Almost every manufacturer claims their coil is the highest-Q unit available &mdash; one of the most persistent myths in mobile HF. The only honest way to compare coils is to measure Q directly with an antenna analyzer or impedance bridge. <!-- Vision: cylindrical antenna coil with mesh/screen housing, close-up — placement uncertain, verify manually --></figcaption>
         </figure>
 
         <h2 id="band-coverage-myth">The Band Coverage Myth</h2>
@@ -210,9 +210,11 @@
 
         <p>Far too many amateurs purchase VHF antennas based solely on their advertised gain. The published gain figure typically doesn't have a quantifying designator &mdash; they just list the dB, without specifying dBi (isotropic) or dBd (dipole). Without one of these designators, the figure is meaningless.</p>
 
-        <figure>
-          <img src="../images/Antenna_Myths_p1_1.jpeg" alt="VHF antenna radiation patterns for 1/4, 1/2, and 5/8 wave designs" loading="lazy">
-          <figcaption>Radiation pattern comparison between 1/4, 1/2, and 5/8-wave VHF mobile antennas. Note the sawtooth-like gaps in the higher-gain patterns. In metropolitan areas with high-HAAT repeaters, the 1/4-wave unity-gain antenna often outperforms its higher-gain counterparts.</figcaption>
+        <figure class="image-placeholder">
+          <span class="placeholder-icon" aria-hidden="true">📷</span>
+          <span class="placeholder-label">[VHF radiation pattern comparison: 1/4, 1/2, and 5/8-wave]</span>
+          <p>Polar plot comparison of elevation radiation patterns for 1/4-wave, 1/2-wave, and 5/8-wave VHF mobile antennas, showing the sawtooth-like nulls in higher-gain patterns that reduce coverage to high-HAAT repeaters.</p>
+          <span class="placeholder-source">Original photo not recoverable from PDF extraction</span>
         </figure>
 
         <p>A +3 dB increase in ERP will not magically double the distance you can communicate, especially on FM. In the real world, it may take as much as 10 dB, and perhaps a good deal more, depending on Fresnel zoning and other factors. Keep in mind also that antennas don't achieve gain in the usual sense &mdash; they reshape the radiation pattern. More power in one direction means less in others. There is a good case to be made for using unity-gain (0 dBd) antennas in metropolitan areas where the HAAT of the repeater versus that of a mobile requires radiating power at higher angles.</p>
@@ -271,8 +273,8 @@
         <p>A vehicle is not a ground plane for an HF antenna. Rather, it acts like a capacitor between the antenna and the surface under the vehicle. That surface &mdash; whatever it is &mdash; forms the actual ground plane, albeit a lossy one. The real-world ground loss figures are closer to 5 to 20 ohms, and may be higher on the upper bands than the lower ones.</p>
 
         <figure>
-          <img src="../images/Antenna_Myths_p2_2.jpeg" alt="Diagram of mobile antenna ground current paths through vehicle body and soil" loading="lazy">
-          <figcaption>Ground current paths in a mobile installation. Some antenna current returning to the source flows through the surface under the vehicle rather than through the vehicle body. This increases ground losses that are already high. The only practical remedy is to raise the antenna as high as possible and place as much metal directly under it as possible.</figcaption>
+          <img src="../images/Antenna_Myths_p2_2.jpeg" alt="Close-up of a large-diameter screwdriver antenna loading coil winding showing tightly spaced turns of heavy wire" loading="lazy">
+          <figcaption>A large-diameter screwdriver antenna loading coil, close-up. The tightly wound, heavy-gauge wire is visible. Coil Q &mdash; determined by wire gauge, turn spacing, diameter, and core material &mdash; is the primary variable that separates high-efficiency from low-efficiency mobile antennas. Q cannot be assessed visually; measurement is required. <!-- Vision: large diameter coil winding close-up, tightly spaced heavy wire turns — placement uncertain, verify manually --></figcaption>
         </figure>
 
         <p>One of the reasons ground-plane-less verticals don't perform well is that the return current is forced to travel through lossy ground. A similar situation exists in a mobile installation. The mean deviation in soil conductivity changes as moisture content and surface temperature change &mdash; in fact, changes are often great enough that you can measure a difference in input impedance between morning and evening. This is yet another reason antenna shootouts are not as definitive as their organizers would have you believe.</p>
@@ -309,8 +311,8 @@
         <p>One thing is for sure: SWR alone will not give you the true resonant point unless the antenna's input impedance at resonance is exactly R50+j0, which is a very rare occurrence. It is possible to damage some transceivers even though the SWR appears to be low.</p>
 
         <figure>
-          <img src="../images/Antenna_Myths_p4_3.jpeg" alt="MFJ-259B antenna analyzer showing 23 ohm resistive, 2.1:1 SWR at resonance" loading="lazy">
-          <figcaption>An unmatched screwdriver antenna measured at resonance (reactive component = 0) shows 23 ohms resistive and 2.1:1 SWR on the MFJ-259B. If you raise the frequency slightly, the SWR drops to 1.4:1 &mdash; but the antenna is no longer at resonance. The lowest SWR point is not the resonant point.</figcaption>
+          <img src="../images/Antenna_Myths_p4_3.jpeg" alt="Elevation radiation pattern polar plot at 7.150 MHz comparing Perfect Ground versus Average Ground, 0 dB = 5.10 dBi" loading="lazy">
+          <figcaption>Elevation radiation pattern at 7.150 MHz, comparing perfect ground versus average ground conditions (NEC model HBX01_22-044). The pattern shape changes significantly with ground quality. Ground loss in a mobile installation &mdash; always far from perfect &mdash; affects not just total radiated power but also the pattern at low takeoff angles. SWR tells you nothing about this. <!-- Vision: polar elevation pattern plot, 7.150 MHz, Perfect vs Average Ground labels — placement uncertain, verify manually --></figcaption>
         </figure>
 
         <h2 id="swr-vs-resonance-myth">The SWR vs. Resonance Myth</h2>
@@ -318,8 +320,8 @@
         <p>A very common belief is that the lowest VSWR point is always the exact resonant point. This is a myth. By definition, an antenna's resonant point is when the reactive component (j) is equal to zero (X=0). A decent quality, unmatched HF mobile antenna will have an average input impedance of approximately 25 ohms at resonance &mdash; representing a VSWR of 2:1. If you raise the analyzer frequency slightly, the reactive component increases (inductively) along with an increase in the resistive component, and the VSWR decreases, perhaps to 1.4:1. The lowest SWR is not at resonance.</p>
 
         <figure>
-          <img src="../images/Antenna_Myths_p4_4.jpeg" alt="Graph showing SWR and reactance versus frequency, illustrating that lowest SWR is not at resonance" loading="lazy">
-          <figcaption>Graphical illustration of SWR versus frequency for an unmatched mobile antenna. The lowest SWR point is not coincident with the resonant point (zero reactance). This is why antenna analyzers' SWR readout should be ignored while attempting to match a mobile antenna &mdash; use the impedance readout instead.</figcaption>
+          <img src="../images/Antenna_Myths_p4_4.jpeg" alt="MFJ-259B HF/VHF SWR Analyzer displaying 7.1664 MHz, SWR 2.1, R(Z) greater than 850 ohms" loading="lazy">
+          <figcaption>MFJ-259B reading at a frequency above resonance: 7.1664 MHz, SWR 2.1, R(Z) &gt;850 ohms. The analog SWR meter is well off-scale while the digital display confirms a high impedance reading &mdash; this is not the resonant point, despite what a simple SWR dip would suggest. The impedance readout, not the SWR readout, identifies the true resonant condition. <!-- Vision: MFJ-259B front panel photo, 7.1664MHz display, R(Z)>850, SWR 2.1 --></figcaption>
         </figure>
 
         <p>Because of this issue, the SWR readout of any antenna analyzer should be ignored while attempting to match a mobile antenna. If the input impedance is other than 50 ohms non-reactive, any length of coax between the antenna and the analyzer will skew the readout results. Take measurements as close to the antenna as possible.</p>
@@ -329,8 +331,8 @@
         <p><strong>Myth one: The coax feed line must be a specific length.</strong> Several antenna manufacturers suggest using a specific length coax cable, or an open stub cut to some length, between the transceiver and the antenna. Both of these schemes are SWR patches, not fixes. Shunt matching is the only correct way to match a remotely tuned HF mobile antenna to 50 ohms.</p>
 
         <figure>
-          <img src="../images/Antenna_Myths_p5_5.jpeg" alt="Common mode choke made of 7 turns RG8X on mix-31 split bead" loading="lazy">
-          <figcaption>The correct common mode choke: 7 turns, 3/4-inch ID, Mix 31 split bead, approximately 2.7 k&Omega; at 10 MHz. To duplicate this on RG-213 would require 49 similar split beads at approximately $250. RG-8X wins on both loss and choking practicality in a mobile installation.</figcaption>
+          <img src="../images/Antenna_Myths_p5_5.jpeg" alt="MFJ-259B HF/VHF SWR Analyzer close-up showing 7.1343 MHz, R equals 23, X equals 0, SWR 2.1 at resonance" loading="lazy">
+          <figcaption>MFJ-259B close-up at the true resonant point of an unmatched screwdriver antenna: 7.1343 MHz, R=23 ohms, X=0 (zero reactance confirms resonance), SWR 2.1. The SWR is 2.1:1 at resonance &mdash; not 1:1. Using SWR to find resonance on an unmatched mobile antenna will lead you to the wrong frequency. Use the X=0 indication instead. <!-- Vision: MFJ-259B close-up, R=23 X=0 SWR display at 7.1343 MHz —corrected from wrong caption --></figcaption>
         </figure>
 
         <p><strong>Myth two: Using the best grade of coax money can buy is worth the expense.</strong> The length of coax used in the average mobile installation seldom exceeds 10 feet. The difference between RG-213 and RG-8X at that length is less than 0.25 dB. But there's a hidden factor: properly choking RG-213 to achieve the same common mode impedance as a 7-turn RG-8X choke on a Mix-31 split bead would require 49 similar split beads at approximately $250 worth of hardware, instead of just $5. RG-8X wins.</p>
@@ -342,8 +344,8 @@
         <p>In a general sense, with respect to HF mobile operation, wider bandwidth usually relates to lower efficiency &mdash; but not always. Using a shorted stub to impedance match a monoband antenna can expand the 2:1 bandwidth by double. However, one manufacturer touts the bandwidth of their high-powered coils as a selling point. The truth is, large end caps reduce coil Q below that of standard-sized ones. Be careful of advertising claims about bandwidth.</p>
 
         <figure>
-          <img src="../images/Antenna_Myths_p5_6.jpeg" alt="Comparison of antenna with and without large end caps showing Q difference" loading="lazy">
-          <figcaption>Large end caps on a loading coil. They increase bandwidth, yes &mdash; but by reducing Q, not by improving performance. Wider bandwidth from this source means lower efficiency. <!-- From PDF page 5 — verify placement --></figcaption>
+          <img src="../images/Antenna_Myths_p5_6.jpeg" alt="Graph showing SWR curve and Resonance curve versus increasing frequency, with arrows marking the Resonant Point and Lowest SWR Point as distinct separate frequencies" loading="lazy">
+          <figcaption>Graphical illustration of SWR versus frequency for an unmatched mobile antenna. The Resonant Point (X=0) and the Lowest SWR Point are distinct, separated frequencies. Tuning for minimum SWR on an unmatched antenna places you off resonance. The SWR readout of any analyzer should be ignored when finding resonance &mdash; use the reactance (X) readout and tune for X=0.</figcaption>
         </figure>
 
         <p>Using a properly mounted cap hat will always increase both bandwidth and efficiency &mdash; sometimes drastically. An improperly mounted one will also increase bandwidth, but efficiency will suffer just as drastically. These facts underscore why it is so important to properly design and install cap hats.</p>
@@ -352,24 +354,28 @@
 
         <p>Justifying a no-hole installation by using trite references to leases, spouses, and depreciation value is inane. Yes, drilled holes might eventually have to be repaired &mdash; but a no-hole installation can be just as costly, perhaps more so.</p>
 
-        <figure>
-          <img src="../images/Antenna_Myths_p5_7.jpeg" alt="Body damage caused by trunk lip antenna mount including cracked paint and bent metal" loading="lazy">
-          <figcaption>Damage caused by a trunk-lip antenna mount (Yaesu ATAS-120 installation shown). The damage to the trunk lid is obvious. The damage to the quarter panel is less so, but repairing it isn't going to be inexpensive. A drilled hole can be plugged and go unnoticed. This cannot.</figcaption>
+        <figure class="image-placeholder">
+          <span class="placeholder-icon" aria-hidden="true">📷</span>
+          <span class="placeholder-label">[Trunk lid damage from lip/clip antenna mount]</span>
+          <p>Photo showing damage to a trunk lid or quarter panel caused by a lip-style or K400-type clip antenna mount: bent metal, cracked paint, or corrosion at the clip contact points. Should contrast with a cleanly drilled and plugged mount hole.</p>
+          <span class="placeholder-source">Original photo not recoverable from PDF extraction</span>
         </figure>
 
         <figure>
-          <img src="../images/Antenna_Myths_p5_8.jpeg" alt="Circular paint discoloration pattern from magnetic mount mooning effect" loading="lazy">
-          <figcaption>Circular paint discoloration from a magnetic mount &mdash; what is commonly called "mooning." The acid formed from brake dust particles and moisture discolors the paint. Regular cleaning doesn't prevent this. After a few months of use, the moons stand out like a sore thumb.</figcaption>
+          <img src="../images/Antenna_Myths_p5_8.jpeg" alt="Lip-style antenna mount clipped to the edge of a blue vehicle hood with a short antenna base attached, showing the clip mechanism" loading="lazy">
+          <figcaption>A lip-style clip mount on a vehicle hood edge. The clip mechanism contacts painted sheetmetal, providing a poor RF ground and concentrating mechanical stress at the lip. This type of mount is the primary cause of the hood and trunk damage that advocates of "no-hole" installations hope to avoid &mdash; but the damage from this mount type is often worse than a properly drilled and refinished hole. <!-- Vision: lip/clip mount on car hood edge, blue vehicle, close-up — corrected from wrong mooning caption --></figcaption>
         </figure>
 
         <figure>
-          <img src="../images/Antenna_Myths_p5_9.jpeg" alt="Close-up of K400 clip mount damage to trunk lid sheet metal" loading="lazy">
-          <figcaption>Close-up of K400 clip mount damage. The only difference between this and a drilled hole is that the drilled hole can be plugged and refinished invisibly. This damage requires panel replacement. <!-- From PDF page 5 — verify placement --></figcaption>
+          <img src="../images/Antenna_Myths_p5_9.jpeg" alt="Lip-style antenna clip mount attached to vehicle hood edge showing mechanism and antenna stub base" loading="lazy">
+          <figcaption>A K400-type clip mount installed on a vehicle hood or trunk edge. The clip contacts painted sheetmetal at two small pressure points, producing both a poor electrical connection and localized stress that eventually cracks paint and deforms the metal. This image is duplicate of the adjacent figure; the original K400 damage close-up was not recoverable from the PDF. <!-- Vision: same lip/clip mount image as adjacent figure — duplicate, original damage photo not available --></figcaption>
         </figure>
 
-        <figure>
-          <img src="../images/Antenna_Myths_p6_10.jpeg" alt="Properly drilled and plugged antenna mount hole compared to clip mount damage" loading="lazy">
-          <figcaption>Comparison of a properly drilled and plugged mount hole versus clip mount damage. The argument that drilling holes degrades vehicle value doesn't withstand scrutiny when the alternative is this type of damage. <!-- From PDF page 6 — verify placement --></figcaption>
+        <figure class="image-placeholder">
+          <span class="placeholder-icon" aria-hidden="true">📷</span>
+          <span class="placeholder-label">[Drilled and plugged hole vs. clip mount damage comparison]</span>
+          <p>Side-by-side or before/after comparison of a properly drilled, plugged, and refinished antenna mount hole versus the paint cracking and sheetmetal deformation caused by a K400-type clip mount. The original image was not recoverable; the extracted file is a duplicate of the clip mount photo above.</p>
+          <span class="placeholder-source">Original photo not recoverable from PDF extraction</span>
         </figure>
 
         <p>A mag mount has no RF ground connection. As a result, the coax cable radiates a large percentage of the transmitted power via common mode currents, and its pattern includes the interior of the vehicle. They also collect road debris, leaving circular acid-stain patterns in the paint. Rather than base your no-holes installation on trite references, base it on sound engineering practices.</p>

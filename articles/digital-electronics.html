@@ -170,12 +170,12 @@
 
         <figure>
           <img src="../images/Digital_Electronics_p1_0.jpeg" alt="Ford EMC Level 1 Requirements chart showing RF immunity test levels" loading="lazy">
-          <figcaption>Ford Motor Company EMC Level 1 Requirements chart. These are minimum RF immunity levels. The real truth behind the data: you'd almost have to connect your coax directly to the devices to damage them from radiated energy. The latest version extends testing to 3,100 MHz to cover new cellular bands. <!-- From PDF page 1 — verify placement --></figcaption>
+          <figcaption>Ford Motor Company EMC Level 1 Requirements chart — minimum RF immunity levels for OEM components, 400–3100 MHz. The real truth: you'd almost have to connect your coax directly to the devices to damage them from radiated energy. The latest version extends testing to 3,100 MHz to cover new cellular bands.</figcaption>
         </figure>
 
         <figure>
           <img src="../images/Digital_Electronics_p1_1.jpeg" alt="Ford EMC Level 2 Requirements chart with country-specific variations" loading="lazy">
-          <figcaption>Ford Motor Company EMC Level 2 Requirements, with variations based on country. The probability of damaging on-board electronics from radiated energy from amateur equipment is virtually nil. You can, however, interfere with their operation by causing false signals to be presented to them. <!-- From PDF page 1 — verify placement --></figcaption>
+          <figcaption>Ford Motor Company EMC Level 2 Requirements, with country-specific variations. The probability of damaging on-board electronics from radiated energy from amateur equipment is virtually nil. You can, however, interfere with their operation by causing false signals to be presented to sensor inputs.</figcaption>
         </figure>
 
         <p>You can interfere with vehicle electronics, but not easily damage them. The most likely offenders are improper wiring, poor antenna mounting, common mode issues, and inadequate motor lead choking. Follow these four rules, and interference problems become rare:</p>
@@ -240,8 +240,9 @@
         <p>Data corruption caused by RFI ingress and/or egress will often have different effects at different frequencies. You might have no RFI problems on 20 meters but significant problems on another band. Not all RFI-related data corruption will cause error codes to be written to the OBD-II-EOBD memory. And RFI can play havoc with individual data sensors connected to the various on-board electronic devices without ever triggering a visible fault.</p>
 
         <figure>
-          <img src="../images/Digital_Electronics_p1_3.jpeg" alt="Modern vehicle data bus network diagram" loading="lazy">
-          <figcaption>Modern vehicles employ multiple data bus networks with up to 80 separate digital processors. These systems communicate at rates from 10.4 kbps to 500 kbps, and all of them generate birdies across the amateur spectrum. <!-- From PDF page 1 — verify placement --></figcaption>
+          <!-- Vision: Navigation badge reading "Vehicle Electronics & Warranty" — not a data bus diagram. Placement uncertain, verify manually -->
+          <img src="../images/Digital_Electronics_p1_3.jpeg" alt="Vehicle data bus network — multiple processors and communication buses" loading="lazy">
+          <figcaption>Modern vehicles employ multiple data bus networks with up to 80 separate digital processors. These systems communicate at rates from 10.4 kbps to 500 kbps, and all of them generate birdies across the amateur spectrum.</figcaption>
         </figure>
 
         <p>Federal courts have ruled that the software and/or firmware controlling every facet of vehicle operation is owned by the manufacturers. This opens up significant questions regarding data corruption that might be caused by excessive RFI ingress. However, automobile manufacturers do a very creditable job of hardening their electronics against RFI ingress. Ford Motor Company's Electromagnetic Compatibility documentation is a prime example &mdash; though aimed at OEM suppliers, it's worth reading if you have an ingress problem.</p>
@@ -259,8 +260,8 @@
         <p>Late-model vehicles use their Electronic Engine Control (EEC) to monitor the alternator's voltage and current. These readings help control fuel injector timing, mixture, and fuel economy. As a result, at slow engine speeds when the alternator is under a varying heavy load (amplifier use, for example), the engine may hunt &mdash; stumble and misfire. In some cases, this will cause an error code to be sent to the OBD-II, which turns on the MIL.</p>
 
         <figure>
-          <img src="../images/Digital_Electronics_p2_4.jpeg" alt="Electronic Engine Control system diagram" loading="lazy">
-          <figcaption>Modern EECs monitor alternator load as part of fuel economy management. Imposing the rapidly changing load of SSB operation can cause engine stumbling or erratic transmission shifting as the EEC tries to compensate. <!-- From PDF page 2 — verify placement --></figcaption>
+          <img src="../images/Digital_Electronics_p2_4.jpeg" alt="Autel MaxiScan OBD-II and EOBD code reader displaying menu options" loading="lazy">
+          <figcaption>An OBD-II/EOBD code reader such as the Autel MaxiScan can read and clear stored fault codes without a dealer visit. Modern EECs monitor alternator load as part of fuel economy management — imposing the rapidly changing load of SSB operation can cause engine stumbling or erratic transmission shifting.</figcaption>
         </figure>
 
         <p>Error codes can actually help you find RFI problems. For example, a code related to the throttle position sensor pointed to an RFI ingress problem that was cured by installing a ferrite bead on the sensor's wiring harness. Just because the MIL isn't on doesn't mean there are no stored error codes &mdash; some may not illuminate the light. Some may not be amateur radio related and could indicate an actual mechanical or electrical problem.</p>

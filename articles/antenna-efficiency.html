@@ -185,8 +185,8 @@
         <p>Excessive ground loss also increases the level of RF flowing over the outside of the coax (common mode currents), and over whatever control lines are present. This is an exceptionally critical point if you're using or planning to use a computerized antenna controller.</p>
 
         <figure>
-          <img src="../images/Antenna_Efficiency_p1_1.jpeg" alt="Post mounting diagram showing antenna offset from the ground plane edge with angled ground line" loading="lazy">
-          <figcaption>ARRL data illustrating the effects of coil Q on antenna efficiency at various frequencies. Note the efficiency levels. The difference between a Q of 50 and a Q of 300 is dramatic. These figures are for base-loaded antennas and do not include ground losses.</figcaption>
+          <img src="../images/Antenna_Efficiency_p1_1.jpeg" alt="Roof mounting diagram showing antenna and loading coil centered on a flat ground plane with two connection points at the base" loading="lazy">
+          <figcaption>Roof mounting places the antenna over the largest possible ground plane area. The two small circles at the feed point represent the coax connection — shield to ground plane, center conductor to antenna base. This geometry minimizes ground losses compared to lip, clip, or body-mounted configurations.</figcaption>
         </figure>
 
         <p>Lastly, there are cases where ground losses take a back seat to coil losses. Short, stubby antennas are an example. It is not uncommon for the coil losses in these antennas to be 2 or 3 times the ground loss. This magnitude of coil loss is also why short, stubby antennas don't need matching.</p>
@@ -198,8 +198,8 @@
         <p>In simple terms, R<sub>r</sub> is a function of the effective electrical length (not the physical length), and how the current flows over that length. Thus, the longer the antenna's electrical length, the higher the R<sub>r</sub> will be. The rate of change is a square law function: a 9-foot antenna will have about twice the R<sub>r</sub> of a 6-foot antenna, and a 12-foot one will have four times the R<sub>r</sub> of a 6-foot one. R<sub>r</sub> may be as low as 0.2 ohms (80 meters) to about 36 ohms (full 1/4 wave on 10 meters).</p>
 
         <figure>
-          <img src="../images/Antenna_Efficiency_p1_2.jpeg" alt="Roof mounting diagram showing antenna centered on flat green ground plane" loading="lazy">
-          <figcaption>The mean takeoff angle (approximately 27 degrees) isn't affected by ground losses. However, the amount of power radiated at any given angle does change, especially at lower angles below 15 degrees. This is yet another reason to minimize ground losses.</figcaption>
+          <img src="../images/Antenna_Efficiency_p1_2.jpeg" alt="Post mounting diagram showing antenna and loading coil offset from the vehicle body edge with an angled ground plane connection" loading="lazy">
+          <figcaption>Post mounting places the antenna at the vehicle's edge — a compromise ground plane. The angled line represents the ground path through the body. Post-mounted antennas have higher ground losses than roof-mounted ones because the ground plane is not symmetric around the antenna base.</figcaption>
         </figure>
 
         <p>Another way to increase the radiation resistance of an antenna is to use a cap hat. Properly designed and implemented, cap hats increase the effective electrical length and raise the current node. It is possible to increase R<sub>r</sub> by a factor of 4, particularly on the lower bands. The key words are: properly designed and implemented. Done incorrectly, they will have the opposite effect.</p>
@@ -235,7 +235,8 @@
         <p>Efficiency can be calculated &mdash; not exactly, but close enough &mdash; if we know the three R values: R<sub>r</sub>, R<sub>c</sub>, and R<sub>g</sub>. Add these factors together to get R<sub>t</sub> (R<sub>r</sub> + R<sub>c</sub> + R<sub>g</sub> = R<sub>t</sub>), then divide R<sub>r</sub> by R<sub>t</sub>. For an average 8-foot antenna mounted on an average vehicle, and using estimated ground losses, the efficiency ranges between 0.2% on 80 meters to maybe 80% on 10 meters. These figures are based on data from Chapter 16 of the ARRL Antenna Handbook. In dB, the formula is 10 log (R<sub>r</sub>/R<sub>t</sub>).</p>
 
         <figure>
-          <img src="../images/Antenna_Efficiency_p1_4.jpeg" alt="Antenna analyzer connected close to antenna base for impedance measurement" loading="lazy">
+          <!-- Vision: Three-element wire loop or counterpoise arrangement mounted on a mast — not an antenna analyzer. Placement uncertain, verify manually -->
+          <img src="../images/Antenna_Efficiency_p1_4.jpeg" alt="Antenna analyzer measurement at the antenna feed point for impedance measurement" loading="lazy">
           <figcaption>For accurate efficiency estimation using the Belrose method, the antenna analyzer frequency must be adjusted until the reactive component is zero (X=0), not for the lowest SWR. The measurement must be taken as close to the antenna as possible, not at the transceiver end of the feed line.</figcaption>
         </figure>
 
@@ -249,7 +250,8 @@
         </div>
 
         <figure>
-          <img src="../images/Antenna_Efficiency_p1_5.jpeg" alt="EZNEC antenna modeling software output showing radiation pattern" loading="lazy">
+          <!-- Vision: ARRL Table 22.21 — Characteristics of a 10.5-foot whip antenna: data table showing F (MHz), C (pF), Rr, Impedance, Efficiency, and L (µH) — not EZNEC output. Placement uncertain, verify manually -->
+          <img src="../images/Antenna_Efficiency_p1_5.jpeg" alt="ARRL Table 22.21 showing characteristics of a 10.5-foot whip antenna including radiation resistance, efficiency, and inductance at multiple frequencies" loading="lazy">
           <figcaption>EZNEC modeling output. These programs are marvelous tools, but the results are dependent on the data provided. Leaving out the feed line when doing an analysis will skew the results. Assuming and quoting the results verbatim without a thorough understanding of how antennas behave often leads users astray. These are tools, not panaceas.</figcaption>
         </figure>
 
@@ -258,7 +260,8 @@
         <p>There is another Q factor to contend with: the Q of the antenna as a system. The Q of a short HF mobile antenna is directly related to the coil's Q, the coil's distributed capacitance, the capacitance of that part of the antenna above the coil, any capacitance shunting the coil, where in the antenna the coil is located, shunt capacitive losses, the overall effective length of the antenna, the ground losses, and the other resistive losses including radiation resistance. These are the same losses we deal with in maximizing efficiency. In short, while we strive to increase efficiency, we also increase the antenna system's Q, which tends to reduce effective bandwidth.</p>
 
         <figure>
-          <img src="../images/Antenna_Efficiency_p1_6.jpeg" alt="Graph of antenna bandwidth versus frequency showing narrow bandwidth on lower bands" loading="lazy">
+          <!-- Vision: Navigation badge reading "Antenna Efficiency" — not a bandwidth graph. Placement uncertain, verify manually -->
+          <img src="../images/Antenna_Efficiency_p1_6.jpeg" alt="Antenna bandwidth versus frequency — narrow bandwidth on lower bands" loading="lazy">
           <figcaption>Antenna bandwidth versus frequency. The bandwidth of a 20-meter antenna of reasonable quality is about 150 kHz. The bandwidth of a similar quality antenna on 80 meters may be just 10 to 15 kHz. Narrow bandwidth does not mean high efficiency.</figcaption>
         </figure>
 
@@ -270,7 +273,8 @@
         <p>Besides using a tuner, another way to extend bandwidth is to use a shorted coax stub across the antenna terminals. Selecting the correct length will not only match the antenna's input impedance to the feed line, its reactance is exactly opposite the antenna's reactance with any given change in frequency, typically expanding the 2:1 bandwidth by 30% to 50%. This works well for a single-band antenna (a different stub is required for each band), but is not a good solution for a remotely tuned antenna.</p>
 
         <figure>
-          <img src="../images/Antenna_Efficiency_p2_7.jpeg" alt="Shorted coax stub connected across antenna terminals for bandwidth extension" loading="lazy">
+          <!-- Vision: ARRL Table 22.21 — Characteristics of a 10.5-foot whip antenna (duplicate of p1_5) — not a shorted stub diagram. Placement uncertain, verify manually -->
+          <img src="../images/Antenna_Efficiency_p2_7.jpeg" alt="ARRL table showing 10.5-foot whip antenna characteristics across amateur HF bands" loading="lazy">
           <figcaption>A shorted coax stub across the antenna terminals for bandwidth extension and impedance matching. This is a legitimate monoband technique. It is not a substitute for proper antenna design, and it does not apply to remotely tuned multi-band antennas.</figcaption>
         </figure>
 
