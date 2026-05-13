@@ -190,6 +190,11 @@
 
         <p>The MFJ-854 is a clamp-on device that you simply place around the coax at various points. By measuring at the antenna feedpoint and again at the radio end, you can quantify exactly how much common mode current is present and, more importantly, verify that your choke is doing its job. If you are serious about mobile HF, this is not an optional accessory&mdash;it is a diagnostic necessity.</p>
 
+        <figure>
+          <img src="../images/Common_Mode_Currents_p1_0.jpeg" alt="MFJ-854 RF Current Meter, a black bench instrument with analog meter, clamp-on current probe, and controls for sensitivity and current range" loading="lazy">
+          <figcaption>The MFJ-854 RF Current Meter &mdash; the standard field tool for diagnosing common mode current. Clamp it around the coax, read the scale, and you know immediately how much current is on the outside of the shield. MFJ ceased manufacturing in May 2024; used units remain available.</figcaption>
+        </figure>
+
         <h2 id="the-coax-choke">The Coax Choke: Building One That Works</h2>
 
         <p>The solution to common mode current is a coax choke, sometimes called a common mode choke or current balun. The principle is straightforward: you introduce a high impedance in series with the <em>outside</em> of the coax shield to block common mode current, while the differential mode signals inside the coax pass through unaffected.</p>
@@ -211,11 +216,9 @@
 
         <p>With 6 turns, you will get approximately 2.2 kilohms of impedance at 10 MHz. That is adequate for operation on 80 through 10 meters. Wind 7 turns of RG-8X and the impedance climbs to approximately 2.7 kilohms, which may be sufficient for 160-meter operation&mdash;though 160 meters with a poor mount may demand more aggressive measures.</p>
 
-        <figure class="image-placeholder">
-          <span class="placeholder-icon" aria-hidden="true">📷</span>
-          <span class="placeholder-label">Coax wound through mix 31 split bead</span>
-          <p>6-7 turns of RG-8X coax wound through a 3/4-inch ID mix 31 ferrite split bead, installed at the antenna feedpoint outside the vehicle.</p>
-          <span class="placeholder-source">Photo requested from W1AST (stationproject.blog)</span>
+        <figure>
+          <img src="../images/Common_Mode_Currents_p1_1.jpeg" alt="Coaxial cable looped multiple turns through a clamp-on ferrite split bead common mode choke" loading="lazy">
+          <figcaption>Multiple turns of coax wound through a mix 31 ferrite split bead &mdash; the correct construction for an HF common mode choke. The split bead snaps around the coax without cutting it, making installation practical at the antenna feedpoint.</figcaption>
         </figure>
 
         <h3 id="increasing-impedance">Increasing the Impedance</h3>
@@ -303,6 +306,11 @@
         <h3 id="note-on-g3txq">A Note on G3TXQ</h3>
 
         <p>Steve Hunt, G3TXQ, whose impedance data is referenced earlier in this article, passed away in December 2018. His meticulous measurements of ferrite choke impedance across various materials and winding configurations remain the gold standard reference in this field. His original data is still accessible at karinya.net/g3txq/chokes/ and has been mirrored at several community sites. His updated 2015 RadCom article, archived at gm3sek.com, contains his most recent measurements. If you are serious about understanding choke design, seek out his work &mdash; it is well worth the effort.</p>
+
+        <figure>
+          <img src="../images/Common_Mode_Currents_p1_2.jpeg" alt="G3TXQ common-mode choke impedance chart showing color-coded frequency bands for ferrite-cored and air-cored choke designs across 0 to 30 MHz, with impedance thresholds at 500 ohms, 1k, 2k, 4k, and 8k" loading="lazy">
+          <figcaption>Steve Hunt, G3TXQ's landmark impedance chart comparing ferrite-cored and air-cored choke designs from 1 to 30 MHz. Color coding indicates impedance ranges: red is below 500 ohms (inadequate), green is above 2k ohms (effective). The chart makes immediately clear why mix 31 dominates HF choke design and why no single core suits all bands.</figcaption>
+        </figure>
 
       </div>
 

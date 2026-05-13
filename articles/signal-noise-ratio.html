@@ -238,11 +238,9 @@
           <figcaption>The Helper Instruments Sinadder — a distortion analyzer with a reversed meter scale (lower noise equals better SNR). The 1 kHz notch filter removes the modulation tone; what remains on the meter is extraneous noise. Setup: connect to audio out, disable AGC, back off RF gain until the meter just lifts off full scale, then peak the VFO at 1 kHz.</figcaption>
         </figure>
 
-        <figure class="image-placeholder">
-          <span class="placeholder-icon">📷</span>
-          <span class="placeholder-label">Inside the Helper Instruments Sinadder</span>
-          <p>Internal view of the Sinadder showing the 1 kHz notch filter — the core of how it works. The Sinadder removes the 1 kHz modulation and measures what's left over as extraneous noise.</p>
-          <span class="placeholder-source">Photo not recovered from source PDF</span>
+        <figure>
+          <img src="../images/Signal_To_Noise_Ratio_p2_5.jpeg" alt="Block diagram of Sinadder circuit showing two AGC amplifiers, detector, absolute value circuit, 1000 Hz reject filter, and precision rectifier driving a meter" loading="lazy">
+          <figcaption>Functional block diagram of the Sinadder. The signal passes through two AGC amplifier stages with a detector and absolute value circuit. The 1,000 Hz reject filter strips the reference tone, leaving only noise and distortion. A precision rectifier drives the analog meter &mdash; which reads backwards: lower reading equals better SNR.</figcaption>
         </figure>
 
         <p>There is a way to measure SNR comparatively, but it does require a piece of hardware and a stable signal source. The piece of hardware is a Sinadder, as made by Helper Instruments. Although meant for use with commercial FM transceivers (SINAD = Signal to Noise and Distortion), it is usable for SSB as well. Helper is out of business, and their successor stopped making the device. However, used ones are readily available online. Used pricing varies from as low as $20 up to $200 depending on the model and condition.</p>

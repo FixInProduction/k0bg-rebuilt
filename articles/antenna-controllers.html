@@ -164,6 +164,16 @@
 
         <p>The MFJ-1924 and Ameritron SDC-102B are common examples of turn-counting controllers. Some models interface with the radio's data port (CI-V or equivalent), allowing the controller to automatically select the correct antenna position when you change frequency on the radio. In theory, this is the hands-free mobile operating experience everyone wants.</p>
 
+        <figure>
+          <img src="../images/Antenna_Controllers_p2_4.jpeg" alt="MFJ-1924 turn-counting screwdriver antenna controller with LED display" loading="lazy">
+          <figcaption>The MFJ-1924 turn-counting controller. Band positions are stored as pulse counts from the parked position; the LED display shows current count. MFJ ceased production in May 2024 — used units are your only source now.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Antenna_Controllers_p1_1.png" alt="Ameritron SDC screwdriver antenna controller front panel with multiple buttons" loading="lazy">
+          <figcaption>The Ameritron SDC series controller. Multiple memory positions store pulse counts for each band. The SDC-102B improved on the SDC-100's erratic stall-detection behavior, but both require the motor lead choke to be outside the vehicle to function reliably.</figcaption>
+        </figure>
+
         <h3 id="parking">A Word About Parking</h3>
 
         <p>"Parking" means driving the antenna coil to one extreme of its travel &mdash; typically the highest-frequency (most collapsed) position. This establishes the known reference point from which all pulse counts are measured. Every time the controller loses its position reference (power interruption, miscounted pulse, etc.), it must re-park to recalibrate.</p>
@@ -182,6 +192,11 @@
 
         <p>The SDC-100 (predecessor to the SDC-102B) is known for erratic behavior that sends operators on wild goose chases through their entire installation. Before you tear apart your wiring or blame RFI, check the stall current setting. The SDC-100 detects the end of antenna travel by sensing when motor current spikes (because the motor has stalled against the mechanical stop). If the stall current threshold is set incorrectly, the controller either overshoots (does not detect the stall) or stops prematurely (false stall detection from normal running current variation). It is a simple adjustment that solves an outsized percentage of SDC-100 complaints.</p>
 
+        <figure>
+          <img src="../images/Antenna_Controllers_p2_6.jpeg" alt="Ameritron SDC-102B controller panel showing RPM and DPM indicators" loading="lazy">
+          <figcaption>The Ameritron SDC-102B front panel. The stall-current adjustment — the most commonly overlooked setting — determines when the controller interprets a motor current spike as an end-of-travel stop. Set it wrong and the erratic behavior that drives operators to distraction begins immediately.</figcaption>
+        </figure>
+
         <h2 id="swr-sensing">SWR-Sensing Controllers</h2>
 
         <p>SWR-sensing controllers take a different approach. Instead of counting motor turns, they transmit a brief carrier, measure the SWR, and drive the motor in the direction that lowers the SWR. The process repeats until the SWR falls below a preset threshold. No parking, no pulse counting, no stored positions. The controller simply hunts for the lowest SWR in real time.</p>
@@ -194,6 +209,16 @@
         </div>
 
         <p>For true automatic operation with an SWR-sensing controller, a fixed shunt coil is the only correct matching solution. No substitutes &mdash; not a UNUN, not a capacitance box, not an autotransformer. The shunt coil must be properly sized for your antenna and mounting configuration. Without proper matching, the SWR-sensing controller is chasing a phantom. It will find <em>a</em> minimum, but that minimum may not be where you want the antenna tuned.</p>
+
+        <figure>
+          <img src="../images/Antenna_Controllers_p2_9.jpeg" alt="West Mountain Radio TARGETuner SWR-sensing automatic antenna controller" loading="lazy">
+          <figcaption>The West Mountain Radio TARGETuner is an SWR-sensing controller. It transmits a brief carrier, reads the SWR, and drives the antenna motor toward minimum SWR. It will find a minimum every time — but whether that minimum corresponds to actual resonance depends entirely on whether the antenna system is properly matched to 50 ohms first.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Antenna_Controllers_p2_5.jpeg" alt="MFJ SWR-300 mobile antenna matcher and SWR sensing unit" loading="lazy">
+          <figcaption>MFJ's SWR-sensing mobile antenna interface unit. SWR-sensing systems sample the reflected power from a brief transmit pulse to determine which direction to drive the motor. Without proper 50-ohm matching at the feedpoint, the SWR minimum the sensor finds is meaningless as a resonance indicator.</figcaption>
+        </figure>
 
         <h2 id="choke-placement">Choke Placement: The Make-or-Break Detail</h2>
 
@@ -212,6 +237,11 @@
 
         <p>Placing the choke at the antenna base, outside the vehicle, means the RF energy is blocked before it ever enters the vehicle. The wires from the choke to the controller inside the car are clean, carrying only DC motor current and reed switch pulses. The controller operates in a quiet electrical environment and works as intended.</p>
 
+        <figure>
+          <img src="../images/Antenna_Controllers_p1_2.jpeg" alt="Close-up of motor control wires — black, white, yellow, and green — entering screwdriver antenna housing at the base" loading="lazy">
+          <figcaption>Motor control wires entering the antenna base housing. These wires — motor leads and reed switch signal — run through the RF field of the antenna. The choke must be at this point, outside the vehicle, not under the dash. Every inch of wire between the antenna base and the choke is an RF pickup antenna feeding directly into the controller.</figcaption>
+        </figure>
+
         <h2 id="factory-chokes">Factory-Supplied Chokes Are Inadequate</h2>
 
         <p>I will say this plainly: the ferrite beads and toroids shipped with most antenna controllers and antenna kits are almost always inadequate. They are too small. They use the wrong ferrite mix. They have insufficient turns. They are, to put it charitably, a token gesture toward a problem that demands a serious solution.</p>
@@ -229,6 +259,11 @@
         </div>
 
         <p>Why do short or stubby antennas require more choke impedance? Because shorter antennas have lower radiation resistance, which means the currents in the system are proportionally higher for a given power level. Higher current means more RF on the motor leads, which means you need a higher-impedance choke to keep those currents out of the controller. The math is straightforward, even if the antenna manufacturers prefer to ignore it.</p>
+
+        <figure>
+          <img src="../images/Antenna_Controllers_p1_0.jpeg" alt="Properly wound motor lead choke on mix 31 split ferrite beads with red and black wires" loading="lazy">
+          <figcaption>A properly built motor lead choke: multiple turns of the motor control wires through stacked mix 31 split ferrite beads, wrapped with self-amalgamating tape for weather protection. This is what adequate choke impedance looks like. The factory-supplied bead that came in the antenna box does not come close.</figcaption>
+        </figure>
 
         <h2 id="icom-706-7000-incompatibility">Critical Incompatibility: IC-706 vs. IC-7000/7100/7200</h2>
 
@@ -267,6 +302,16 @@
 
         <p>Regardless of which type you choose, the installation fundamentals are the same: choke outside the vehicle at the antenna base, adequate choke impedance, proper impedance matching, and verified isolation of motor leads from the mast. Get these right and the controller will do its job. Skip any one of them and you will spend more time troubleshooting than operating.</p>
 
+        <figure>
+          <img src="../images/Antenna_Controllers_p2_7.jpeg" alt="TuneMatic Lite model TML1 motorized antenna controller with LED display and memory select knob" loading="lazy">
+          <figcaption>The TuneMatic Lite (TML1) from JT Communications. A turn-counting controller that stores band positions via the memory select/recall knob. Straightforward, US-made, with a clearly readable LED position display. Requires the same proper choke and matching as any other controller — the electronics are only as reliable as the RF environment you give them.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Antenna_Controllers_p3_11.jpeg" alt="Simple two-button up/down motor control switch with green LED power indicator and wiring harness" loading="lazy">
+          <figcaption>At the other end of the spectrum: a basic manual up/down motor control switch with a power indicator LED. No automation, no memory, no pulse counting. For some operators, this is exactly right — simple, bulletproof, no moving software parts. You drive to the band manually, use an SWR meter to confirm resonance, and operate. Nothing to miscalibrate, nothing to lose its position reference.</figcaption>
+        </figure>
+
         <h2 id="summary">The Bottom Line</h2>
 
         <p>Antenna controllers are not magic boxes. They are electromechanical devices that operate in a hostile RF environment, and they are only as good as the installation supporting them. The controller cannot compensate for poor bonding, inadequate chokes, missing impedance matching, or shorted motor leads. It can only do its narrowly defined job &mdash; counting turns or minimizing SWR &mdash; in an environment clean enough for its electronics to function.</p>
@@ -282,6 +327,16 @@
         <p>Case in point: MFJ Enterprises, which manufactured the MFJ-1924 and its subsidiary Ameritron's SDC-102B, ceased all production in May 2024 after 52 years. These controllers are no longer manufactured new. Used units remain available through the usual channels, and remaining dealer stock may still be found, but plan accordingly.</p>
 
         <p>The practical advice is simple: if you find a working controller &mdash; new or used &mdash; that does what you need, buy it. Do not wait for the next model. Do not hold out for a feature that might be added in a future revision. What was available six months ago may not be available today, and what is available today may not be available next month.</p>
+
+        <figure>
+          <img src="../images/Antenna_Controllers_p2_8.jpeg" alt="TuneMatic automatic motorized antenna controller main unit with ANT and RIG SO-239 connectors, with keypad remote" loading="lazy">
+          <figcaption>The TuneMatic full-featured controller from JT Communications, with a wireless keypad remote. The SO-239 connectors (ANT and RIG) indicate this is an SWR-sensing design with an inline RF sensor. The wireless remote makes for a clean dash installation. JT Communications is one of the surviving small-batch controller manufacturers — the kind of vendor that may or may not be taking orders next year.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Antenna_Controllers_p2_10.jpeg" alt="TennaTronix TurboTuner-2 automatic screwdriver antenna controller with radio and antenna ports" loading="lazy">
+          <figcaption>The TennaTronix TurboTuner-2. An SWR-sensing screwdriver antenna controller with radio interface, antenna, and motor connectors on the front panel. Another small-batch product from a small manufacturer. When these companies stop production, they stop — there is no corporate successor to pick up the line.</figcaption>
+        </figure>
 
         <h3 id="smart-alternators">Smart Alternators and Supply Voltage</h3>
 

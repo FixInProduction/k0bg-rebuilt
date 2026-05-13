@@ -188,6 +188,11 @@
 
         <p>What you need is an antenna analyzer that displays reactance (the j component) separately from resistance. Set the coil so that reactance reads zero (or as close to zero as you can get) at your desired frequency. Then deal with the resistive mismatch separately using a matching coil or UNUN, as described in the <a href="antenna-matching.html">Antenna Matching</a> article.</p>
 
+        <figure>
+          <img src="../images/Antenna_Coil_Adjustment_Procedure_p1_0.jpeg" alt="MFJ-259B HF/VHF SWR analyzer displaying 7.1664 MHz with R(Z) greater than 850 ohms and SWR of 2.1" loading="lazy">
+          <figcaption>The MFJ-259B reads R and X independently. Here it shows R(Z)&gt;850 — the coil winding has not been adjusted yet and the impedance is nowhere near 50 ohms. This is exactly the kind of reading an SWR-only meter would misinterpret as a bad antenna. It is not a bad antenna; it is an unadjusted matching coil.</figcaption>
+        </figure>
+
         <div class="callout myth">
           <div class="callout-title">🔥 MYTH BUSTED</div>
           <p>Lowest SWR does not mean your antenna is resonant. On the lower bands especially, the point of lowest SWR and the point of zero reactance can be tens of kilohertz apart. Use an analyzer that reads reactance, not your transceiver's SWR bridge.</p>
@@ -202,10 +207,25 @@
           <p>The motor lead choke and all control wiring <strong>must be removed</strong> from the antenna before making any measurements. An improperly wound or installed choke affects the input impedance readings. After the coil adjustment is complete, reattach the choke and control wires. If reconnecting them changes the input impedance &mdash; even slightly &mdash; the choke is inadequate and must be rewound. See the <a href="antenna-controllers.html">Antenna Controllers</a> article for proper choke construction.</p>
         </div>
 
+        <figure>
+          <img src="../images/Antenna_Coil_Adjustment_Procedure_p1_3.jpeg" alt="Motor lead choke made from two stacked toroid cores wrapped in fiberglass tape with red and black motor control wires wound through" loading="lazy">
+          <figcaption>A properly constructed motor lead choke — two stacked toroids with the motor leads wound through and secured with fiberglass tape. This choke must be disconnected entirely before taking any impedance measurements at the feed point. Its presence on the antenna during measurement introduces errors that will send you chasing phantom problems.</figcaption>
+        </figure>
+
         <div class="callout callout-key">
           <div class="callout-title">KEY SPECS: The Shunt Coil</div>
           <p>Start with a coil of approximately <strong>1 &mu;H</strong> (the actual value will vary between 0.5 and 1.5 &mu;H depending on your antenna and mounting). Construction: <strong>0.75 to 1.25 inches inside diameter</strong>, <strong>7 to 9 turns</strong>, wound with <strong>#14 or #12 Thermaleze (enameled) wire</strong>. Keep the finished coil's form factor (length to diameter) close to 1:1. Long, skinny coils do not work well in this application. The coil must be in open air &mdash; do not enclose it in a box or mounting bracket, and keep it as clear of surrounding metal as possible.</p>
         </div>
+
+        <figure>
+          <img src="../images/Antenna_Coil_Adjustment_Procedure_p1_1.jpeg" alt="Shunt matching coil wound from heavy copper enameled wire, stretched wide with many turns, mounted at the antenna base on a vehicle body panel" loading="lazy">
+          <figcaption>A shunt matching coil mounted at the antenna feed point. This one has been stretched — the turns are spread apart to increase the inductance per unit of distributed capacitance. Note the coil is in open air, well clear of the mount hardware. That spacing matters; bury this coil in a bracket and you will never get the distributed capacitance under control.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Antenna_Coil_Adjustment_Procedure_p1_2.jpeg" alt="Compact shunt matching coil with tightly spaced turns wound from copper enameled wire, mounted near the antenna feed point on a vehicle body panel" loading="lazy">
+          <figcaption>A more compact coil configuration with tightly wound turns — fewer turns, smaller form factor. The form factor (length to diameter ratio) should stay close to 1:1. This version is close to the target geometry. Whether you stretch or compress depends entirely on what your analyzer tells you at zero reactance.</figcaption>
+        </figure>
 
         <h3 id="adjustment-steps">The Step-by-Step Procedure</h3>
 
@@ -226,10 +246,25 @@
           </li>
         </ol>
 
+        <figure>
+          <img src="../images/Antenna_Coil_Adjustment_Procedure_p1_4.jpeg" alt="MFJ-259B analyzer display showing 7.1343 MHz, R equals 23 ohms, X equals 0, SWR 2.1 — before shunt coil adjustment" loading="lazy">
+          <figcaption>Before adjustment: 40 meters, X = 0, R = 23 ohms, SWR 2.1. This is what the analyzer shows before the shunt coil has been properly adjusted. The reactance is zeroed — the antenna is resonant — but R is far below 50 ohms. The coil needs to be stretched to bring R up toward the 40-ohm target.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Antenna_Coil_Adjustment_Procedure_p1_5.jpeg" alt="MFJ-259B analyzer display showing 7.1589 MHz, R equals 46 ohms, X equals 4, SWR 1.1 — after successful shunt coil adjustment" loading="lazy">
+          <figcaption>After adjustment: 40 meters, R = 46 ohms, X = 4, SWR 1.1. This is what success looks like. R is near 46 ohms — close enough to the 40-ohm compromise target — and reactance is negligible. The SWR is essentially 1:1. This is what a properly adjusted shunt matching coil produces.</figcaption>
+        </figure>
+
         <div class="callout callout-key">
           <div class="callout-title">WHY 40 OHMS, NOT 50?</div>
           <p>The target R value of <strong>40 ohms</strong> on 80 and 40 meters is a deliberate compromise. If you aim for 50 ohms on the low bands, you will find that 17 and 15 meters read over 80 ohms (&gt;1.7:1 SWR) in most installations. The reason is the changing reactance of the shunt coil (including its distributed capacitance) as frequency increases. Distributed capacitance also explains why small, closely-spaced coils mounted inside an antenna bracket do not work well in this application.</p>
         </div>
+
+        <figure>
+          <img src="../images/Antenna_Coil_Adjustment_Procedure_p2_7.jpeg" alt="MFJ-259B analyzer display showing 14.173 MHz, R equals 42 ohms, X equals 4, SWR 1.2 — 20-meter verification reading after coil adjustment" loading="lazy">
+          <figcaption>20-meter verification after the same coil adjustment: R = 42 ohms, X = 4, SWR 1.2. This is exactly what the 40-ohm compromise buys you — the coil that reads 46 ohms on 40 meters tracks closely on 20 meters, giving a flat, usable SWR across both bands without touching the coil between them.</figcaption>
+        </figure>
 
         <p>If you cannot reach a workable compromise between 80 and 40 meters, or if the 20-meter R reading is far from 50 ohms at X = 0, the most likely cause is an inadequate ground plane under the antenna (the number one cause) or excessive shunt capacitance between the antenna coil and the vehicle body. Fix the mounting before proceeding.</p>
 

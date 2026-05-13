@@ -172,6 +172,11 @@
 
         <p>Let me start with the single most important rule in all of mobile radio wiring. Memorize it. Tattoo it on your forearm if you have to.</p>
 
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p1_0.jpeg" alt="Wiring diagram showing dedicated power leads from battery through battery management system and inline fuses to radio, with chassis ground point" loading="lazy">
+          <figcaption>The correct wiring topology: dedicated positive and negative leads run directly from the battery. The Battery Management System sits in the negative return path where it belongs. Each circuit has its own inline fuse sized to its wire gauge — not to the load.</figcaption>
+        </figure>
+
         <div class="callout warning">
           <div class="callout-title">⚠ WARNING</div>
           <p><strong>Never, ever, use existing vehicle wiring to power any radio gear.</strong> Not the cigarette lighter socket. Not an accessory tap. Not a fuse panel piggyback. Not the conveniently-located power wire behind the dash. Never. Run dedicated leads directly from the battery &mdash; both positive AND negative.</p>
@@ -186,6 +191,11 @@
         <p><strong>On older vehicles</strong> (roughly pre-2017), the traditional advice is correct: run the negative lead directly to the battery negative terminal. On <strong>modern vehicles</strong> equipped with an Intelligent Battery Sensor (IBS) on the negative terminal, this approach can cause problems. See the <a href="#modern-vehicles">Modern Vehicle Considerations</a> section below for the updated guidance.</p>
 
         <h2 id="wire-gauge">Wire Gauge: Getting It Right</h2>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p6_23.jpeg" alt="West Mountain Radio PWRcheck inline meter displaying voltage, amps, and watts" loading="lazy">
+          <figcaption>The West Mountain Radio PWRcheck gives you a real-time readout of volts, amps, and watts in your power cable. Put one of these inline and you'll know immediately whether your wiring is delivering adequate voltage under transmit load — or isn't.</figcaption>
+        </figure>
 
         <p>Wire gauge matters, and the correct gauge depends on two factors: the current draw of your equipment and the length of the cable run. Both matter. A wire that's adequate for an 8-foot run may be completely inadequate for a 14-foot run in a full-size pickup truck.</p>
 
@@ -254,11 +264,29 @@
           <p><strong>Fuses are I&sup2;T devices, not on/off switches.</strong> A 30-amp fuse will carry 40 amps for about 8 minutes before blowing. The same fuse will blow in roughly 3 seconds at 100 amps. This time-delay characteristic is intentional &mdash; it allows for normal startup surges without nuisance trips. It also means your wire can be damaged by a sustained moderate overcurrent well before the fuse actually opens. Don't interpret a fuse that hasn't blown as evidence that everything is fine. If your wire is getting warm under normal operating loads, the fuse is the wrong size, the wire is the wrong gauge, or both.</p>
         </div>
 
-        <figure class="image-placeholder">
-          <span class="placeholder-icon" aria-hidden="true">📷</span>
-          <span class="placeholder-label">Fuse holder installed near battery terminal</span>
-          <p>Maxi fuse holder mounted as close to the battery positive terminal as possible, with weather-resistant housing.</p>
-          <span class="placeholder-source">Seeking CC-licensed photo — see images/SOURCES.md</span>
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p4_15.jpeg" alt="Assorted Maxi blade fuses in multiple ampere ratings and colors" loading="lazy">
+          <figcaption>Maxi blade fuses in common ratings. Size the fuse to the wire gauge, not the equipment — a 30-amp fuse on 10 AWG wire, a 40-amp fuse on 8 AWG. The color coding is standardized: 20A yellow, 30A pink, 40A green, 60A blue.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p4_11.jpeg" alt="200-amp ANL fuse holder installed on number 6 red power cable" loading="lazy">
+          <figcaption>An ANL-style fuse holder on #6 heavy cable — the right choice for an amplifier feed or high-current multi-radio installation. Mount it within a few inches of the battery positive terminal. Nothing between the battery and this fuse is protected.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p5_17.jpeg" alt="Single J-Case fuse in red plastic housing" loading="lazy">
+          <figcaption>A J-Case fuse — increasingly common in modern vehicle fuse blocks. The format looks superficially similar to a Maxi fuse but is <em>not interchangeable</em>. J-Case fuses also have an extended I²T characteristic; do not substitute them in amateur radio power circuits.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p4_14.jpeg" alt="Littelfuse MAXI Slo-Blo fuse time-current characteristic curves for 20A through 60A ratings" loading="lazy">
+          <figcaption>Littelfuse I²T curves for Maxi Slo-Blo fuses. Note that a 30-amp fuse will pass 100 amps for about 3 seconds before opening — your wire can sustain serious damage in that window. Fuses protect wire from prolonged overcurrent, not instantaneous shorts.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p6_24.jpeg" alt="West Mountain Radio PWRguard inline power protection device with indicator LEDs" loading="lazy">
+          <figcaption>The West Mountain Radio PWRguard monitors voltage, temperature, and current and will disconnect the load if any parameter goes out of bounds. It is not a substitute for proper fusing, but it adds a useful layer of protection for equipment connected to an unattended installation.</figcaption>
         </figure>
 
         <h2 id="connectors">Connectors: Anderson Powerpoles</h2>
@@ -274,11 +302,29 @@
 
         <p>One color convention note: the ARES/RACES standard uses red and black housings for positive and negative DC power connections, and you should follow that convention for your radio's power leads. Reserve red and black exclusively for DC power. For motor leads, control wiring, or actuator connections, use a different color pair&mdash;yellow and blue, for example&mdash;so that motor leads are visually distinct from power wiring and cannot be accidentally cross-connected.</p>
 
-        <figure class="image-placeholder">
-          <span class="placeholder-icon" aria-hidden="true">📷</span>
-          <span class="placeholder-label">Anderson Powerpole PP45 connections</span>
-          <p>Properly crimped PP45 Powerpole connectors on 10 AWG wire. Red/black housings for DC power leads.</p>
-          <span class="placeholder-source">Seeking CC-licensed photo — see images/SOURCES.md</span>
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p3_10.png" alt="Anderson Powerpole connector family: PP15/45 (yellow and red), PP120 (blue), and PP180 (green) sizes" loading="lazy">
+          <figcaption>The Anderson Powerpole family. PP45 (red) is the correct choice for most HF transceiver power leads. PP120 and PP180 are for amplifier feeds and heavy service. All sizes are polarized and pin-compatible within their class — you cannot accidentally reverse polarity.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p4_13.jpeg" alt="Red and black battery terminal stud adapters with copper ring lugs and insulated ring terminals" loading="lazy">
+          <figcaption>Battery terminal stud adapters (red for positive, black for negative) with a selection of copper compression lugs and insulated ring terminals. Use the correct lug size for your wire gauge — a lug crimped onto undersized wire is a connection waiting to fail.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p3_7.jpeg" alt="West Mountain Radio red-handled ratcheting Powerpole crimping tool" loading="lazy">
+          <figcaption>The West Mountain Radio Powerpole crimping tool. A ratcheting crimper like this applies consistent, repeatable force and will not release until the crimp is complete. If you're serious about Powerpole installations, this tool pays for itself on the first connector.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p3_8.jpeg" alt="Diagonal cutters and combination wire stripper/crimper hand tools" loading="lazy">
+          <figcaption>The two hand tools you'll use most: diagonal cutters for cleanly nipping wire ends, and a wire stripper/crimper for insulated terminals and smaller gauge work. Keep both sharp — a dull stripper nicks conductor strands and creates a weak point under vibration.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p3_9.jpeg" alt="Hydraulic cable lug crimping tool with die set in yellow carrying case" loading="lazy">
+          <figcaption>A hydraulic crimper with interchangeable dies — the right tool for large-gauge cable lugs (4 AWG and heavier). Hand-squeezed ratchet crimpers don't develop enough force for large copper lugs. Rent one, borrow one, or buy one if you do large-gauge work regularly.</figcaption>
         </figure>
 
         <h2 id="cable-routing">Cable Routing</h2>
@@ -301,12 +347,37 @@
 
         <p>The best routing path in most vehicles is along the rocker panel or door sill area, under the carpet and trim. This path typically avoids the major electronic modules and provides good physical protection for the cable. Use grommets where cables pass through the firewall, and secure the cable every 12 to 18 inches with cable ties or adhesive-backed mounts so it doesn't dangle, vibrate, or chafe.</p>
 
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p6_19.jpeg" alt="Vehicle rocker panel area with trim pulled back, showing cable routing path along sill" loading="lazy">
+          <figcaption>The rocker panel sill with trim pulled back — the correct routing path for power cables in most vehicles. The channel runs the full length of the cabin well away from ABS, airbag, and ECU wiring. Cables laid here and re-covered by the trim panel are protected from physical damage and invisible when installed.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p6_20.jpeg" alt="Close view of vehicle door sill cable routing channel with factory and added wiring" loading="lazy">
+          <figcaption>Another look at the sill routing channel. Keep your cable tight against the inner sill and away from the factory wiring harnesses that often run the same path. Zip-tie at intervals — a loose cable will eventually chafe through its insulation on a body edge.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p6_22.jpeg" alt="Severely burned and melted wire insulation in vehicle rocker channel, red arrows pointing to damage" loading="lazy">
+          <figcaption>This is what happens when undersized or inadequately fused wire runs in a confined space and overheats. The insulation carbonizes, the wire melts, and if you're lucky the fire stays small. The fuse was either oversized, missing, or at the wrong end of the run. Don't let this be your installation.</figcaption>
+        </figure>
+
         <div class="callout tip">
           <div class="callout-title">&#128161; TIP</div>
           <p>When drilling a new hole through the firewall, a step drill bit cuts clean holes in sheet metal without walking or tearing. For a professional result, a <strong>Rotacut</strong> (a specialized rotary punch tool) creates a perfectly clean, round hole in sheet metal without drilling &mdash; no sharp edges or flanges to clean up afterward. In any case, always check both sides of the firewall before drilling &mdash; fuel lines, brake lines, and wiring harnesses often run directly against the firewall on the engine side where they can't be seen from inside the vehicle. Brake lines are commonly attached to the engine side of the firewall directly below the brake pedal. Once the hole is drilled, install a <strong>3/4-inch ID grommet</strong> (available at any well-stocked hardware store). To make pulling the wire easier, apply a small amount of wire lubricant (Ideal #77 or equivalent) to the cable's outer surface. Feed the wire from the passenger compartment to the under-hood fuse blocks first, then to its final destination &mdash; in almost all cases the amount of wire needed from the firewall outward is much less than that needed behind it.</p>
           <p>Most modern vehicles have a fresh air inlet plenum just behind the hood, sometimes containing the windshield wiper assembly and cabin air filter. For this reason, the upper area of the firewall should be avoided. Choose a spot outside any area where the wire might be stepped on or pinched &mdash; the closer to the left kick panel (on left-hand drive vehicles) the better.</p>
           <p>At connections and terminations, <strong>never use twist-on wire nuts</strong> (the plastic caps used in residential electrical work). They are not designed for vibration, and they will loosen and fall off in a vehicle. Use proper crimp terminals, or solder-and-heatshrink at every connection.</p>
         </div>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p5_18.jpeg" alt="Rotacut chassis punch tool in two pieces showing punch and die" loading="lazy">
+          <figcaption>A Rotacut rotary chassis punch — the right way to make a clean, round firewall hole without drilling. No ragged edges, no burrs to cut through cable insulation. If you're doing a permanent installation, it's worth owning one of these or borrowing one from a shop.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p6_21.jpeg" alt="Pink heat gun used for shrinking heat-shrink tubing" loading="lazy">
+          <figcaption>A small heat gun for shrinking adhesive-lined heat-shrink tubing over connections and cable entry points. Use adhesive-lined (dual-wall) heat shrink, not the plain single-wall type, anywhere moisture or vibration is a concern — which in a vehicle is everywhere.</figcaption>
+        </figure>
 
         <h2 id="insulation-stranding">Insulation, Stranding, and Wire Types</h2>
 
@@ -320,6 +391,16 @@
         <p>Insulation temperature ratings matter in a vehicle environment. The insulation temperature rating should be at least <strong>90&deg;C (195&deg;F) in the passenger compartment</strong> and <strong>105&deg;C (220&deg;F) in the engine compartment</strong>. All exposed wire should be covered with protective split loom regardless of the quality or type of wire used.</p>
 
         <p>On strand count: construction grade THHN and THWN wire has an outer nylon jacket making it very abrasion resistant, but it is typically 7 or 19 strand and rather stiff. Automotive wire is usually 49 strand, much easier to work with, and will generally stay where you put it. High strand count "super-flex" wire like that sold at mobile sound stores is almost too flexible. Avoid after-market sound system wire insulated with plain polyethylene &mdash; it is moisture resistant but has poor heat and flame resistance. Do not use it for under-hood wiring.</p>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p2_5.jpeg" alt="MFJ DC Line RFI Filter with Anderson Powerpole connectors" loading="lazy">
+          <figcaption>An MFJ DC line RFI filter — a ferrite-core LC filter that attenuates noise conducted in either direction on the power leads. Useful when you've done everything else right and still have residual noise coupling through the supply. It is not a substitute for proper wiring; it is a tool of last resort after the fundamentals are correct.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p3_6.png" alt="Multi-position power distribution block with red Anderson Powerpole connectors" loading="lazy">
+          <figcaption>A power distribution block with Powerpole connectors — the correct way to power multiple pieces of equipment from a single battery run. One heavy gauge feed from the battery, individually fused outputs to each device. This is far better than daisy-chaining power connectors or running multiple separate cable runs to the battery.</figcaption>
+        </figure>
 
         <p>One more note on super-flex wire including high strand count welding cable: you must use crimp-type connectors to properly terminate it. Soldering these with an iron requires a very large iron, and even then the solder wicks badly, creating more problems than it solves. This is not a concern with 49-strand automotive wire if you know how to solder.</p>
 
@@ -355,6 +436,11 @@
           <p>The mega fuses in the BMFB protect the <strong>vehicle's</strong> wiring from catastrophic shorts. They do NOT protect your accessory wire. A 150-amp mega fuse will not blow for a 30-amp short on your 10 AWG radio wire &mdash; your wire will melt and potentially start a fire long before that mega fuse trips. You still need your own correctly-sized inline fuse immediately after your connection point.</p>
         </div>
 
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p5_16.png" alt="Powergate or battery booster device with Anderson Powerpole and ring terminal connections" loading="lazy">
+          <figcaption>A DC voltage booster device — connects between the battery and the radio to maintain stable voltage during the charging system excursions described above. Useful on vehicles where smart alternator behavior causes audio artifacts or equipment resets. Not necessary for most installations, but worth knowing about.</figcaption>
+        </figure>
+
         <p>Some BMFB units have an auxiliary stud terminal specifically for accessories. If yours has one, you can connect your positive lead there with a ring terminal, then install your inline fuse within a few inches. If there is no auxiliary stud, you may need to add an aftermarket fuse distribution block that clamps alongside the BMFB, or access the battery terminal directly if mechanically possible. Consult your vehicle's service manual for the specific layout.</p>
 
         <h3 id="ibs-sensor">Intelligent Battery Sensors (IBS)</h3>
@@ -378,6 +464,11 @@
 
         <p><strong>The updated recommendation for the negative lead on IBS-equipped vehicles:</strong> Connect to a <strong>factory ground stud</strong> on the engine block or inner fender, near the battery. These are robust, low-impedance ground points that are part of the vehicle's main ground path. All current flowing through chassis ground passes through the IBS on its way back to the battery, so the sensor can properly account for your radio's current draw.</p>
 
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p1_1.jpeg" alt="Battery negative terminal with red arrow pointing to Intelligent Battery Sensor module clamped between cable end and post" loading="lazy">
+          <figcaption>The IBS sits between the negative cable end and the battery post — the red arrow shows exactly where. If you connect your radio's negative lead directly to the post above this sensor, the BCM cannot see your current draw. On BMW and Mercedes this will generate fault codes within minutes. On GM trucks it's more tolerant but still wrong.</figcaption>
+        </figure>
+
         <p>This is a departure from the original K0BG advice, but it is necessary on modern vehicles. The key nuance: a factory ground stud on the engine block within a few feet of the battery is a <em>very different thing</em> from a random body bolt in the trunk. The impedance difference between a short run to a factory engine block stud and a direct battery terminal connection is negligible at DC. The noise problems K0BG warned about came from using thin chassis sheet metal as a return path over long distances &mdash; that is still bad advice. A factory ground stud is not.</p>
 
         <div class="callout tip">
@@ -387,6 +478,11 @@
 
         <h3 id="smart-alternators">Smart Alternators and Variable Voltage</h3>
 
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p2_4.jpeg" alt="Automotive alternator showing rectifier assembly, rotor, and stator" loading="lazy">
+          <figcaption>A typical automotive alternator — rectifier, stator, and rotor visible. In modern vehicles, the field current through this assembly is continuously commanded by the ECM rather than regulated by a simple internal regulator. The result is charging voltage that varies intentionally over a wide range.</figcaption>
+        </figure>
+
         <p>Modern vehicles do not maintain a constant 13.8-volt charging voltage. The ECM commands the alternator field current based on battery state of charge, engine load, and fuel economy targets. GM calls this Load Response Control (LRC). Ford calls it Smart Charging. The practical result:</p>
 
         <ul>
@@ -395,6 +491,11 @@
           <li><strong>Steady cruise, battery full:</strong> Can drop to 12.4&ndash;13.0V (alternator partially decouples to save fuel)</li>
           <li><strong>After a start-stop restart:</strong> Brief burst to 14.8V+ to replenish quickly</li>
         </ul>
+
+        <figure>
+          <img src="../images/Wiring_and_Grounding_p1_2.jpeg" alt="Engine bay of yellow car with annotation arrow pointing to DC-DC Accessory Voltage Booster module near battery" loading="lazy">
+          <figcaption>Some modern vehicles include a DC-DC accessory voltage booster — a converter that maintains stable accessory-circuit voltage even while the smart alternator is commanding reduced output. If your vehicle has one, your radio is already benefiting from regulated supply voltage. If not, you'll see the variation described above.</figcaption>
+        </figure>
 
         <p>Most modern transceivers (Icom IC-7300, Yaesu FT-891, Kenwood TS-480, etc.) are designed for 13.8V &plusmn;15% and will handle this range without issue, though output power may dip slightly at the low end. The bigger concern is <strong>motorized screwdriver antennas</strong> &mdash; motor speed varies with voltage, which affects tune times and can confuse turn-counting controllers that assume consistent motor speed. SWR-seeking controllers are less affected.</p>
 

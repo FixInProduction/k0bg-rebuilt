@@ -168,6 +168,11 @@
 
         <p>Spark ignition noise presents as rapid static or hash that varies with engine RPM. It is one of the oldest and most recognizable forms of mobile RFI. The sound is distinctive&mdash;a raspy, ticking buzz that speeds up as you accelerate and slows as you decelerate.</p>
 
+        <figure>
+          <img src="../images/Ignition_Notes_on_RFI_p1_0.jpeg" alt="Gasoline direct injection fuel injector, a high-pressure solenoid valve" loading="lazy">
+          <figcaption>A gasoline direct injection (GDI) injector. Unlike port-fuel injectors, GDI units operate at pressures up to 2,900 psi and fire with sharp current pulses that generate significant broadband RF noise — a source of ignition hash that did not exist in carbureted or early fuel-injected engines.</figcaption>
+        </figure>
+
         <p>The severity of ignition noise is directly related to the age and condition of the spark plugs and spark plug wires. Worn plugs with eroded electrodes require higher voltage to fire, which means stronger RF impulses. Degraded plug wires with cracked or deteriorated insulation leak RF energy. In many cases, simply replacing the plugs and wires with quality components significantly reduces or eliminates the problem.</p>
 
         <p>Proper bonding of the vehicle body panels is the first line of defense. The hood, fenders, and exhaust system should all be bonded to the main chassis. This contains the ignition noise within the engine compartment rather than allowing it to radiate from every seam and gap in the body.</p>
@@ -201,13 +206,38 @@
 
         <p>Power cabling is frequently and wrongly blamed for RFI problems. In a properly installed system with adequate wire gauge, direct battery connections, and proper fusing, the power cables are not a significant RFI path. When operators experience noise that seems related to their power wiring, the actual cause is almost always poor bonding or common mode current on the coax&mdash;not the power cables themselves.</p>
 
+        <figure>
+          <img src="../images/RFI_Problems_p2_3.png" alt="Multi-position 12V fused power distribution block with binding post terminals" loading="lazy">
+          <figcaption>A properly fused power distribution block keeps each load on its own circuit. This is not an RFI fix — it is basic installation practice. Individual fusing ensures that a fault in one accessory does not take down the entire installation, and it keeps power leads short and traceable when you are hunting a noise source.</figcaption>
+        </figure>
+
         <h2 id="infotainment">Modern Infotainment and Audio Systems</h2>
 
         <p>Here is a particularly annoying one. Modern vehicles have sophisticated audio and infotainment systems with amplifiers that are wired hot at all times&mdash;they draw power even when the system appears to be off. These amplifiers have high gain stages that make them both sources of RFI and susceptible to RF energy from your transmitter.</p>
 
+        <figure>
+          <img src="../images/RFI_Problems_p2_4.jpeg" alt="Icom HF transceiver installed in a vehicle dashboard double-DIN slot" loading="lazy">
+          <figcaption>An Icom transceiver integrated into the factory double-DIN opening — a clean factory-style installation. When the vehicle's own infotainment system is removed or relocated like this, the switching amplifiers that were generating noise often go with it. This is not always practical, but it illustrates that sometimes the best fix for infotainment RFI is simply removing the offending hardware.</figcaption>
+        </figure>
+
         <p>On the receive side, switching power supplies inside the head unit and amplifier modules generate broadband noise that can be surprisingly strong. On the transmit side, RF energy from your antenna can be demodulated by the audio amplifier, producing your voice or a distorted version of it through the vehicle speakers. Both problems are maddening.</p>
 
         <p>Ferrite snap-on beads on the wiring to the amplified device can help. The ideal approach is to wind multiple turns through a single snap-on bead, since impedance increases by the square of the number of turns&mdash;multiple turns on one bead is far more effective than one turn on multiple beads. However, there is a practical difficulty: factory wiring harnesses rarely have enough slack to wind multiple turns through a snap-on bead. If you are limited to a single pass through the ferrite, you will need to stack several beads to achieve useful impedance, but this is a distant second-best to the multi-turn approach. Apply the beads as close to the amplified device as possible, not at the radio end of things.</p>
+
+        <figure>
+          <img src="../images/The_Proper_Split_Beads_to_Suppress_RFI_p1_0.jpeg" alt="Split-core ferrite clamp-on bead shown open, ready to snap onto a cable" loading="lazy">
+          <figcaption>A split-core snap-on ferrite bead shown open. These clamp directly onto existing wiring without cutting the harness — a major advantage when working with factory cables. The catch: one pass through the core gives you minimal impedance. Loop the cable through multiple times if the harness has slack, or stack several beads for a single-pass installation.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/RFI_Problems_p1_0.jpeg" alt="Split-core ferrite snap-on bead with a cable looped through it multiple times" loading="lazy">
+          <figcaption>Multiple turns through a single snap-on bead. Impedance scales with the square of the number of turns, so three turns gives nine times the impedance of one turn on the same core. If there is any way to loop the cable through more than once, do it. This is the right way to use snap-on beads.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/RFI_Problems_p1_1.jpeg" alt="Multi-turn toroid choke wound with red and black wire on stacked ferrite cores, wrapped in fiberglass tape" loading="lazy">
+          <figcaption>A properly wound multi-turn choke on stacked ferrite cores, secured with fiberglass tape. This is the high-impedance solution when you need maximum common-mode rejection and have the flexibility to build your own choke rather than clamp a snap-on bead onto existing harness wiring. Several turns of paired conductors through a high-permeability core produces far more impedance than any number of snap-on beads used single-turn.</figcaption>
+        </figure>
 
         <div class="callout tip">
           <div class="callout-title">💡 TIP</div>

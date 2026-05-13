@@ -172,13 +172,68 @@
 
         <p>The market for mobile HF amplifiers is thin. For years, the only purpose-built 500-watt class mobile HF amplifier was the Ameritron ALS-500M. <em>[Editor's note: Ameritron/MFJ ceased all manufacturing in May 2024. The ALS-500M is no longer produced new. See <a href="#amplifier-market-2026">updated availability</a> below.]</em> And let's be honest about the numbers: while it was marketed as a 500-watt amplifier, the ALS-500M realistically produces around 400 watts PEP on a good day with adequate primary voltage. Mobile primary voltage is rarely "adequate" by the amplifier's standards, particularly while transmitting with the engine off.</p>
 
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p1_1.jpeg" alt="Ameritron ALS-500M solid-state no-tune mobile amplifier front panel with DC ammeter, band switch, and power controls" loading="lazy">
+          <figcaption>The Ameritron ALS-500M — for years, the only purpose-built 500W-class mobile HF amplifier. The DC ammeter is not optional monitoring; it tells you immediately when primary voltage is sagging and the amplifier is starving. Note the THERMAL and LOAD FAULT indicators on the left — if either lights up during operation, something in your installation is wrong.</figcaption>
+        </figure>
+
         <p>The ALS-500M uses four MOSFET devices in a push-pull broadband configuration. It requires no tuning, which is convenient, and it draws substantial current from the vehicle's electrical system, which is not. Plan on at least 80 amps on voice peaks. If your wiring isn't up to the task &mdash; and if you haven't read the <a href="wiring.html">Wiring</a> article, it probably isn't &mdash; you're going to have voltage drop problems that will limit the amplifier's output and potentially damage it.</p>
 
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p2_4.jpeg" alt="Ameritron ARI-500 Radio Interface unit with REMOTE A and B jacks on left and RADIO jack on right with PWR and LINK indicator LEDs" loading="lazy">
+          <figcaption>The Ameritron ARI-500 Radio Interface provides T/R keying between the ALS-500M and the transceiver. The LINK LED tells you the interface has communication with the amplifier; the PWR LED confirms power. If neither lights up when you key the transceiver, start with the cable between the radio's ALC/KEY output and the interface — that's where most of these problems originate.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p2_5.jpeg" alt="Ameritron ALS-500RC remote control panel with ammeter, band switch, power switch, and PWR TX and O/L indicator LEDs" loading="lazy">
+          <figcaption>The ALS-500RC remote control puts the ammeter and band switch at the operator position while the amplifier rides in the trunk. The O/L (overload) LED is your warning that you are overdriving. If it lights during normal voice operation, reduce drive immediately — the amplifier is protecting itself, but repeated trips through overload protection shortens the finals' service life.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p2_8.png" alt="Transistor circuit schematic for T/R switching using two 2N3904 NPN transistors, with HSEND input, 100k and 3.3k ohm resistors, and T/R output to amplifier" loading="lazy">
+          <figcaption>A simple two-transistor T/R switching interface using common 2N3904 NPN devices. Q1 serves as a logic level translator for the HSEND signal from the transceiver; Q2 drives the T/R output to the amplifier. The 100k input resistor protects Q1 from transceiver output voltages. Build this on a small piece of perfboard and mount it inside a shielded enclosure — at amplifier power, any unshielded control wiring is an antenna for RF ingress.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p2_7.jpeg" alt="Wiring diagram for SGC SG500 remote interface showing On/Off/Reset and LED connections through a 1-amp fuse to a 4-pin header plug with a resistor" loading="lazy">
+          <figcaption>The SGC SG500 remote wiring diagram. The 1-amp fuse is critical — it protects the remote head from the kind of current surge a bad T/R transition can produce at amplifier power levels. The resistor value is specified in the SGC manual and sets the LED current. Do not omit it or substitute a larger value without verifying the LED is not being damaged.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p2_9.jpeg" alt="Hamteck Bandmaster III band decoder with LED indicators for amateur bands from 160 through 6 meters" loading="lazy">
+          <figcaption>The Hamteck Bandmaster III band decoder reads the transceiver's band data output and automatically selects the correct band position on an external amplifier or antenna switch. With an amplifier in the trunk and the band switch buried out of easy reach, automatic band decoding is not a luxury — switching the wrong band on the amplifier's output network while transmitting can cause real damage.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p1_0.jpeg" alt="Small black box mobile amplifier or interface unit with single control knob on front panel" loading="lazy">
+          <figcaption>A compact interface or low-power amplifier unit — the kind of small accessory box that often gets buried in a center console or mounted to the side of a larger unit. Whatever it is, label it. A mobile installation accumulates black boxes quickly, and six months from now you will not remember what that unlabeled box does or which cables to pull when something goes wrong.</figcaption>
+        </figure>
+
         <p>Used amplifiers occasionally surface. The SGC SG-500, the Mirage units, and a handful of others have come and gone over the years. If you find one in working order, the same principles apply. But be cautious about used amplifiers with unknown histories. A mobile amplifier lives a hard life: heat, vibration, voltage transients, and frequently inadequate cooling.</p>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p3_16.jpeg" alt="SGC SG-500 SmartPowerCube 500-watt HF linear amplifier front panel with input/output connectors and indicator panel" loading="lazy">
+          <figcaption>The SGC SG-500 SmartPowerCube — one of the few alternatives to the ALS-500M in the used market. SGC's auto-sensing T/R switching and built-in low-pass filtering made it popular, but the remote-head interface requires careful attention to RFI shielding of the control cable at amplifier power levels.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p3_15.jpeg" alt="Micom MA1000B linear amplifier, compact black enclosure" loading="lazy">
+          <figcaption>The Micom MA1000B and similar units from Mirage occasionally surface on the used market. Verify output power and inspect for signs of thermal stress before buying any used mobile amplifier with an unknown history.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p4_17.jpeg" alt="Mirage linear amplifier, rack-style enclosure with front panel controls" loading="lazy">
+          <figcaption>Mirage produced several HF linear amplifiers over the years. Like all used mobile amplifiers, these units should be bench-tested across all bands before installation — heat, vibration, and voltage transients take their toll on internal connections and final transistors.</figcaption>
+        </figure>
 
         <h2 id="power-wiring-specs">Power Wiring: The Numbers You Need</h2>
 
         <p><a href="../calculators/wire-fuse.html" class="calc-link">🔌 Wire &amp; Fuse Sizing Calculator — enter your amplifier's current draw →</a></p>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p3_12.jpeg" alt="Battery or power supply box mounted in vehicle trunk with wiring connections and mounting bracket" loading="lazy">
+          <figcaption>A properly mounted auxiliary power box in the trunk — the right approach for supplying an HF amplifier. The mounting bracket keeps it from shifting; the wiring exits through a protected route. Every high-current connection in this run should be torqued to spec and inspected annually. Resistance at a terminal that is fine at 10 amps becomes a fire hazard at 80.</figcaption>
+        </figure>
 
         <div class="callout callout-key">
           <div class="callout-title">KEY VALUES: Amplifier Power Demands</div>
@@ -190,6 +245,11 @@
         <p>Drive level discipline is the single most important operational habit for mobile amplifier users. Most mobile amplifiers require only 50 to 65 watts PEP for full rated output (the ALS-500 falls in this range; some require as little as 25 watts). Overdriving is the fastest way to generate excessive IMD and shorten final transistor life.</p>
 
         <p>Set drive level using SSB voice &mdash; never CW. Most electrical systems cannot sustain the 90-amp load of continuous CW key-down for more than a few seconds. SSB voice peaks are representative of real operating conditions. Start at 20 watts input and increase incrementally. You are looking for the point where additional drive no longer produces a proportional increase in output. When 30 watts in yields 300 watts out and 40 watts in yields 400 watts out, but 50 watts in yields only 450 watts out, you are entering the non-linear portion of the power curve. That non-linearity is IMD. Back off one step from that point.</p>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p2_6.jpeg" alt="Graph of peak input power versus peak output power showing linear operating region in green and non-linear overdrive region in red with a horizontal blue line at approximately 45 watts" loading="lazy">
+          <figcaption>This input-versus-output power curve tells the whole story. The green line is the linear region where the amplifier behaves properly. The blue horizontal line is where you should set your drive level. The red curve is where IMD begins — finals are running hot, the signal sounds bad on the other end, and you are shortening transistor life with every transmission. Drive to the knee of the curve, not past it.</figcaption>
+        </figure>
 
         <div class="callout callout-warning">
           <div class="callout-title">WARNING: Speech Compression With Amplifiers</div>
@@ -241,6 +301,11 @@
 
         <p>Remotely tuned antennas like the Scorpion 680 series are popular with amplifier users, and for good reason: they are solidly built and handle the power. However, the automatic antenna controllers paired with these antennas are susceptible to RFI ingress, and that susceptibility is dramatically exacerbated at amplifier power levels. The controller may exhibit erratic tuning, fail to find a match, or lock up entirely. Ferrite chokes on every control cable are mandatory, not optional.</p>
 
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p1_2.jpeg" alt="Tall mobile HF screwdriver antenna with clear acrylic coil housing and stainless steel whip" loading="lazy">
+          <figcaption>A screwdriver antenna with a clear coil housing — the right way to build one for amplifier service. You can see the winding directly, verify turn spacing, and inspect for arcing or hot spots. At 400 watts, a close-wound coil with excessive inter-turn capacitance will arc over. The coil construction has to be right before you add power.</figcaption>
+        </figure>
+
         <h2 id="mounting-and-swr">Fix Your Mounting First</h2>
 
         <p>If your antenna mount is questionable at 100 watts, it is dangerous at amplifier power. A lip mount with a mediocre ground connection will arc at high power. A trunk-lip mount that relies on set screws biting through paint will develop a hot spot that melts the paint, loosens the connection, and makes the problem progressively worse. A mag mount is simply not suitable for amplifier use. Period.</p>
@@ -271,11 +336,21 @@
 
         <p>Heat is the other consideration. The ALS-500M and similar amplifiers generate substantial heat. Inside a closed trunk on a summer day, temperatures can exceed 150 degrees Fahrenheit before you even key up. The amplifier needs airflow. If it's trunk-mounted, some provision for ventilation is essential &mdash; whether that's a small fan, vents cut into the trunk floor or package shelf, or simply leaving the trunk partially open during extended operating sessions.</p>
 
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p2_11.jpeg" alt="Amplifier or battery box mounted in vehicle trunk area, secured with bracket, with wiring connections visible" loading="lazy">
+          <figcaption>Trunk mounting done right: the amplifier is secured with a proper bracket, not sitting loose on the spare tire. Keep the mass low and forward in the trunk. Every cable — power, coax, control — needs strain relief. An unsecured amplifier in a rear-end collision becomes a 20-pound projectile.</figcaption>
+        </figure>
+
         <h2 id="power-wiring">Power Wiring for Amplifier Service</h2>
 
         <p>The amplifier's power demands are significant. The ALS-500M draws upward of 80 amps on SSB voice peaks. That current must come from the vehicle's battery and alternator through wiring that can handle it without excessive voltage drop. At 80 amps, even small resistances matter. A 0.05-ohm total resistance in the power wiring &mdash; which sounds negligible &mdash; drops 4 volts at 80 amps. That's the difference between 13.8 volts at the amplifier (good) and 9.8 volts (the amplifier shuts down or produces anemic output).</p>
 
         <p>The <a href="wiring.html">Wiring</a> article covers this in detail, but the short version is: run dedicated, heavy-gauge power cables directly from the battery to the amplifier. Use 4 AWG minimum, 2 AWG preferred. Both positive and negative. Fused at the battery. No exceptions, no compromises, no sharing the transceiver's power cable. The amplifier gets its own dedicated power run.</p>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p2_10.jpeg" alt="Custom voltage monitoring panel with blue digital display showing 13.72 volts, indicator LED, and toggle switches mounted near transceiver" loading="lazy">
+          <figcaption>A dedicated voltage monitor at the amplifier terminals is worth the trouble. This one reads 13.72V — adequate, but watch that number closely as you transmit. If primary voltage at the amplifier sags below 12V under load, your wiring run has too much resistance. The solution is heavier wire, not a bigger fuse.</figcaption>
+        </figure>
 
         <h2 id="summary">Summary</h2>
 
@@ -290,6 +365,16 @@
         <p>The mobile HF amplifier market was thin when this article was first written, and it has gotten thinner. Ameritron, which manufactured the ALS-500M referenced above, was a subsidiary of MFJ Enterprises. MFJ ceased all manufacturing in May 2024 after 52 years. The ALS-500M is no longer produced new. Remaining dealer stock may still exist, but the primary source for this amplifier is now the used market.</p>
 
         <p>The used market is your friend here. Mobile HF amplifiers are built to take abuse &mdash; heat, vibration, voltage swings &mdash; and a well-maintained unit has years of service left. But "well-maintained" is the operative phrase. Inspect before buying. Test before installing. Verify output power across all bands with a proper load. Check for signs of overheating, corroded connectors, and loose mounting hardware. A used amplifier with a known history from a fellow operator is worth more than a mystery box from a swap meet.</p>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p3_13.jpeg" alt="Ameritron ALS-500M solid-state no-tune mobile amplifier front panel, showing band switch positions from 1.5–2.3 through 14.5–21.6 MHz" loading="lazy">
+          <figcaption>The ALS-500M's band switch selects the appropriate output network for each frequency range — 1.5–2.3, 2.3–4.4, 4.4–8.0, 8.0–14.5, 14.5–21.6, and AUX. Setting the switch correctly is not optional; using the wrong position stresses the output network and degrades efficiency. With Ameritron gone, learn these positions well — the manual won't be reprinted.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amplifiers_Commercial_p3_14.jpeg" alt="Large gold-colored high-power HF linear amplifier with dual cooling fans on top and multiple front panel controls and a power meter" loading="lazy">
+          <figcaption>High-power linear amplifiers like this one — built for fixed or semi-fixed mobile use — represent the top end of the used market. Dual fans on the heat sink are a good sign; adequate cooling is what separates a long-lived amplifier from an expensive paperweight. Current draw at this power level will dictate serious power system upgrades.</figcaption>
+        </figure>
 
         <h3 id="qrp-to-mobile">The QRP-to-Mobile Niche</h3>
 

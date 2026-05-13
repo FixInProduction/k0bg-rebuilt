@@ -167,11 +167,21 @@
 
         <h2 id="the-impedance-reality">The Impedance Reality</h2>
 
+        <figure>
+          <img src="../images/Antenna_Matching_p1_0.jpeg" alt="Tall stainless steel HF mobile whip antenna with loading coil, showing full antenna assembly from base to tip" loading="lazy">
+          <figcaption>A properly constructed HF mobile whip — loading coil mid-mount, stainless steel whip, base insulator visible at the bottom. A well-built antenna like this, correctly installed, will present approximately 25 ohms at resonance. That is not a defect — it is physics, and it is why you need a matching device.</figcaption>
+        </figure>
+
         <p>Here is the fact that trips up most newcomers: a correctly mounted HF mobile antenna, at resonance, typically presents a feed-point impedance of around 25 ohms resistive. In a 50-ohm system, that is a 2:1 SWR &mdash; right at the threshold where your radio starts cutting power. This is normal. This is expected. And this is exactly why you need a matching device.</p>
 
         <p>If your unmatched SWR at resonance is significantly worse than 2:1 &mdash; say 3:1 or higher &mdash; you do not have a matching problem. You have an antenna or mounting problem. No matching device will fix poor bonding, a bad ground plane, or a defective antenna. Fix the underlying issue first, then worry about matching. Putting a matching network on a broken antenna system is like putting a fresh coat of paint on a car with a blown engine.</p>
 
         <h2 id="reactance-vs-swr">Reactance vs. SWR: The Critical Distinction</h2>
+
+        <figure>
+          <img src="../images/Antenna_Matching_p1_2.jpeg" alt="Graph showing resonant point and lowest SWR point as two distinct frequencies on a reactance-versus-frequency curve" loading="lazy">
+          <figcaption>This diagram illustrates the core mistake operators make every day. The resonant point — where reactance crosses zero — and the lowest SWR point are <em>not</em> the same frequency. Adjusting your antenna to the lowest SWR reading puts you to the right of resonance, not at it.</figcaption>
+        </figure>
 
         <p>This is where most people get it wrong, and I mean <em>most</em> people. Sit down, because this matters.</p>
 
@@ -185,6 +195,16 @@
         <p>The only way to find true resonance is with an antenna analyzer that has a reactance readout. You want the frequency where X equals zero (or as close to zero as you can get). The SWR at that point will typically be around 2:1 for an unmatched mobile antenna &mdash; and that is correct. That is where you apply your matching device.</p>
 
         <p>An SWR-only meter or an analyzer without reactance display is inadequate for this task. If your analyzer does not show reactance, get one that does. This is not the place to economize.</p>
+
+        <figure>
+          <img src="../images/Antenna_Matching_p1_3.jpeg" alt="MFJ-259B antenna analyzer display showing 7.134 MHz, R equals 23, X equals 0, SWR 2.1 — resonance confirmed before matching" loading="lazy">
+          <figcaption>An MFJ-259B reading at resonance: 7.134 MHz, R=23, X=0, SWR 2.1. This is exactly what a correctly installed, unmatched mobile antenna should show — X at zero, SWR around 2:1. This is your starting point, not your problem.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Antenna_Matching_p1_4.jpeg" alt="MFJ-259B antenna analyzer display showing 7.159 MHz, R equals 46, X equals 4, SWR 1.1 — after shunt coil matching" loading="lazy">
+          <figcaption>The same antenna after shunt coil matching: R=46, X=4, SWR 1.1 at 7.159 MHz. Near-perfect. The impedance transformation brought the feed point from 23 ohms up to within striking distance of 50 ohms. That 0.1 MHz shift upward is normal as the matching network interacts with the antenna system.</figcaption>
+        </figure>
 
         <div class="callout myth">
           <div class="callout-title">&#128293; MYTH BUSTED</div>
@@ -219,22 +239,40 @@
           <p>The ground end of the shunt coil must be collocated with the coax shield ground point. If these two ground connections are separated by even a few inches, you introduce a ground loop that will compromise the match and potentially create common-mode current problems. Same bolt, same point, no exceptions.</p>
         </div>
 
-        <figure class="image-placeholder">
-          <span class="placeholder-icon" aria-hidden="true">📷</span>
-          <span class="placeholder-label">Shunt coil at antenna feedpoint</span>
-          <p>Hand-wound shunt coil — 9 turns, 1-inch inside diameter, #14 Thermaleze wire — installed at the antenna base with ground end collocated with the coax shield connection.</p>
-          <span class="placeholder-source">Photo requested from W1AST (stationproject.blog)</span>
+        <figure>
+          <img src="../images/Antenna_Matching_p1_1.jpeg" alt="Hand-wound copper shunt coil installed at antenna feedpoint against vehicle metal surface, with both ends terminated at ground and feedpoint connections" loading="lazy">
+          <figcaption>A hand-wound shunt coil in service at the antenna base — copper wire, approximately 9 turns, with both ends grounded at the same bolt as the coax shield. This is the key mechanical requirement: same bolt, same point, no exceptions. Separate ground connections introduce a loop and defeat the purpose.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Antenna_Matching_p2_10.jpeg" alt="Diagram of vertical antenna with shunt matching coil between feedpoint and ground plane, with coax shield also connected to ground plane at same point" loading="lazy">
+          <figcaption>The shunt coil wiring diagram. The coil connects from the antenna feedpoint to the ground plane. The coax shield connects to that same ground plane at the same location. Ground the shunt coil and the coax shield together — not at two separate points.</figcaption>
         </figure>
 
         <p>You adjust the match by compressing or spreading the turns, or by tapping the coil at different points. Start with all turns in the circuit and remove turns (or move the tap point) until you achieve the best match at resonance. Remember: find resonance first (X=0), then adjust the shunt coil for lowest SWR at that frequency.</p>
+
+        <figure>
+          <img src="../images/Antenna_Matching_p2_9.jpeg" alt="Close-up of large hand-wound copper shunt coil mounted at antenna base on metal bracket with coax feedline visible below" loading="lazy">
+          <figcaption>A well-built shunt coil at an antenna base — heavy copper wire, generous turn spacing, and solid mechanical mounting. The coil must be close-wound enough to maintain inductance but spaced enough to allow turn-spreading for adjustment. Note the coax connection at the base — the coil ground end and the coax shield terminate at the same point.</figcaption>
+        </figure>
 
         <p>A word about commercial shunt coils with fixed inductance values: avoid them. A fixed-value coil cannot provide an ideal match across the full span of operating conditions. Your antenna's feed-point impedance varies with frequency, mounting location, and even vehicle type. An adjustable coil lets you optimize the match for your specific installation. A fixed coil is a compromise, and in this case, it is an unnecessary one.</p>
 
         <h3 id="unun">The UNUN</h3>
 
+        <figure>
+          <img src="../images/Antenna_Matching_p2_11.jpeg" alt="Schematic diagram of a tapped UNUN transformer showing 50-ohm input, bifilar windings on a common core, with output taps at 50 ohms, odd taps, and 12.5 ohms" loading="lazy">
+          <figcaption>A tapped UNUN schematic. The multiple output taps — 50-ohm, odd, and 12.5-ohm — let you select the transformation ratio that best matches your antenna's feedpoint impedance on each band. This is what makes the UNUN more versatile than a fixed shunt coil in multi-band installations.</figcaption>
+        </figure>
+
         <p>An UNUN (unbalanced-to-unbalanced transformer) provides both a DC ground and an impedance transformation. The MFJ-907 is a commercially available example. The UNUN is particularly well-suited for installations using different-length monobander antennas, where you may need to change the matching between bands.</p>
 
         <p>With a remotely tuned antenna, you can change taps on the UNUN between bands to maintain a good match across a wide frequency range. This makes the UNUN more versatile than a shunt coil in multi-band installations where the feed-point impedance varies significantly from band to band.</p>
+
+        <figure>
+          <img src="../images/Antenna_Matching_p2_7.jpeg" alt="Small black MFJ UNUN matching device, commercial antenna matching transformer in a weatherproof enclosure" loading="lazy">
+          <figcaption>A commercial UNUN — an MFJ unit typical of what is used for mobile HF antenna matching. Small enough to mount at the antenna base, with weatherproof construction. The tap selection is usually made with a rotary switch or internal jumper wires.</figcaption>
+        </figure>
 
         <p>For the do-it-yourself crowd, an effective UNUN can be built using an F114-67 ferrite core wound with 9 bifilar turns of #14 enameled copper wire. Cover the finished winding with 3M #27 glass tape for mechanical protection and moisture resistance. The ferrite mix matters &mdash; type 67 is specified because it provides adequate permeability with acceptable loss across the HF spectrum. Do not substitute random ferrite material and expect the same results.</p>
 
@@ -265,6 +303,16 @@
           <div class="callout-title">KEY FACT: 160 Meter Switched Inductor</div>
           <p>A 160-through-10-meter remotely controlled antenna will exhibit <strong>more coil loss at any frequency</strong> than an equivalent 80-through-10-meter antenna. For operators needing true 160-meter coverage with adequate efficiency, a <strong>switched shunt inductor</strong> (such as the MFJ-908 or a homebrew equivalent) is required. The switch shorts out a portion of the coil to reduce inductance from approximately 2 &mu;H down to 0.7 &mu;H as you move from 160 to 80 meters. A single fixed-value coil cannot provide an optimal match across both 160 and 80 meters simultaneously.</p>
         </div>
+
+        <figure>
+          <img src="../images/Antenna_Matching_p2_6.jpeg" alt="Shunt coil installed at antenna mount flange with a small relay or switch wired in circuit to switch inductance between 160 and 80 meter operation" loading="lazy">
+          <figcaption>A switched shunt inductor installation at the antenna base. The relay (the small black component wired in series with the coil) shorts a portion of the winding when energized, reducing inductance as you switch from 160 to 80 meters. Same physical coil, two operating points — this is how you cover both bands without compromising either.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Antenna_Matching_p2_8.jpeg" alt="MFJ-908 Mobile Antenna Matcher, a black metal box with connectors for implementing switched shunt inductor matching for 160 through 10 meters" loading="lazy">
+          <figcaption>The MFJ-908 Mobile Antenna Matcher — a purpose-built switched shunt inductor for operators who need 160-meter coverage. It handles the relay switching and provides the correct inductance taps for 160 through 10 meters. If you are serious about 160 meters from a mobile installation, this is the type of device you need.</figcaption>
+        </figure>
 
         <h2 id="imd-and-swr">IMD and SWR</h2>
 

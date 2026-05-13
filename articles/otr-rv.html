@@ -158,6 +158,11 @@
 
         <p>Every few months, someone on the forums asks how to "just throw an HF rig" into their Class A motorhome or Peterbilt. The short answer is: you don't <em>just</em> do anything when it comes to OTR trucks and recreational vehicles. The answers aren't always simple, the solutions are almost always more expensive than in a passenger vehicle, and the manufacturers are generally less cooperative&mdash;especially when the chassis and coachwork come from different companies, which is nearly always the case.</p>
 
+        <figure>
+          <img src="../images/OTR_and_RV_p1_2.jpeg" alt="OTR Volvo semi-truck with dual HF antennas mounted on mirror brackets, front view" loading="lazy">
+          <figcaption>A Volvo OTR tractor with HF antennas on both mirror brackets. This is a common mounting solution in commercial trucks — the mirrors bolt to the cab, but remember the cab is rubber-mounted to the frame. Bond the cab to the frame or your ground plane is worthless.</figcaption>
+        </figure>
+
         <p>If you've read the other articles on this site, you know that a successful mobile HF installation depends on a solid ground plane, short cable runs, proper bonding, and effective RFI suppression. OTR trucks and RVs challenge every single one of those requirements. That's not a reason to give up. It's a reason to understand what you're dealing with before you start drilling holes and stringing coax.</p>
 
         <div class="callout key-concept">
@@ -168,6 +173,16 @@
         <h2 id="the-body-problem">The Body Problem: It Isn't Steel</h2>
 
         <p>This is the single biggest issue and the one that most newcomers fail to grasp. The body of your RV or the sleeper/cab of your OTR truck is, in large part, <strong>not steel</strong>. Fiberglass, aluminum, composite panels, rubber-mounted cab assemblies&mdash;these are the norm, not the exception. A Class A motorhome is essentially a fiberglass box bolted to a chassis. A fifth-wheel is even worse: it has no electrical connection to a tow vehicle's ground plane at all when unhitched.</p>
+
+        <figure>
+          <img src="../images/OTR_and_RV_p1_0.jpeg" alt="R-Pod teardrop trailer with fiberglass shell body parked on gravel" loading="lazy">
+          <figcaption>An R-Pod teardrop trailer — all fiberglass shell, no steel body panels. From an RF standpoint, this vehicle has no ground plane whatsoever. Every wire inside is exposed to your transmitted signal through the non-conducting walls.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/OTR_and_RV_p2_6.jpeg" alt="Large Class A diesel pusher motorhome at a campsite with HF whip antenna visible on roof" loading="lazy">
+          <figcaption>A large Class A diesel pusher at camp — 45 feet of fiberglass, aluminum skin, and wood framing. The slide-out awnings alone involve control cables running the full length of the coach. Every one of those cables is a potential RF path if it isn't choked.</figcaption>
+        </figure>
 
         <p>What does this mean in practice? It means you have no unified, low-impedance ground plane for your antenna system. It means the factory wiring harnesses&mdash;which are <em>long</em>, sometimes absurdly so&mdash;run through and along non-conducting body panels with only a myriad of ground straps and individual conductors providing any return path. Those long lengths of unshielded wire become antennas in their own right, providing inordinate RF ingress and egress paths.</p>
 
@@ -215,6 +230,11 @@
 
         <h2 id="battery-voltage-limit">House Battery Discharge Limits</h2>
 
+        <figure>
+          <img src="../images/OTR_and_RV_p2_7.png" alt="Digital panel voltmeter displaying 21.5 volts" loading="lazy">
+          <figcaption>A panel-mount digital voltmeter showing battery voltage — exactly the kind of instrument you need within easy sight of the operating position. When that number starts dropping below 11.5V under load, you're eating into your battery reserve. At 10.5V, stop transmitting. Below that, you're doing permanent damage.</figcaption>
+        </figure>
+
         <div class="callout callout-warning">
           <div class="callout-title">WARNING: Do Not Overdischarge Lead-Acid House Batteries</div>
           <p>RV house batteries are often isolated from the SLI battery system. When using them for radio operation, keep a close eye on voltage. <strong>10.5 volts</strong> is approximately the lowest voltage you can take any lead-acid battery to under load without causing permanent damage. Drawing below this level will significantly shorten battery life. Some smaller RVs have house batteries that are little more than one or two SLI batteries with no generator backup &mdash; in those cases, a decent voltmeter is not optional, it is essential.</p>
@@ -229,6 +249,11 @@
         <h2 id="antenna-mounting">Antenna Mounting: Where the Compromises Live</h2>
 
         <p>Antenna mounting on an OTR truck or RV is where most of the painful compromises happen. The ideal HF mobile antenna mount&mdash;centered on a large, flat, all-steel roof&mdash;simply doesn't exist on these vehicles. You're working with fiberglass roofs, aluminum skin over wooden framing, rubber-mounted cabs, and surfaces that flex and leak if you drill through them carelessly.</p>
+
+        <figure>
+          <img src="../images/OTR_and_RV_p1_1.jpeg" alt="Screwdriver HF antenna mounted vertically on OTR truck mirror bracket area" loading="lazy">
+          <figcaption>A screwdriver antenna on an OTR truck mirror bracket — a practical mounting location, but it requires a bonding strap from the cab to the frame. The mirror arm connects to the rubber-mounted cab, not the steel chassis. Without that strap, your counterpoise is floating.</figcaption>
+        </figure>
 
         <div class="callout warning">
           <div class="callout-title">⚠ WARNING</div>
@@ -277,6 +302,11 @@
         <h2 id="cowl-and-body-variations">Cowl and Body Variations</h2>
 
         <p>Back to the vehicle itself &mdash; one thing that makes OTR and RV installations especially frustrating is the variation between models and model years. The cowl area&mdash;where the windshield meets the dashboard and the firewall transitions to the body&mdash;varies enormously. What worked on a 2018 Freightliner Cascadia may not work on a 2020. What worked on a Winnebago View may be completely different on a Navion, even though they share a chassis.</p>
+
+        <figure>
+          <img src="../images/OTR_and_RV_p1_4.jpeg" alt="Close-up of antenna mount bracket installed in RV cowl area above engine compartment, with feed wires visible" loading="lazy">
+          <figcaption>An antenna base bracket installed in the cowl area — a common improvised mounting point in RVs where the windshield surround meets the engine hood. The non-conducting fiberglass panels in this area mean the mount itself needs a dedicated bonding wire run back to the chassis frame. Every installation like this is custom work.</figcaption>
+        </figure>
 
         <p>Plastic and fiberglass body sections in the cowl area mean that factory wiring harnesses pass through non-shielding material. If you're chasing RFI, you may need to trace harnesses through areas you didn't expect, and you may find that bonding solutions that work on one vehicle are ineffective on another. Take good notes, be methodical, and don't assume anything transfers between vehicles.</p>
 
@@ -337,6 +367,11 @@
 
         <p>The MPPT charge controller is the primary offender. It operates at 50 to 150 kHz with switching harmonics that extend well into the HF range. Inverters are worse&mdash;a 2000-watt inverter is a broadband noise generator that will obliterate your receive capability on multiple bands simultaneously.</p>
 
+        <figure>
+          <img src="../images/OTR_and_RV_p2_8.jpeg" alt="Vector Maxxpro 2500-watt power inverter with AC outlets and LED indicator" loading="lazy">
+          <figcaption>A 2500-watt modified sine wave inverter — a near-universal fixture in modern RVs and a broadband noise source. The switching frequency and its harmonics extend across the entire HF spectrum. Type 31 ferrite on every lead is mandatory. Modified sine wave units are generally noisier than pure sine wave inverters; if you have a choice, buy the pure sine wave unit.</figcaption>
+        </figure>
+
         <div class="callout key-concept">
           <div class="callout-title">🔑 KEY CONCEPT</div>
           <p>Install type 31 ferrite on <strong>every lead entering and leaving</strong> both the inverter and the MPPT controller&mdash;DC input, DC output, AC output, sense wires, all of it. Route solar DC wiring away from coax and antenna feed lines. Physical separation and ferrite together. Neither one alone is sufficient.</p>
@@ -359,6 +394,11 @@
         <h3 id="class-b-vans">Class B Vans</h3>
 
         <p>The Sprinter, Transit, and ProMaster conversion vans deserve separate discussion because they're fundamentally different from larger RVs&mdash;and in most ways, they're better for HF.</p>
+
+        <figure>
+          <img src="../images/OTR_and_RV_p1_3.jpeg" alt="Winnebago View Class C motorhome on Mercedes Sprinter chassis with screwdriver antenna on front bull bar, indoors" loading="lazy">
+          <figcaption>A Winnebago View — a Class C coach built on a Mercedes-Benz Sprinter chassis. The steel Sprinter unibody is a real advantage for RF ground plane; this is why Sprinter-based units are among the better RV platforms for HF. The antenna is mounted on the front bull bar, which bolts directly to the steel frame. This is the right approach.</figcaption>
+        </figure>
 
         <p>Steel bodies. That's the headline. A Class B van has an all-steel unibody or body-on-frame construction, which means you have a real ground plane. Compared to the fiberglass-and-aluminum construction of a Class A or fifth-wheel, this is an enormous advantage. By a wide margin, Class B vans are the best RV platform for HF mobile.</p>
 

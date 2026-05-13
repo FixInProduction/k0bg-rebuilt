@@ -154,6 +154,11 @@
 
         <p>Before we discuss antenna problems, let us establish a baseline that will save you an enormous amount of grief: if your antenna is properly mounted — through-bolted or NMO-mounted to sheet metal with adequate ground plane beneath it — then no additional grounding, strapping, scraping, or supplemental connections are necessary. None. The vehicle body, properly bonded, <em>is</em> your ground plane, and it works exactly as intended without help.</p>
 
+        <figure>
+          <img src="../images/Antenna_Problems_p1_0.jpeg" alt="NMO antenna mount installed through vehicle hood sheet metal" loading="lazy">
+          <figcaption>An NMO mount through-bolted to a vehicle hood. This is the correct way to do it — direct metal-to-metal contact, no paint, no gaskets. Everything else follows from getting this right.</figcaption>
+        </figure>
+
         <p>I cannot overstate how much time and frustration this single fact will save you. If you find yourself reaching for copper braid, ground straps, or a wire brush to scrape paint, stop and ask yourself: is my antenna properly mounted? Nine times out of ten, the answer is no, and no amount of supplemental strapping will compensate for a fundamentally flawed mount.</p>
 
         <div class="callout key-concept">
@@ -178,6 +183,11 @@
 
         <p>The coax shield must be electrically consistent with the start of the ground plane. In plain language: where the coax connects to the antenna mount, the shield must make solid, low-impedance contact with the vehicle metal that serves as your ground plane. If there is paint, corrosion, a rubber gasket, or any other insulating material between the coax shield connection and the vehicle body, you have a problem.</p>
 
+        <figure>
+          <img src="../images/Antenna_Problems_p1_1.jpeg" alt="Coax braid unraveled from a PL-259 connector, showing shield strand separation and poor termination" loading="lazy">
+          <figcaption>This is what a bad coax connector termination looks like after removal. The braid strands have separated from the connector body — meaning the shield made little or no electrical contact. This connector was not soldering a coax; it was impersonating one. Check your connectors before assuming the antenna system is at fault.</figcaption>
+        </figure>
+
         <p>This sounds elementary, and it is. Yet it is the single most common cause of antenna system problems in mobile installations. The coax connector is tight, the antenna mount looks solid, but there is a thin layer of paint or primer between the mount and the vehicle body that nobody scraped away during installation. The result is an antenna that seems to tune, sort of works, but generates RFI, produces common mode currents, and performs well below expectations.</p>
 
         <p>Check this connection first. Check it with an ohmmeter. Check it before you do anything else. You will be amazed how often this is the entire problem.</p>
@@ -187,6 +197,11 @@
         <p>If you run a screwdriver antenna — and a great many mobile HF operators do — this section may be the single most important thing you read on this entire website. Pay attention.</p>
 
         <p>The motor leads on a screwdriver antenna operate <em>above</em> RF ground. The motor sits at the top of the antenna, surrounded by the coil and whip, immersed in the RF field. The wires running down from the motor to your controller inside the vehicle are not just DC power leads. At RF frequencies, they are part of the antenna system. They carry RF current into the vehicle, through the controller, and into every wire connected to it.</p>
+
+        <figure>
+          <img src="../images/Antenna_Problems_p3_10.jpeg" alt="Multiple motor leads — black, white, yellow, and green wires — exiting the base of a screwdriver antenna motor" loading="lazy">
+          <figcaption>Motor leads exiting the base of a screwdriver antenna. Every one of these wires is above RF ground and carries RF current during transmit. They all need to be choked — not just the DC motor power leads, but every conductor that runs from this point into the vehicle.</figcaption>
+        </figure>
 
         <div class="callout warning">
           <div class="callout-title">&#9888; WARNING</div>
@@ -199,6 +214,11 @@
           <div class="callout-title">⚠ WARNING</div>
           <p>The ferrite beads supplied by most screwdriver antenna manufacturers are <strong>wholly inadequate</strong> for proper RF choking. They may reduce the problem slightly, but they do not solve it. Do not rely on manufacturer-supplied beads as your only RF choke on the motor leads.</p>
         </div>
+
+        <figure>
+          <img src="../images/Antenna_Problems_p1_4.jpeg" alt="Commercial motor lead choke in a weatherproof black plastic enclosure with motor leads coiled around it" loading="lazy">
+          <figcaption>A commercial motor lead choke assembly in a weatherproof enclosure. The coiled leads add inductance but the real work is done by the ferrite core inside. Whatever form your choke takes, it must be mounted outside the vehicle, close to the antenna base — not under the dashboard at the controller end.</figcaption>
+        </figure>
 
         <h3 id="proper-choke">Building a Proper Motor Lead Choke</h3>
 
@@ -217,11 +237,9 @@
           <p>The motor lead choke must be installed <strong>outside</strong> the vehicle, as close to the antenna base as practical. All wire between the motor and the choke is part of the antenna — it is in the RF field and carrying RF current. The choke must be placed before the motor leads enter the vehicle. Installing the choke inside the vehicle, under the dashboard, or at the controller is ineffective because the RF has already entered the vehicle by that point.</p>
         </div>
 
-        <figure class="image-placeholder">
-          <span class="placeholder-icon" aria-hidden="true">📷</span>
-          <span class="placeholder-label">Motor lead choke: 13 turns on mix 31 bead</span>
-          <p>13 turns of nylon-insulated #18 wire wound on a mix 31 ferrite bead, producing approximately 10 kilohms impedance at 10 MHz. Installed outside the vehicle at the antenna base.</p>
-          <span class="placeholder-source">Photo requested from W1AST (stationproject.blog)</span>
+        <figure>
+          <img src="../images/Antenna_Problems_p1_5.jpeg" alt="Motor lead choke: multiple turns of red wire wound on a split ferrite toroid core, secured with tape" loading="lazy">
+          <figcaption>A properly wound motor lead choke on a large split ferrite toroid — multiple turns of insulated wire packed tightly on the core and secured with fiberglass tape. This is what adequate choking looks like. Note the core size: this is not a small bead. You need sufficient core volume to develop the required impedance across the HF spectrum.</figcaption>
         </figure>
 
         <h2 id="isolated-power">The Isolated Power Fallacy</h2>
@@ -245,6 +263,11 @@
 
         <p>Some screwdriver antennas use an interrupted-thread design on the antenna body, where the whip screws into the top of the coil form using a coarse thread that allows it to be inserted quickly at several discrete positions. This is a convenience feature for manually removing and reinstalling the whip in low-clearance situations.</p>
 
+        <figure>
+          <img src="../images/Antenna_Problems_p3_11.jpeg" alt="Knurled stainless steel antenna stud adapter with threaded post, showing interrupted-thread bayonet-style coupling mechanism" loading="lazy">
+          <figcaption>A knurled stainless antenna stud adapter with an interrupted-thread coupling. The coarse thread allows fast removal and reinstallation at multiple discrete angular positions — which is exactly the problem. The controller has no way to know which position the whip seated in. Use this design with manual control only.</figcaption>
+        </figure>
+
         <div class="callout warning">
           <div class="callout-title">&#9888; WARNING</div>
           <p><strong>Interrupted-thread antenna designs are incompatible with automatic antenna controllers.</strong> SWR-seeking and turn-counting controllers have no way to detect whether the whip has skipped to a different thread position. The controller's memory and tuning logic assume the antenna geometry is continuous. If the whip jumps positions, the controller operates with incorrect assumptions, produces wrong tune readings, and may drive the antenna to its physical limits. Use interrupted-thread antennas with manual control only.</p>
@@ -256,6 +279,11 @@
 
         <p>A specific example worth calling out: the Icom IC-706 and IC-7000 are both popular mobile radios, and they look similar from a feature standpoint. Their SWR ports, however, are electrically different. Controllers designed for the IC-706 are not necessarily compatible with the IC-7000. If you upgrade from one to the other and your SWR-seeking controller behaves erratically — hunting continuously, never locking, or driving to limits — check controller compatibility before assuming the antenna or controller is defective.</p>
 
+        <figure>
+          <img src="../images/Antenna_Problems_p2_7.jpeg" alt="MFJ mobile antenna matcher and SWR monitor, a small black box with two coax ports" loading="lazy">
+          <figcaption>An MFJ mobile antenna matcher. Inline SWR monitoring devices like this one can be useful diagnostic tools, but they add another connector pair, another potential shield bond issue, and another failure point. If you use one, verify that both coax connections make solid shield contact — and that the device itself is not creating the problem you are trying to measure.</figcaption>
+        </figure>
+
         <h2 id="motor-polarity">DC Motor Polarity — Trust but Verify</h2>
 
         <p>Here is a fact that will make you shake your head: at least three screwdriver antenna manufacturers use whatever motor wire colors they happen to have on hand during assembly. Red does not necessarily mean positive. Black does not necessarily mean negative. The motor will run in either direction depending on polarity, and if the polarity is reversed from what your controller expects, the antenna will tune in the wrong direction — going up when the controller commands down, and vice versa.</p>
@@ -266,6 +294,11 @@
           <div class="callout-title">💡 TIP</div>
           <p>When using Anderson Power Pole connectors for motor leads, do <strong>not</strong> use the standard red and black housings. Reserve red/black for power connections. Use a different color pair — yellow/blue, for example — to prevent accidental cross-connection and to make motor leads visually distinct from power wiring.</p>
         </div>
+
+        <figure>
+          <img src="../images/Antenna_Problems_p2_9.png" alt="Anderson Power Pole connectors in four sizes: PP15 (yellow), PP45 (red), PP120 (blue), PP180 (green)" loading="lazy">
+          <figcaption>Anderson Power Poles come in multiple current ratings. PP15 (yellow) handles 15A, PP45 (red) 45A, PP120 (blue) 120A, PP180 (green) 180A. For motor leads — which draw 250–350 mA running and up to 2A at stall — PP15 is adequate. The point is to use a color other than red/black so motor leads cannot be confused with DC power connections.</figcaption>
+        </figure>
 
         <h2 id="coax-size">Coax Selection — Bigger Is Not Better</h2>
 
@@ -280,6 +313,16 @@
           <div class="callout-title">WARNING: Solid Center Conductor Coax</div>
           <p>Do <strong>not</strong> use any coax with a <strong>solid center conductor</strong> in a mobile installation. Solid conductors will fail due to vibration stress sooner or later &mdash; it is a matter of when, not if. Use only stranded-center coax. If your antenna kit came with RG-58/U with a solid center conductor, replace it before installation.</p>
         </div>
+
+        <figure>
+          <img src="../images/Antenna_Problems_p1_2.jpeg" alt="Coax jacket with two visible cracks, annotated with red arrows labeled 'Note the cracks in the coax'" loading="lazy">
+          <figcaption>Cracked coax jacket — and yes, this was in use. UV exposure, heat cycling, and repeated flexing degrade the outer jacket over time. Once the jacket cracks, moisture works its way into the braid. The shield corrodes, impedance rises, and you spend hours trying to diagnose why your antenna system's performance has gradually degraded. Inspect your coax annually.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Antenna_Problems_p1_3.jpeg" alt="Coax jacket with a burned black arc mark at the bend point" loading="lazy">
+          <figcaption>An arc burn on a coax jacket at a tight bend point. RF voltage arced through the jacket to the vehicle body — which only happens when the shield connection is compromised and RF voltage has nowhere else to go. This coax was not salvageable. If you see char marks on coax, replace the entire run; do not try to patch or tape over the damage.</figcaption>
+        </figure>
 
         <p>There is also a practical limit to the RG-213 argument from the standpoint of common mode choking. Duplicating the recommended 7-turn common mode choke using RG-213-sized coax would require 49 separate one-turn beads — approximately $250 worth of ferrite at current prices. RG-8X makes proper choking straightforward and affordable.</p>
 
@@ -321,6 +364,11 @@
           <div class="callout-title">KEY VALUE: SWR Threshold</div>
           <p>Set the SWR threshold on automatic antenna controllers to <strong>no lower than 1.5:1</strong>, and occasionally slightly higher. This prevents the controller from hunting indefinitely at locations with higher ground losses. Even controllers with automatic SWR threshold settings can exhibit this behavior. If yours does, raise the threshold manually.</p>
         </div>
+
+        <figure>
+          <img src="../images/Antenna_Problems_p2_8.jpeg" alt="Graph showing resonant point and lowest SWR point as two distinct positions along the frequency axis" loading="lazy">
+          <figcaption>Resonance and lowest SWR are not the same point — and on a mobile antenna with real ground losses, they can be noticeably separated. An SWR-seeking controller tuning to the SWR minimum will not necessarily land on resonance. Set the SWR threshold to account for this separation; chasing a 1.0:1 dip that does not exist will leave your controller hunting indefinitely.</figcaption>
+        </figure>
 
         <h2 id="summary">Parting Thoughts</h2>
 

@@ -155,6 +155,11 @@
 
         <p>If you've spent any time reading the other articles on this site, you know that proper mobile HF installation requires attention to wiring, bonding, mounting, and safety. Here is something that shouldn't surprise you but apparently surprises a lot of people: <strong>every single one of those principles applies to VHF and UHF installations too.</strong> The frequencies are different. The physics is the same.</p>
 
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p1_0.jpeg" alt="1940s newspaper clipping announcing new FCC mobile radio regulations for amateur radio operators" loading="lazy">
+          <figcaption>Amateur mobile operation has been subject to FCC regulation since the early days of the hobby. The rules have changed over the decades, but the requirement to do it right has not.</figcaption>
+        </figure>
+
         <p>In fact, the case can be made that proper installation practices are <em>more</em> important for VHF/UHF mobile work, not less. The reason is simple: the incidence of RFI problems is often higher at VHF and UHF than at HF. Modern vehicles are packed with microprocessor-controlled systems operating at clock speeds that generate harmonics right into the VHF and UHF amateur bands. The vehicle's wiring harness acts as both a transmitting and receiving antenna for this digital hash. At HF, the coupling is often manageable. At VHF, it can be fierce.</p>
 
         <div class="callout key-concept">
@@ -165,6 +170,11 @@
         <h2 id="rfi-considerations">RFI: A Different Problem</h2>
 
         <p>There's an important distinction between commercial-grade FM transceivers and amateur VHF/UHF radios that most hams never think about. Commercial mobile radios &mdash; the Motorola, Kenwood, and Harris units used by public safety and business fleets &mdash; are designed with narrow front-end filtering. They receive only within their assigned frequency band and reject everything else. These radios are nearly impervious to AM-detected RFI because their receivers simply don't respond to out-of-band signals.</p>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p5_23.jpeg" alt="Icom IC-R wideband receiver with spectrum display showing 438.295 MHz" loading="lazy">
+          <figcaption>A wideband receiver is exactly what it sounds like: it receives everything. That spectrum display isn't just for show — it's showing you all the hash your vehicle is generating. Every spike is a potential interference source riding into your radio's front end.</figcaption>
+        </figure>
 
         <p>Amateur VHF/UHF transceivers are a different animal entirely. They feature wide-band receive capability, often covering from broadcast FM through 900 MHz or beyond. This is a feature that hams love and that engineers wince at. That wide-open front end means the receiver happily detects anything that gets into it, including the broadband hash from your vehicle's CAN bus, engine computer, LED headlights, and every other digital system under the hood.</p>
 
@@ -192,7 +202,17 @@
 
         <p>Mag mounts are the path of least resistance for VHF/UHF, and to be fair, they work adequately for this purpose. At VHF and UHF wavelengths, the capacitive coupling between the mag mount's base and the vehicle roof provides a reasonably low-impedance path to the ground plane. The antenna pattern is acceptable. The SWR is usually fine. For casual 2-meter and 70-cm FM operation, a mag mount on the roof will get the job done without drilling holes.</p>
 
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p1_1.jpeg" alt="Mobile VHF/UHF antenna with loading coil on a magnetic mount base" loading="lazy">
+          <figcaption>A typical mag mount VHF/UHF antenna: loading coil near the base, NMO-style connector, rubber-padded magnet. It works. It is not the same thing as a permanent mount, and it won't perform like one.</figcaption>
+        </figure>
+
         <p>That said, "adequate" is not "good." A permanent NMO mount will always outperform a mag mount. The direct electrical connection to the vehicle body eliminates the capacitive coupling loss and provides a more consistent ground plane connection. The mechanical security is vastly superior &mdash; mag mounts can and do come loose at highway speed, particularly on hot days when the magnet's holding force decreases, or when you drive through a car wash and forget the antenna is there.</p>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p2_9.jpeg" alt="Magnetic mount assembly showing the mount body, coax cable, and PL-259 connector" loading="lazy">
+          <figcaption>The complete mag mount assembly: base, coax, and connector. The coax is the other variable to scrutinize — the cable that ships with discount mag mounts is rarely worth keeping.</figcaption>
+        </figure>
 
         <p>For HF, mag mounts are much less adequate. The capacitive coupling that works passably at 146 MHz is grossly insufficient at 7 MHz. But this article is about VHF/UHF, so I'll simply note that if you're running an HF mobile installation, the mag mount needs to go. See the <a href="installation.html">Installation Notes</a> article.</p>
 
@@ -200,12 +220,32 @@
 
         <p>The NMO (New Motorola) mount is the de facto standard for professional and amateur mobile VHF/UHF antenna installations. A genuine NMO mount provides a weatherproof, mechanically robust, electrically solid connection between the antenna and the vehicle body. It requires a 3/4-inch hole in the mounting surface. Install it properly and forget about it for years.</p>
 
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p2_7.png" alt="Machined aluminum NMO mount body showing the threaded antenna collar, o-ring seal, and cable connection points" loading="lazy">
+          <figcaption>A quality NMO mount in cross-section: machined body, o-ring weatherseal, and the threaded brass collar that accepts the antenna's bayonet. This is what you're buying when you pay for a genuine Larsen or PCTEL mount. The import equivalent looks similar and isn't.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p3_13.jpeg" alt="Carbide-tipped hole saw for cutting the 3/4-inch hole required for NMO mount installation" loading="lazy">
+          <figcaption>Cutting the 3/4-inch hole for an NMO mount requires a proper hole saw — a carbide-tipped unit like this one, not a cheap bi-metal saw that wanders and chatters. Take your time, use cutting oil on steel roofs, and drill from the outside in. You only get one shot at this.</figcaption>
+        </figure>
+
         <div class="callout warning">
           <div class="callout-title">⚠ WARNING</div>
           <p>There is an important distinction between genuine NMO mounts and the import "NMO-style" mounts flooding the market. The import mounts are <strong>not compatible</strong> with genuine NMO antennas. The threading, the contact dimensions, and the mechanical tolerances differ enough that an antenna designed for a genuine NMO mount will not seat properly in an import mount, and vice versa. You'll get intermittent connections, poor SWR, and frustration. Buy genuine NMO mounts from reputable sources: Larsen, PCTEL, Laird, or equivalent. The few dollars you save on an import mount will cost you many times over in troubleshooting time.</p>
         </div>
 
         <p>While we're on the subject of imports: the import antennas themselves deserve scrutiny. Many are overpriced for what they deliver, of questionable mechanical sturdiness, and some use SO-239 connectors at the base rather than the NMO bayonet. An SO-239 connection at the antenna base is mechanically inferior to a proper NMO bayonet and introduces an unnecessary impedance discontinuity. It is a cost-cutting measure that benefits the manufacturer, not you.</p>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p2_10.jpeg" alt="NMO mount body with brass threaded connector, metal housing, and wiring connections" loading="lazy">
+          <figcaption>The business end of an NMO mount: brass connector, steel housing, color-coded wiring terminals. Notice the precision machining — this is why genuine NMO mounts cost more than the import alternatives, and why they're worth it.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p2_8.jpeg" alt="NMO mount body showing the weatherproof housing and coax connection" loading="lazy">
+          <figcaption>A quality NMO mount housing, showing the weatherproof construction and coax interface. The electrical path from antenna to feedline must be solid and dry. A mount that allows moisture ingress will corrode internally, degrading your connection without any obvious external sign.</figcaption>
+        </figure>
 
         <h2 id="glass-mounts">Glass Mounts</h2>
 
@@ -221,6 +261,21 @@
         <h2 id="trunk-mount-coax">Trunk-Lid Mounts and Coax Quality</h2>
 
         <p>Trunk-lid and lip mounts are popular for sedans. They avoid roof drilling and can provide acceptable ground plane contact through the vehicle body. The weak point in most trunk-lid installations is the coax used to connect the antenna to the radio: specifically, the pigtail from the mount to the first connector.</p>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p2_4.jpeg" alt="Black L-bracket trunk-lid antenna mount with pre-drilled holes and mounting screws" loading="lazy">
+          <figcaption>A typical trunk-lid bracket mount. The L-bracket clamps to the trunk lip; the antenna threads into the hole. It's a legitimate mounting option for sedans — just scrutinize the coax that comes with it before you trust your signal to it.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p2_5.jpeg" alt="Trunk-lid or lip mount antenna base assembly with attached coax cable and connector" loading="lazy">
+          <figcaption>Complete trunk-lid mount assembly. The coax pigtail attached here is the first place to look when a trunk-mount installation underperforms — particularly at 70 cm, where thin coax loss is brutal.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p2_6.jpeg" alt="Antenna mount installed on vehicle body, showing the clamp mechanism and antenna base attached to a car" loading="lazy">
+          <figcaption>A trunk or door-frame mount installed in the field. The mechanical contact between mount and vehicle body is the electrical ground connection — if it's loose, corroded, or painted over, your ground plane is compromised.</figcaption>
+        </figure>
 
         <div class="callout warning">
           <div class="callout-title">&#9888; WARNING</div>
@@ -258,6 +313,11 @@
 
         <p>Contact your vehicle dealer or consult the service manual before installing any antenna mount on an aluminum-bodied vehicle. Some manufacturers have specific guidance &mdash; or specific prohibitions &mdash; regarding drilling into aluminum body panels. Warranty implications may also apply. It's better to ask first than to discover afterward that you've voided your body corrosion warranty.</p>
 
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p5_25.jpeg" alt="PWRguard power protection module with indicator LEDs and wire connections for mobile radio installation" loading="lazy">
+          <figcaption>A voltage protection module for mobile radio power feeds. On aluminum-bodied vehicles with their sensitive electronics and start-stop systems, keeping your radio supply clean and within spec is not optional — it's the price of coexistence.</figcaption>
+        </figure>
+
         <h2 id="vehicle-computer-rfi">Vehicle Computer Harmonic Interference</h2>
 
         <div class="callout callout-key">
@@ -277,15 +337,35 @@
 
         <p>A handheld radio sitting in a cup holder with its rubber duck antenna is not a mobile installation. It's a handheld being used in a car. The distinction matters because performance is abysmal: the rubber duck antenna inside the vehicle body is shielded from the outside world by the vehicle's sheet metal, and what little signal escapes does so in an unpredictable, inefficient pattern.</p>
 
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p3_14.jpeg" alt="Multiple mobile amateur radios stacked on a vertical rack-style mounting bracket" loading="lazy">
+          <figcaption>A proper multi-radio mobile installation on a purpose-built rack bracket. Every radio here is a mobile unit with an external antenna, not a handheld in a cup holder. This is what "mobile installation" looks like when someone takes it seriously.</figcaption>
+        </figure>
+
         <p>If you must use a handheld as your "mobile" rig, at minimum connect it to an external antenna mounted on the vehicle. Most handhelds accept a BNC or SMA adapter to connect external antennas. This single change &mdash; moving the antenna from inside the car to outside the car, mounted on the roof or trunk &mdash; will improve your effective radiated power by 10 to 20 dB. That is not an exaggeration.</p>
 
         <p>Power wiring for handhelds is simpler than for full-power mobiles, but the same safety considerations apply. Use a proper power adapter, fused at the appropriate current, run from a solid power source. Don't use a cigarette lighter adapter for permanent installations. They are mechanically unreliable and introduce additional voltage drop.</p>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p4_22.jpeg" alt="Powerwerx APO3 automatic power-off module with red and black power leads and Anderson Powerpole connector" loading="lazy">
+          <figcaption>A Powerwerx APO3 automatic power-off module. For any radio that draws standby current — and that includes most VHF/UHF mobiles with memory backup — an automatic cutoff prevents you from returning to a dead battery. This is not an optional accessory; it's basic protection for your vehicle.</figcaption>
+        </figure>
 
         <h2 id="ssb-on-vhf">SSB on VHF</h2>
 
         <p>Weak-signal VHF work &mdash; SSB, CW, and digital modes on 2 meters and above &mdash; has its own set of considerations. These modes are far more sensitive to noise than FM, because there is no capture effect or squelch to mask low-level interference. Every bit of vehicle-generated noise that an FM receiver would squelch out, an SSB receiver will faithfully present to your ears.</p>
 
         <p>If you plan to operate SSB on 2 meters or 70 cm from the vehicle, the installation requirements approach or equal those of a serious HF mobile installation. Thorough bonding, common mode suppression, and careful attention to noise sources become essential. The antenna requirements also differ: SSB operators prefer horizontally polarized antennas for weak-signal work, which means a different antenna system than the vertical whip used for FM repeater operation. Some operators carry a portable mast and horizontal antenna for use during stops, keeping the vertical for FM use while mobile.</p>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p5_27.jpeg" alt="Halo loop antenna for horizontal polarization on VHF, mounted on a truck bed with a vertical whip visible alongside it" loading="lazy">
+          <figcaption>A halo (horizontal loop) antenna mounted for portable/parked VHF SSB operation. Note the vertical whip still in place alongside it — the operator keeps the vertical for FM simplex and repeater work while mobile, deploys the halo for weak-signal SSB work during stops. Two antennas, two modes, done right.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p5_26.jpeg" alt="Mirage VHF linear amplifier for mobile or portable VHF operation" loading="lazy">
+          <figcaption>A Mirage VHF amplifier. If you're doing serious weak-signal work on 2 meters, a linear amplifier between your transceiver and antenna makes sense — provided your antenna system, feedline, and bonding are already correct. Amplifying into a lossy installation just produces more heat.</figcaption>
+        </figure>
 
         <div class="callout tip">
           <div class="callout-title">💡 TIP</div>
@@ -306,11 +386,31 @@
 
         <p><strong>DMR (Digital Mobile Radio)</strong> is the 800-pound gorilla. Originally a commercial standard, it's been embraced by hams primarily because the radios are dirt cheap. For the price of a decent dinner out, you can buy a DMR handheld or mobile. The worldwide talk group infrastructure &mdash; Brandmeister, TGIF, and others &mdash; gives you global reach through linked repeaters and hotspots. The catch? Programming a DMR radio is an exercise in frustration. You'll need a codeplug, a cable, software that looks like it was designed in 1998, and patience. Lots of patience. Once it's set up, it works. Getting there is the tax you pay for cheap hardware.</p>
 
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p3_15.jpeg" alt="Icom dual-band VHF/UHF mobile transceiver showing 146.820 MHz and 443.550 MHz on its display" loading="lazy">
+          <figcaption>A dual-band Icom mobile showing 2-meter and 70-cm frequencies simultaneously. This is the standard configuration for most VHF/UHF mobile operations — one antenna per band, or a duplexer feeding both radios from a single dual-band antenna.</figcaption>
+        </figure>
+
         <p><strong>Fusion (C4FM)</strong> is Yaesu's proprietary digital voice system. If you're already a Yaesu shop, Fusion is the path of least resistance. The radios handle both analog and digital seamlessly, the Wires-X network provides internet linking, and programming is straightforward compared to DMR. The ecosystem is smaller than DMR but well-supported. You're locked into one manufacturer's ecosystem, which bothers some people and doesn't bother others.</p>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p4_20.jpeg" alt="Yaesu FTM-400 dual-band mobile transceiver with touchscreen display showing 144.390 and 438.350 MHz" loading="lazy">
+          <figcaption>The Yaesu FTM-400 — a Fusion-capable dual-band mobile. C4FM digital voice and analog FM in one box, with a touchscreen interface. The installation requirements are identical to any other mobile radio: same power wiring standards, same NMO mount, same bonding.</figcaption>
+        </figure>
 
         <p><strong>D-STAR</strong> has a loyal following, particularly among Icom users who adopted it early. The technology works, the gateway system provides internet linking, and the user experience is reasonably polished. That said, growth has slowed noticeably. New repeater installations increasingly favor DMR or Fusion over D-STAR. It's not dead, but it's not where the momentum is.</p>
 
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p4_17.jpeg" alt="Icom ID-5100 dual-band D-STAR mobile transceiver with GPS and large color display showing 146.580 MHz" loading="lazy">
+          <figcaption>The Icom ID-5100 — a dual-band D-STAR mobile with built-in GPS. D-STAR's call-sign routing and position reporting are genuinely useful features. The radio still goes into an NMO mount via the same feedline as any other mobile rig.</figcaption>
+        </figure>
+
         <p><strong>M17</strong> is the newcomer &mdash; an open-source digital voice protocol designed by hams, for hams. No proprietary codecs, no licensing fees, no single manufacturer controlling the standard. It uses the Codec2 vocoder, which is fully open. Hardware support is still limited, but it's growing. If the idea of an open-source digital voice standard appeals to you &mdash; and it should &mdash; M17 is worth watching closely.</p>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p4_21.jpeg" alt="Kenwood dual-band mobile transceiver with blue-backlit display showing 446.000 and 144.390 MHz" loading="lazy">
+          <figcaption>A Kenwood dual-band mobile displaying both 70-cm and 2-meter frequencies. Whether this radio is running analog FM or digital voice, the installation behind it needs to meet the same standard.</figcaption>
+        </figure>
 
         <div class="callout key-concept">
           <div class="callout-title">🔑 KEY CONCEPT</div>
@@ -336,9 +436,29 @@
 
         <p>Several current VHF mobile radios include built-in APRS capability &mdash; GPS receiver, TNC, and SmartBeaconing all in the radio itself. This is the cleanest installation: one radio, one feedline, one antenna, done. No separate boxes, no extra cables, no additional failure points. If you want APRS and are shopping for a new radio anyway, a model with built-in APRS is worth the premium.</p>
 
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p3_16.jpeg" alt="Small Icom VHF FM mobile transceiver showing 147.340 MHz on display" loading="lazy">
+          <figcaption>A compact Icom VHF mobile — the type of radio that gets paired with an external TNC for APRS service. Small footprint, straightforward installation, but it needs the same quality power wiring and antenna connection as any larger mobile.</figcaption>
+        </figure>
+
         <p>For radios without built-in APRS, Bluetooth-connected TNCs have emerged as a compact option. These pair with a smartphone running an APRS application and key the radio through a cable connection. The phone provides the GPS position, the app handles the packet formatting, and the TNC handles the audio interface to the radio. It works, though you've now added dependencies on a phone, a Bluetooth link, an app, and a TNC &mdash; four things that can individually decide to misbehave.</p>
 
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p4_18.jpeg" alt="Alinco DR-135 VHF FM mobile transceiver showing 145.000 MHz" loading="lazy">
+          <figcaption>The Alinco DR-135 — a workhorse VHF mobile that has served as the backbone of many APRS installations. No built-in TNC, which means an external box of some kind, which means more cables, more connectors, and more opportunities for things to go wrong.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p4_19.jpeg" alt="Rand McNally Rapid City street map and car keys on a blue surface" loading="lazy">
+          <figcaption>Before GPS, this is what navigation looked like. APRS replaced the paper map for mobile position tracking, but the underlying requirement — knowing where you are — hasn't changed. What has changed is how many failure modes stand between you and that information.</figcaption>
+        </figure>
+
         <p>Software TNCs, most notably Direwolf, can run on a Raspberry Pi or similar small computer and handle packet encoding and decoding entirely in software. Combined with a USB sound card interface to the radio, this provides a capable and inexpensive APRS setup. It's a tinkerer's solution, and a good one for operators who enjoy building systems from components.</p>
+
+        <figure>
+          <img src="../images/Amateur_Radio_VHF_Options_p5_28.jpeg" alt="DTMF keypad controller board with component layout and dimensions showing 1.50 by 2.10 inches" loading="lazy">
+          <figcaption>A compact DTMF controller board — the kind of interface used in radio-control and packet applications. At 1.5 by 2.1 inches, these fit almost anywhere in a mobile installation. Mount it somewhere accessible, protect it from moisture, and don't let the wiring become a tangle.</figcaption>
+        </figure>
 
         <p>Regardless of which approach you choose, the installation fundamentals haven't changed. GPS receiver desensing from VHF transmit energy is still a real problem. Common mode currents on the feedline will still jam your GPS receiver during transmit. Antenna placement still matters. The hardware has gotten smaller and smarter, but physics remains stubbornly indifferent to technological progress.</p>
 
