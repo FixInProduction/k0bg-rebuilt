@@ -168,9 +168,11 @@
 
         <p>Ground losses (R<sub>g</sub>) dominate the efficiency equation, and keeping them low is a worthy exercise. The most important consideration toward that goal is proper antenna mounting. It is the metal mass directly under the antenna, not what's alongside, that counts. A ground strap to the nearest hard point is not a substitute for proper mounting &mdash; in fact, excessive and/or incorrect grounding can cause ground loops to occur, often masquerading as RFI.</p>
 
-        <figure>
-          <img src="../images/Antenna_Efficiency_p1_0.jpeg" alt="Diagram comparing correct and incorrect antenna mounting styles relative to ground plane" loading="lazy">
-          <figcaption>The correct mounting style places the antenna above a mass of metal. The incorrect style places the antenna beside or beyond the ground plane. This difference directly determines ground loss magnitude.</figcaption>
+        <figure class="image-placeholder">
+          <span class="placeholder-icon" aria-hidden="true">📷</span>
+          <span class="placeholder-label">Antenna mounting position comparison</span>
+          <p>Correct mounting places the antenna above a continuous metal surface (roof center). Incorrect mounting places it beside or beyond the ground plane edge (trunk lip, hood edge, bumper). This single factor has more impact on ground loss than any other installation decision.</p>
+          <span class="placeholder-source">Original photo not recoverable from PDF extraction</span>
         </figure>
 
         <p>The average recognized figure for ground loss varies from 10 to 2 ohms (80 through 10 meters). It may be considerably higher than this value, but never lower. Lack of proper bonding, incorrect or missing control line chokes, poor mounting techniques, poor mounting locations, and incorrectly terminated coax feeds all play a part. And since ground losses are proportional to the square of the field intensity, if you double the field intensity, the power losses increase by four times. This is the main reason ground losses should be kept as low as possible, especially when using physically short mobile antennas.</p>
@@ -183,8 +185,8 @@
         <p>Excessive ground loss also increases the level of RF flowing over the outside of the coax (common mode currents), and over whatever control lines are present. This is an exceptionally critical point if you're using or planning to use a computerized antenna controller.</p>
 
         <figure>
-          <img src="../images/Antenna_Efficiency_p1_1.jpeg" alt="Chart showing mean takeoff angle versus ground losses" loading="lazy">
-          <figcaption>The mean takeoff angle (approximately 27 degrees) isn't affected by ground losses. However, the amount of power radiated at any given angle does change, especially at lower angles below 15 degrees. This is yet another reason to minimize ground losses.</figcaption>
+          <img src="../images/Antenna_Efficiency_p1_1.jpeg" alt="Post mounting diagram showing antenna offset from the ground plane edge with angled ground line" loading="lazy">
+          <figcaption>ARRL data illustrating the effects of coil Q on antenna efficiency at various frequencies. Note the efficiency levels. The difference between a Q of 50 and a Q of 300 is dramatic. These figures are for base-loaded antennas and do not include ground losses.</figcaption>
         </figure>
 
         <p>Lastly, there are cases where ground losses take a back seat to coil losses. Short, stubby antennas are an example. It is not uncommon for the coil losses in these antennas to be 2 or 3 times the ground loss. This magnitude of coil loss is also why short, stubby antennas don't need matching.</p>
@@ -196,8 +198,8 @@
         <p>In simple terms, R<sub>r</sub> is a function of the effective electrical length (not the physical length), and how the current flows over that length. Thus, the longer the antenna's electrical length, the higher the R<sub>r</sub> will be. The rate of change is a square law function: a 9-foot antenna will have about twice the R<sub>r</sub> of a 6-foot antenna, and a 12-foot one will have four times the R<sub>r</sub> of a 6-foot one. R<sub>r</sub> may be as low as 0.2 ohms (80 meters) to about 36 ohms (full 1/4 wave on 10 meters).</p>
 
         <figure>
-          <img src="../images/Antenna_Efficiency_p1_2.jpeg" alt="ARRL table of efficiency versus coil Q and frequency" loading="lazy">
-          <figcaption>ARRL data illustrating the effects of coil Q on antenna efficiency at various frequencies. Note the efficiency levels. The difference between a Q of 50 and a Q of 300 is dramatic. These figures are for base-loaded antennas and do not include ground losses.</figcaption>
+          <img src="../images/Antenna_Efficiency_p1_2.jpeg" alt="Roof mounting diagram showing antenna centered on flat green ground plane" loading="lazy">
+          <figcaption>The mean takeoff angle (approximately 27 degrees) isn't affected by ground losses. However, the amount of power radiated at any given angle does change, especially at lower angles below 15 degrees. This is yet another reason to minimize ground losses.</figcaption>
         </figure>
 
         <p>Another way to increase the radiation resistance of an antenna is to use a cap hat. Properly designed and implemented, cap hats increase the effective electrical length and raise the current node. It is possible to increase R<sub>r</sub> by a factor of 4, particularly on the lower bands. The key words are: properly designed and implemented. Done incorrectly, they will have the opposite effect.</p>
@@ -209,8 +211,8 @@
         <p>Coil loss (R<sub>c</sub>) is one of the most misunderstood aspects of mobile antennas. Part of the misunderstanding deals with the term Q, which stands for Quality. It is determined by dividing the inductive reactance in ohms by the resistive losses in the coil in ohms at the operating frequency. Under laboratory conditions, it is possible to obtain coil Qs in the 800 to 1,000 range. However, in the real world of mobile loading coils, it is difficult to obtain Qs over 250 when mounted as part of an antenna. Even this takes good construction practices.</p>
 
         <figure>
-          <img src="../images/Antenna_Efficiency_p1_3.jpeg" alt="Optimal loading coil construction: 3 inch OD, 6 TPI, #10 silver plated wire" loading="lazy">
-          <figcaption>An example of optimal coil construction: approximately 3 inches OD, 6 turns per inch, using #10 silver-plated wire. This design consistently provides the highest assembled Q across 80 through 10 meters.</figcaption>
+          <img src="../images/Antenna_Efficiency_p1_3.jpeg" alt="ARRL elevation radiation pattern semicircle comparing perfect ground versus average ground at 7.15 MHz" loading="lazy">
+          <figcaption>ARRL elevation radiation pattern for a mobile HF antenna at 7.15 MHz, comparing perfect ground vs. average ground. Note how ground quality shifts the pattern &mdash; another reason to minimize ground losses.</figcaption>
         </figure>
 
         <p>With the possible exception of 10, 12, and sometimes 15 meters, all HF mobile antennas incorporate a loading coil. Although it adds physical length to the antenna, it does not increase the electrical length except in very special cases (long, skinny, linear loading is an example). An antenna loading coil is a lumped constant. Online sources which state that a loading coil replaces a given physical length of an antenna are in error.</p>
